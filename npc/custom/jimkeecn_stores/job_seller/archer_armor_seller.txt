@@ -1,0 +1,15 @@
+//======================================== Author jimkeecn
+-	shop	archer_armorseller	-1,501:-1
+
+prontera, 84,63,4	script	Archer Armor Shop	3,{
+    callshop .Shop$,1;
+    end;
+
+OnInit:
+    .Shop$ = "archer_armorseller";
+    query_sql("SELECT id FROM `item_db` WHERE `type` = 'armor' AND `script` IS NOT NULL AND TRIM(`script`) != '' AND (`job_archer` > 0 OR `job_hunter` > 0);", .Items);
+    npcshopitem .Shop$,.Items, 999999999;
+    for(.@i = 1; .@i < getarraysize(.Items); .@i++)
+        npcshopadditem .Shop$,.Items[.@i], 999999999;
+    end;
+}

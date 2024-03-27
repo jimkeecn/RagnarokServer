@@ -1,0 +1,15 @@
+//======================================== Author jimkeecn
+-	shop	thief_armorseller	-1,501:-1
+
+prontera, 86,63,4	script	Thief Armor Shop	12,{
+    callshop .Shop$,1;
+    end;
+
+OnInit:
+    .Shop$ = "thief_armorseller";
+    query_sql("SELECT id FROM `item_db` WHERE `type` = 'armor' AND `script` IS NOT NULL AND TRIM(`script`) != '' AND (`job_assassin` > 0 OR `job_thief` > 0 OR `job_rogue` > 0);", .Items);
+    npcshopitem .Shop$,.Items, 999999999;
+    for(.@i = 1; .@i < getarraysize(.Items); .@i++)
+        npcshopadditem .Shop$,.Items[.@i], 999999999;
+    end;
+}
