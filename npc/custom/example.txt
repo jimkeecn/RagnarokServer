@@ -1,0 +1,1 @@
+prontera,156,145,4	shop	Fruit Store	58,512:-1,513:1000
