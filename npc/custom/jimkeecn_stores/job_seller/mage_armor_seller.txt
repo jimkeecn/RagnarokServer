@@ -8,8 +8,8 @@ prontera, 88,63,4	script	Mage Armor Shop	123,{
 OnInit:
     .Shop$ = "mage_armorseller";
     query_sql("SELECT id FROM `item_db` WHERE `type` = 'armor' AND `script` IS NOT NULL AND TRIM(`script`) != '' AND (`job_mage` > 0 OR `job_wizard` > 0 OR `job_sage` > 0);", .Items);
-    npcshopitem .Shop$,.Items, 999999999;
+    npcshopitem .Shop$,.Items, 10000;
     for(.@i = 1; .@i < getarraysize(.Items); .@i++)
-        npcshopadditem .Shop$,.Items[.@i], 999999999;
+        npcshopadditem .Shop$,.Items[.@i], 10000;
     end;
 }

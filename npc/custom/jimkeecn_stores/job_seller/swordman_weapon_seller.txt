@@ -1,0 +1,15 @@
+//======================================== Author jimkeecn
+-	shop	swordman_weaponseller	-1,501:-1
+
+prontera, 90,58,4	script	Swordman Weapon Shop	1,{
+    callshop .Shop$,1;
+    end;
+
+OnInit:
+    .Shop$ = "swordman_weaponseller";
+    query_sql("SELECT id FROM `item_db` WHERE `type` = 'weapon' AND `script` IS NOT NULL AND TRIM(`script`) != '' AND (`job_swordman` > 0 OR `job_knight` > 0 OR `job_crusader` > 0);", .Items);
+    npcshopitem .Shop$,.Items, 10000;
+    for(.@i = 1; .@i < getarraysize(.Items); .@i++)
+        npcshopadditem .Shop$,.Items[.@i], 10000;
+    end;
+}

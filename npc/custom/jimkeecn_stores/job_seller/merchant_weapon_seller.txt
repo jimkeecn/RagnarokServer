@@ -1,0 +1,15 @@
+//======================================== Author jimkeecn
+-	shop	merchant_weaponseller	-1,501:-1
+
+prontera, 82,58,4	script	Merchant Weapon Shop	18,{
+    callshop .Shop$,1;
+    end;
+
+OnInit:
+    .Shop$ = "merchant_weaponseller";
+    query_sql("SELECT id FROM `item_db` WHERE `type` = 'weapon' AND `script` IS NOT NULL AND TRIM(`script`) != '' AND (`job_merchant` > 0 OR `job_blacksmith` > 0 OR `job_alchemist` > 0);", .Items);
+    npcshopitem .Shop$,.Items, 10000;
+    for(.@i = 1; .@i < getarraysize(.Items); .@i++)
+        npcshopadditem .Shop$,.Items[.@i], 10000;
+    end;
+}

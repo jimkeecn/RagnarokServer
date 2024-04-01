@@ -1,0 +1,15 @@
+//======================================== Author jimkeecn
+-	shop	acolyte_weaponseller	-1,501:-1
+
+prontera, 80,58,4	script	Acolyte Weapon Store	4,{
+    callshop .Shop$,1;
+    end;
+
+OnInit:
+    .Shop$ = "acolyte_weaponseller";
+    query_sql("SELECT id FROM `item_db` WHERE `type` = 'weapon' AND `script` IS NOT NULL AND TRIM(`script`) != '' AND (`job_acolyte` > 0 OR `job_priest` > 0 OR `job_monk` > 0);", .Items);
+    npcshopitem .Shop$,.Items, 10000;
+    for(.@i = 1; .@i < getarraysize(.Items); .@i++)
+        npcshopadditem .Shop$,.Items[.@i], 10000;
+    end;
+}
