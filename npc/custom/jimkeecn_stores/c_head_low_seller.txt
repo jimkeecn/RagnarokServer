@@ -10,6 +10,6 @@ OnInit:
     query_sql("select id from `item_db_re` where `location_costume_head_low` > 0 AND `name_english` IS NOT NULL AND `name_english` != '' ", .Items);
     npcshopitem .Shop$,.Items, 500000;
     for(.@i = 1; .@i < getarraysize(.Items); .@i++)
-        npcshopadditem .Shop$,.Items[.@i], 500000;
+        npcshopadditem .Shop$,.Items[.@i], 100000+.@i;
     end;
 }

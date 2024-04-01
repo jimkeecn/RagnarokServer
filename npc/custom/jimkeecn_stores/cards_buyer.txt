@@ -1,0 +1,76 @@
+// Script for "Card Trade CashPoint" NPC
+// *searchitem <array name>,"<item name>";
+
+function	script	F_Confirm_Trade	{
+
+	.@amount = getarg(0);
+
+	menu "Yes.",L_Yes,"No.",L_Nope;
+
+	L_Yes:
+
+			query_sql("SELECT item.`name_english` AS item_name, inv.`nameid` AS item_id, inv.`amount` FROM `inventory` inv JOIN `item_db` item ON inv.`nameid` = item.`id` WHERE item.`type` = 'card' AND inv.`char_id` =" + getcharid(0) +"", 
+	.@cards_name_array$, .@cards_id_array, .@cards_amount_array );
+
+			mes "You have exchanged for " + .@amount +" cash point(s)";
+
+			#CASHPOINTS += .@amount;
+
+			for ( .@i = 0; .@i < getarraysize(.@cards_id_array); .@i++ ) {
+				delitem .@cards_id_array[.@i],.@cards_amount_array[.@i];
+			}
+			
+			close;
+
+	L_Nope:
+			mes "thanks for stopping by, we will see you soon";
+			close;
+}
+
+
+function	script	F_Mes_Item_exchange	{
+	.@name = getarg(0);
+	.@id = getarg(1);
+	.@amount = getarg(2);
+
+	mes "You can exchange " + .@name + " for " + .@amount + "cash point(s).";
+
+}
+
+
+
+prontera,155,168,4	script	Card Trade CashPoint	506,{
+	// Initialize variables
+    //.@cards_array as return variable for the below sql query
+	// getcharid(0) is getting current character's id
+
+	query_sql("SELECT item.`name_english` AS item_name, inv.`nameid` AS item_id, inv.`amount` FROM `inventory` inv JOIN `item_db` item ON inv.`nameid` = item.`id` WHERE item.`type` = 'card' AND inv.`char_id` =" + getcharid(0) +"", 
+	.@cards_name_array$, .@cards_id_array, .@cards_amount_array );
+
+	// Check if player has any cards
+	if (getarraysize(.@cards_id_array) > 0) {
+		.@totalAmount = 0;
+		for ( .@i = 0; .@i < getarraysize(.@cards_id_array); .@i++ ) {
+			.@totalAmount = .@totalAmount + .@cards_amount_array[.@i];
+
+			//This line is not working properly.
+			//callfunc("F_Mes_Item_exchange", .@cards_name_array[.@i], .@cards_id_array[.@i], .@cards_amount_array[.@i]);
+
+			mes "You can exchange " + .@cards_name_array$[.@i] + " for " + .@cards_amount_array[.@i] + "cash point(s).";
+		}
+		next;
+
+		mes "[Card Trade CashPoint]";
+		mes "I see you have " + .@totalAmount + " cards with you. Do you want to exchange them for cash points?";
+
+		callfunc("F_Confirm_Trade",.@totalAmount);
+		close;
+	}
+	else
+	{
+		mes "[Card Trade CashPoint]";
+		mes "Hello! I can exchange your cards for cash points. However, it seems you don't have any cards with me right now.";
+	close;
+	}
+	
+}
