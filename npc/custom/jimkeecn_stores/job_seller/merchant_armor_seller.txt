@@ -8,8 +8,8 @@ prontera, 82,63,4	script	Merchant Armor Shop	18,{
 OnInit:
     .Shop$ = "merchant_armorseller";
     query_sql("SELECT id FROM `item_db` WHERE `type` = 'armor' AND `script` IS NOT NULL AND TRIM(`script`) != '' AND (`job_merchant` > 0 OR `job_blacksmith` > 0 OR `job_alchemist` > 0);", .Items);
-    npcshopitem .Shop$,.Items, 10000;
+    npcshopitem .Shop$,.Items, 999999999;
     for(.@i = 1; .@i < getarraysize(.Items); .@i++)
-        npcshopadditem .Shop$,.Items[.@i], 10000;
+        npcshopadditem .Shop$,.Items[.@i], 999999999;
     end;
 }
