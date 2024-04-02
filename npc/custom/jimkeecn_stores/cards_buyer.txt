@@ -3,23 +3,26 @@
 
 function	script	F_Confirm_Trade	{
 
+	getinventorylist;
 	.@amount = getarg(0);
 
 	menu "Yes.",L_Yes,"No.",L_Nope;
 
 	L_Yes:
 
-			query_sql("SELECT item.`name_english` AS item_name, inv.`nameid` AS item_id, inv.`amount` FROM `inventory` inv JOIN `item_db` item ON inv.`nameid` = item.`id` WHERE item.`type` = 'card' AND inv.`char_id` =" + getcharid(0) +"", 
-	.@cards_name_array$, .@cards_id_array, .@cards_amount_array );
-
 			mes "You have exchanged for " + .@amount +" cash point(s)";
 
 			#CASHPOINTS += .@amount;
-
-			for ( .@i = 0; .@i < getarraysize(.@cards_id_array); .@i++ ) {
-				delitem .@cards_id_array[.@i],.@cards_amount_array[.@i];
+			freeloop(1);
+			for(.@i = 0; .@i < @inventorylist_count; .@i++){
+				.@id = @inventorylist_id[.@i];
+				.@amount = @inventorylist_amount[.@i];
+				if(getiteminfo(.@id,ITEMINFO_TYPE) == IT_CARD){
+					sleep2 10; // For good measure
+					delitem .@id,.@amount;
+				}
 			}
-			
+			freeloop(0);
 			close;
 
 	L_Nope:
@@ -27,37 +30,43 @@ function	script	F_Confirm_Trade	{
 			close;
 }
 
-
-function	script	F_Mes_Item_exchange	{
-	.@name = getarg(0);
-	.@id = getarg(1);
-	.@amount = getarg(2);
-
-	mes "You can exchange " + .@name + " for " + .@amount + "cash point(s).";
-
-}
-
-
-
 prontera,155,168,4	script	Card Trade CashPoint	506,{
 	// Initialize variables
     //.@cards_array as return variable for the below sql query
 	// getcharid(0) is getting current character's id
 
-	query_sql("SELECT item.`name_english` AS item_name, inv.`nameid` AS item_id, inv.`amount` FROM `inventory` inv JOIN `item_db` item ON inv.`nameid` = item.`id` WHERE item.`type` = 'card' AND inv.`char_id` =" + getcharid(0) +"", 
-	.@cards_name_array$, .@cards_id_array, .@cards_amount_array );
+	.@hasCard = 0;
+	.@totalAmount = 0;
+
+	getinventorylist;
+	//Check if player has cards 
+	freeloop(1);
+	for(.@i = 0; .@i < @inventorylist_count; .@i++){
+				.@id = @inventorylist_id[.@i];
+				.@amount = @inventorylist_amount[.@i];
+				sleep2 10;
+				if(getiteminfo(.@id,ITEMINFO_TYPE) == IT_CARD){
+					.@hasCard = 1;
+					break;
+				}
+	}
+	freeloop(0);
+
 
 	// Check if player has any cards
-	if (getarraysize(.@cards_id_array) > 0) {
-		.@totalAmount = 0;
-		for ( .@i = 0; .@i < getarraysize(.@cards_id_array); .@i++ ) {
-			.@totalAmount = .@totalAmount + .@cards_amount_array[.@i];
-
-			//This line is not working properly.
-			//callfunc("F_Mes_Item_exchange", .@cards_name_array[.@i], .@cards_id_array[.@i], .@cards_amount_array[.@i]);
-
-			mes "You can exchange " + .@cards_name_array$[.@i] + " for " + .@cards_amount_array[.@i] + "cash point(s).";
+	if (.@hasCard == 1) {
+		
+		freeloop(1);
+		for(.@i = 0; .@i < @inventorylist_count; .@i++){
+				.@id = @inventorylist_id[.@i];
+				.@amount = @inventorylist_amount[.@i];
+				if ( getiteminfo(.@id,ITEMINFO_TYPE)  == IT_CARD ) {
+					.@totalAmount = .@totalAmount + .@amount;
+					sleep2 10; // For good measure
+					mes "You can exchange " + getitemname(.@id) + " for " + .@amount + "cash point(s).";
+				}
 		}
+		freeloop(0);
 		next;
 
 		mes "[Card Trade CashPoint]";
