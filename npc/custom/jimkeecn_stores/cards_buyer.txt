@@ -30,7 +30,7 @@ function	script	F_Confirm_Trade	{
 			close;
 }
 
-prontera,155,168,4	script	Card Trade CashPoint	506,{
+-	script	Card_Trade_CashPoint	-1,{
 	// Initialize variables
     //.@cards_array as return variable for the below sql query
 	// getcharid(0) is getting current character's id
@@ -83,3 +83,6 @@ prontera,155,168,4	script	Card Trade CashPoint	506,{
 	}
 	
 }
+
+//prontera,146,94,4	duplicate(Card_Trade_CashPoint)	CashPoint Trader#pron	506
+moc_para01,26,16,6	duplicate(Card_Trade_CashPoint)	CashPoint Trader#eden	506
