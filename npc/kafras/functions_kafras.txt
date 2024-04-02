@@ -305,7 +305,8 @@ function	script	F_KafTele	{
 			mes "to " + @wrpD$[.@j] + " is " + @wrpP[.@j] + " zeny.";
 			close3;
 		}
-		Zeny -= @wrpP[.@j];
+		//teleport will not cost zeny
+		//Zeny -= @wrpP[.@j];
 		RESRVPTS += (@wrpP[.@j]/16);
 	}
 	cutin "", 255;
