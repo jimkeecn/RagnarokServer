@@ -41,6 +41,8 @@
 #include "pet.hpp"
 #include "quest.hpp"
 
+
+
 using namespace rathena;
 
 #define ACTIVE_AI_RANGE 2	//Distance added on top of 'AREA_SIZE' at which mobs enter active AI mode.
@@ -2210,6 +2212,18 @@ static void mob_item_drop(struct mob_data *md, struct item_drop_list *dlist, str
 		&& (drop_rate <= sd->state.autoloot || pc_isautolooting(sd, ditem->item_data.nameid))
 		&& (flag ? ((battle_config.homunculus_autoloot ? (battle_config.hom_idle_no_share == 0 || !pc_isidle_hom(sd)) : 0) || (battle_config.mercenary_autoloot ? (battle_config.mer_idle_no_share == 0 || !pc_isidle_mer(sd)) : 0)) :
 			(battle_config.idle_no_autoloot == 0 || DIFF_TICK(last_tick, sd->idletime) < battle_config.idle_no_autoloot));
+
+	auto item_info = itemdb_search(ditem->item_data.nameid); // Search for item info
+
+	if (test_autoloot && item_info != nullptr) { // Ensure item_info is not null
+		// Check the item's type against predefined enum values for Card, Weapon, and Armor
+		if (item_info->type == IT_CARD ||
+			item_info->type == IT_WEAPON ||
+			item_info->type == IT_ARMOR) {
+			test_autoloot = false; // Exclude these types from auto-looting
+		}
+	}
+	
 #ifdef AUTOLOOT_DISTANCE
 		test_autoloot = test_autoloot && sd->bl.m == md->bl.m
 		&& check_distance_blxy(&sd->bl, dlist->x, dlist->y, AUTOLOOT_DISTANCE);
