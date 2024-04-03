@@ -33,7 +33,6 @@ Header:
     Version: 1
 
 Body:
-    - Tab: New
     - Tab: Hot
       Items:
           - Item: Bloody_Dead_Branch
@@ -47,14 +46,29 @@ Body:
           - Item: CHALLENGE_KIT
             Price: 18
           - Item: NOIVE_BOX
+            Price: 100
+          - Item: HD_Oridecon_50Box
+            Price: 15
+          - Item: HD_Elunium_50Box
+            Price: 15
+          - Item: Enriched_Oridecon_Box5
+            Price: 15
+          - Item: Enriched_Elunium_Box5
+            Price: 15
+          - Item: HD_Carnium_Box10
+            Price: 15
+          - Item: HD_Bradium_Box10
+            Price: 15
+          - Item: HIGH_REFINE_GUARANTEE
             Price: 50
+          - Item: REFINE_GUARANTEE
+            Price: 25
     - Tab: Limited
       Items:
           - Item: NEW_SHADOW_CUBE
             Price: 20
           - Item: 2013_RWC_SCROLL
             Price: 20
-    - Tab: Rental
     - Tab: Scrolls
       Items:
           - Item: Battle_Manual_X3
@@ -95,6 +109,12 @@ Body:
             Price: 3
           - Item: G_Almighty
             Price: 3
+          - Item: F_Aspersio_5_Scroll_Box
+            Price: 5
+          - Item: F_Assumptio_5_Box
+            Price: 5
+          - Item: F_Wind_Walk_10_Box
+            Price: 10
     - Tab: Other
       Items:
           - Item: Inventory_Ex_Evt
@@ -106,4 +126,8 @@ Body:
           - Item: World_Tour_Ticket
             Price: 1
           - Item: Kafra_Card_Box
+            Price: 5
+          - Item: F_Giant_Fly_Wing_Box50
+            Price: 5
+          - Item: Marriage_Covenant_Box
             Price: 5
