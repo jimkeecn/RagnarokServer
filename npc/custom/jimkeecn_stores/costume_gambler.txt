@@ -1,23 +1,83 @@
 //===== rAthena Script =======================================
 //= Summer Flower
 //===== Description: =========================================
-//= Buy Any costume in the game with variable price. 
+//= Buy Any costume in the game with 3 variable price 10k,50k,1m. 
 //===== Changelogs: ==========================================
 //= 1.0 First version [jimkeecn]
 //============================================================
 
 
-moc_para01,23,28,4	script	Summer Flower	481,{ 
-    mes "Summer Flower";
-    mes "Hey, I will buy your costume for 10 zeny or 50000 zeny or 500000 zeny?";
-    mes "----------Chance----------";
-    mes "10000 zeny (10%)";
-    mes "50000 zeny (88%);
-    mes "500000 zeny (2%)";
+moc_para01,23,28,4	script	The Lady Gambler	772,{ 
+    mes " [The Lady Gambler]";
+    mes " Hey there! They call me the Lady Gambler!!!";
+    mes " Looks like you have some extra costume wanna trade? I'm up for trading your costume for some zeny. The rates? Well, they're a bit of a gamble themselves!";
     next;
-    mes "please make sure you have your costume ready in your inventory.";
-    if (select("I am ready.:I don't gamble") == 2) {
-        
+    mes " [The Lady Gambler]" ;
+    mes " ---Exchange Rate---";
+    mes " 10,000 z: There's a 20% chance." , " - " ,
+        " 50,000 z: Got a 78% chance for this one." , " - " ,
+        " 1 million zeny: Ah, the big prize! But it's rare, with only a 2% chance.";
+    next;
+    mes " [The Lady Gambler] ";
+    mes " ^FF0000 Please make sure you wear the costume you wanna trade!!!!!!!!  ", 
+        " Also make sure you only have one in your inventory. ^000000 ";
+    next;
+    if (select("I want to gamble!.:I don't gamble") == 2) {
+        mes "Okay, no worries. Bye";
+        end;
     }
+    
+    freeloop(1);
+    .@inner_id_array$  = "";
+	for(.@i = 10; .@i < 14; .@i++){
+				sleep2 10;
+				if(getequipid(.@i) == -1 ){
+                        continue;
+                }
+                .@name$ = getitemname(getequipid(.@i));
+                explode(.@name_arrau$, .@name$, ":");
+                if(getarraysize(.@name_arrau$) > 1){
+                    .@menu$ = .@menu$ + .@name_arrau$[0] + .@name_arrau$[1] + ":";
+                }else{
+                    .@menu$ = .@menu$ + .@name$ + ":";
+                }
+                .@inner_id_array$ += getequipid(.@i) + ":";
+	}
+
+	freeloop(0);
+    .@s = select(.@menu$) - 1;
+    explode(.@outer_id_array$, .@inner_id_array$, ":");
+    //  mes "You have selected " + .@outer_id_array$[.@s] + "."; //test if the id is correct;
+    mes " [The Lady Gambler] ";
+    mes " You have selected " + getitemname(atoi(.@outer_id_array$[.@s])) + ".";
+    mes " Do you still wanna trade?";
+    next;
+    if (select("Yes.:Cancel.") == 2) {
+        mes " [The Lady Gambler] "," Okay, no worries. Bye";
+        end;
+    }
+
+    .@rand_number = rand(1,100);
+    // Handling the 10% chance for 10,000 zeny
+    if (.@rand_number <= 20) { // This covers the 1-10 range, which is 10% of 1-100
+        mes " [The Lady Gambler] ";
+        mes " You received 10,000 zeny!" , " Better luck next time!";
+        Zeny += 10000;
+    }
+    // Handling the 88% chance for 50,000 zeny
+    else if (.@rand_number <= 98) { // This adds the next 88 numbers, covering 11-98
+        mes " [The Lady Gambler] ";
+        mes " You received 50,000 zeny!" , " That is a fair price mate!";
+        Zeny += 50000;
+    }
+    // Handling the 2% chance for 1,000,000 zeny
+    else { // This covers the last 2 numbers, 99 and 100, which is 2% of 1-100
+        mes " [The Lady Gambler] ";
+        mes " You received 1,000,000 zeny!" , " OMG! You are the first guy to get this price!!";
+        Zeny += 1000000;
+    }
+    delitem atoi(.@outer_id_array$[.@s]),1;
+    close;
+    end;
 
 }
