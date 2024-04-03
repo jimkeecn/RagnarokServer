@@ -14,8 +14,8 @@ moc_para01,23,28,4	script	The Lady Gambler	772,{
     next;
     mes " [The Lady Gambler]" ;
     mes " ---discount--- ---rate---";
-    mes "      90%           30% " , " - " ,
-        "      50%           68% " , " - " ,
+    mes "      90%           40% " , " - " ,
+        "      50%           58% " , " - " ,
         "    1000%            2% ";
     next;
     mes " [The Lady Gambler] ";
@@ -69,13 +69,13 @@ moc_para01,23,28,4	script	The Lady Gambler	772,{
             .@original_price = atoi(.@outer_id_array$[.@s]) * 2;
     }
 
-    // Handling the 30% chance 
-    if (.@rand_number <= 30) { 
+    // Handling the 40% chance 
+    if (.@rand_number <= 40) { 
         .@final_price = (.@original_price * (100 - 90 )) / 100;
         mes " [The Lady Gambler] ";
         mes " You received "+.@final_price+" zeny!" , " Better luck next time!";
     }
-    // Handling the 68% chance 
+    // Handling the 58% chance 
     else if (.@rand_number <= 98) { 
         .@final_price = (.@original_price * (100 - 50 )) / 100;
         mes " [The Lady Gambler] ";

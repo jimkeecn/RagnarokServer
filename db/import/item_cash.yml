@@ -42,7 +42,7 @@ Body:
           - Item: SPECIAL_COSTUME_BOX_
             Price: 5
           - Item: S_COSTUME_BOX
-            Price: 40
+            Price: 80
           - Item: PAYMENT_COSTUME_BOX1
             Price: 5
           - Item: 2017_GSTAR_COSTUMEBOX

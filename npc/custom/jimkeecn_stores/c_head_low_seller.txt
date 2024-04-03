@@ -6,6 +6,7 @@ prontera,155,150,4	script	C.HeadGear Seller(Low)	58,{
     callshop .Shop$,1;
     end;
 OnInit:
+    .@basePrice = 0;
     .Shop$ = "example_shop24";
     query_sql("select id from `item_db_re` where `location_costume_head_low` > 0 AND `name_english` IS NOT NULL AND `name_english` != '' ", .Items);
     npcshopitem .Shop$,501, 9999999;
@@ -13,11 +14,11 @@ OnInit:
     freeloop(1);
     for(.@i = 1; .@i < getarraysize(.Items); .@i++){
         if(.Items[.@i] <= 20000){
-            npcshopadditem .Shop$,.Items[.@i], .Items[.@i] * 10;
+            npcshopadditem .Shop$,.Items[.@i], .Items[.@i] * 10 + .@basePrice;;
         }else if(.Items[.@i] <= 50000){
-            npcshopadditem .Shop$,.Items[.@i], .Items[.@i] * 20;
+            npcshopadditem .Shop$,.Items[.@i], .Items[.@i] * 20 + .@basePrice;
         } else {
-            npcshopadditem .Shop$,.Items[.@i], .Items[.@i] * 2;
+            npcshopadditem .Shop$,.Items[.@i], .Items[.@i] * 2 + .@basePrice;
         }
     }
     freeloop(0);
