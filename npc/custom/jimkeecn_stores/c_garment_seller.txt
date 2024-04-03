@@ -1,17 +1,25 @@
 //======================================== Author jimkeecn
 -	shop	example_shop27	-1,501:-1
 
-prontera, 155,158,4	script	Costume Garment Seller	58,{
+prontera, 155,158,4	script	C.Garment Seller	58,{
     callshop .Shop$,1;
     end;
 
 OnInit:
     .Shop$ = "example_shop27";
     query_sql("select id from `item_db_re` where `location_costume_garment` > 0 AND `name_english` IS NOT NULL AND `name_english` != '' ", .Items);
-    npcshopitem .Shop$,.Items, 500000;
+    npcshopitem .Shop$,501, 9999999;
+    npcshopdelitem .Shop$, 501;
     freeloop(1);
+    
     for(.@i = 1; .@i < getarraysize(.Items); .@i++){
-        npcshopadditem .Shop$,.Items[.@i], 100000+.@i;
+        if(.Items[.@i] <= 20000){
+            npcshopadditem .Shop$,.Items[.@i], .Items[.@i] * 10;
+        }else if(.Items[.@i] <= 50000){
+            npcshopadditem .Shop$,.Items[.@i], .Items[.@i] * 20;
+        } else {
+            npcshopadditem .Shop$,.Items[.@i], .Items[.@i] * 2;
+        }
     }
     freeloop(0);
     end;
