@@ -1,0 +1,35 @@
+-	script	F_KafTele_J	-1,{
+	mes "[Kafra Employee]";
+	mes "Please choose";
+	mes "your destination.";
+	next;
+	.@j = select( implode(@wrpC$,":") ) - 1;
+	if (@wrpC$[.@j] == "Cancel")
+		return;
+	// Consume "Free Ticket for Kafra Transportation" if available.
+	// Do not consume if in Guild castle
+	
+	cutin "", 255;
+	if (@wrpD$[.@j] == "Al De Baran") warp "aldebaran",168,112;
+	else if (@wrpD$[.@j] == "Alberta") warp "alberta", 117, 56;
+	else if (@wrpD$[.@j] == "Comodo") warp "comodo", 209, 143;
+	else if (@wrpD$[.@j] == "Comodo Pharos Beacon") warp "cmd_fild07", 127, 134;
+	else if (@wrpD$[.@j] == "Geffen") warp "geffen", 120, 39;
+	else if (@wrpD$[.@j] == "Izlude") {
+		if (checkre(0) == true)
+			warp "izlude", 128, 98;
+		else
+			warp "izlude", 91, 105;
+	}
+	else if (@wrpD$[.@j] == "Juno") warp "yuno", 158, 125;
+	else if (@wrpD$[.@j] == "Mjolnir Dead Pit") warp "mjolnir_02", 99, 351;
+	else if (@wrpD$[.@j] == "Morocc") warp "morocc", 156, 46;
+	else if (@wrpD$[.@j] == "Orc Dungeon") warp "gef_fild10", 52, 326;
+	else if (@wrpD$[.@j] == "Payon") warp "payon", 161, 58;
+	else if (@wrpD$[.@j] == "Prontera") warp "prontera", 116, 72;
+	else if (@wrpD$[.@j] == "Umbala") warp "umbala", 100, 154;
+	end;
+}
+
+//moc_para01,26,16,6	duplicate(Card_Trade_CashPoint)	CashPoint Trader#eden	506
+moc_para01,34,16,2	duplicate(F_KafTele_J)	Free Teleport#eden	113

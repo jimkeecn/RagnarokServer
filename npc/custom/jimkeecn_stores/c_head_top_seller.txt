@@ -9,7 +9,10 @@ OnInit:
     .Shop$ = "example_shop26";
     query_sql("select id from `item_db_re` where `location_costume_head_top` > 0 AND `name_english` IS NOT NULL AND `name_english` != '' ", .Items);
     npcshopitem .Shop$,.Items, 500000;
-    for(.@i = 1; .@i < getarraysize(.Items); .@i++)
+    freeloop(1);
+    for(.@i = 1; .@i < getarraysize(.Items); .@i++){
         npcshopadditem .Shop$,.Items[.@i], 100000+.@i;
+    }
+    freeloop(0);
     end;
 }
