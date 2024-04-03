@@ -33,6 +33,22 @@ Header:
     Version: 1
 
 Body:
+    - Tab: New
+      Items:
+          - Item: CACHUA_COSTUME_BOX
+            Price: 5
+          - Item: SPECIAL_COSTUME_BOX
+            Price: 5
+          - Item: SPECIAL_COSTUME_BOX_
+            Price: 5
+          - Item: S_COSTUME_BOX
+            Price: 5
+          - Item: PAYMENT_COSTUME_BOX1
+            Price: 5
+          - Item: 2017_GSTAR_COSTUMEBOX
+            Price: 5
+          - Item: COSTUME_FESTIVAL_BOX2
+            Price: 5
     - Tab: Hot
       Items:
           - Item: Bloody_Dead_Branch
