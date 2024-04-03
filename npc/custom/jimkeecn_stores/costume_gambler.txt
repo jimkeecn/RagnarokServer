@@ -1,7 +1,7 @@
 //===== rAthena Script =======================================
 //= Summer Flower
 //===== Description: =========================================
-//= Buy Any costume in the game with 3 variable price 10k,50k,1m. 
+//= Buy Any costume in the game with 3 variable price 10%,50%,1000%. 
 //===== Changelogs: ==========================================
 //= 1.0 First version [jimkeecn]
 //============================================================
@@ -13,10 +13,10 @@ moc_para01,23,28,4	script	The Lady Gambler	772,{
     mes " Looks like you have some extra costume wanna trade? I'm up for trading your costume for some zeny. The rates? Well, they're a bit of a gamble themselves!";
     next;
     mes " [The Lady Gambler]" ;
-    mes " ---Exchange Rate---";
-    mes " 10,000 z: There's a 20% chance." , " - " ,
-        " 50,000 z: Got a 78% chance for this one." , " - " ,
-        " 1 million zeny: Ah, the big prize! But it's rare, with only a 2% chance.";
+    mes " ---discount--- ---rate---";
+    mes "      90%           30% " , " - " ,
+        "      50%           68% " , " - " ,
+        "    1000%            2% ";
     next;
     mes " [The Lady Gambler] ";
     mes " ^FF0000 Please make sure you wear the costume you wanna trade!!!!!!!!  ", 
@@ -58,24 +58,36 @@ moc_para01,23,28,4	script	The Lady Gambler	772,{
     }
 
     .@rand_number = rand(1,100);
-    // Handling the 10% chance for 10,000 zeny
-    if (.@rand_number <= 20) { // This covers the 1-10 range, which is 10% of 1-100
-        mes " [The Lady Gambler] ";
-        mes " You received 10,000 zeny!" , " Better luck next time!";
-        Zeny += 10000;
+    .@original_price = 0;
+    .@final_price = 0;
+
+    if(atoi(.@outer_id_array$[.@s]) <= 20000){
+            .@original_price = atoi(.@outer_id_array$[.@s]) * 10;
+    }else if(atoi(.@outer_id_array$[.@s]) <= 50000){
+            .@original_price = atoi(.@outer_id_array$[.@s]) * 20;
+    } else {
+            .@original_price = atoi(.@outer_id_array$[.@s]) * 2;
     }
-    // Handling the 88% chance for 50,000 zeny
-    else if (.@rand_number <= 98) { // This adds the next 88 numbers, covering 11-98
+
+    // Handling the 30% chance 
+    if (.@rand_number <= 30) { 
+        .@final_price = (.@original_price * (100 - 90 )) / 100;
         mes " [The Lady Gambler] ";
-        mes " You received 50,000 zeny!" , " That is a fair price mate!";
-        Zeny += 50000;
+        mes " You received "+.@final_price+" zeny!" , " Better luck next time!";
     }
-    // Handling the 2% chance for 1,000,000 zeny
-    else { // This covers the last 2 numbers, 99 and 100, which is 2% of 1-100
+    // Handling the 68% chance 
+    else if (.@rand_number <= 98) { 
+        .@final_price = (.@original_price * (100 - 50 )) / 100;
         mes " [The Lady Gambler] ";
-        mes " You received 1,000,000 zeny!" , " OMG! You are the first guy to get this price!!";
-        Zeny += 1000000;
+        mes " You received "+.@final_price+" zeny!" , " That is a fair price mate!";
     }
+    // Handling the 2% chance 
+    else { 
+        .@final_price = .@original_price * 10;
+        mes " [The Lady Gambler] ";
+        mes " You received "+.@final_price+" zeny!" , " OMG! You are the first guy to get this price!!";
+    }
+    Zeny += .@final_price;
     delitem atoi(.@outer_id_array$[.@s]),1;
     close;
     end;
