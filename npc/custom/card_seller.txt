@@ -53,7 +53,8 @@ OnInit:
 		"OR `name_aegis` IN ( SELECT DISTINCT `drop9_item` FROM `" + .@mob_db$ + "` WHERE COALESCE(`mode_mvp`,0) = 0 ) " +
 		"OR `name_aegis` IN ( SELECT DISTINCT `drop10_item` FROM `" + .@mob_db$ + "` WHERE COALESCE(`mode_mvp`,0) = 0 ) )";
 
-	.@total = query_sql( "SELECT DISTINCT LEFT( `name_english`, 1 ) AS alphabets FROM `"+ .@item_db$ +"` WHERE `type` = 'Card' AND " + .@string$ + " ORDER BY alphabets;", .@alphabet$ );
+	.@total = query_sql( "SELECT DISTINCT LEFT( `name_english`, 1 ) AS alphabets FROM `"+ .@item_db$ +
+						 "` WHERE `type` = 'Card' AND " + .@string$ + " ORDER BY alphabets;", .@alphabet$ );
 	for ( .@i = 0; .@i < .@total; .@i++ ) {
 		.@nb = query_sql( "SELECT `"+ .@item_db$ +"`.`id` FROM `"+ .@item_db$ +"` WHERE `type` = 'Card' AND LEFT( `name_english`, 1 ) = '"+ .@alphabet$[.@i] +"' AND " + .@string$ + " ORDER BY `name_english` LIMIT 128;", .@id );
 		if (.@nb > 0) {

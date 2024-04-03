@@ -1,0 +1,23 @@
+//===== rAthena Script =======================================
+//= Summer Flower
+//===== Description: =========================================
+//= Buy Any costume in the game with variable price. 
+//===== Changelogs: ==========================================
+//= 1.0 First version [jimkeecn]
+//============================================================
+
+
+moc_para01,23,28,4	script	Summer Flower	481,{ 
+    mes "Summer Flower";
+    mes "Hey, I will buy your costume for 10 zeny or 50000 zeny or 500000 zeny?";
+    mes "----------Chance----------";
+    mes "10000 zeny (10%)";
+    mes "50000 zeny (88%);
+    mes "500000 zeny (2%)";
+    next;
+    mes "please make sure you have your costume ready in your inventory.";
+    if (select("I am ready.:I don't gamble") == 2) {
+        
+    }
+
+}

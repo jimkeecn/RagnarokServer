@@ -1,0 +1,74 @@
+//===== rAthena Script =======================================
+//= Black Market Yue
+//===== Description: =========================================
+//= Sells all items that has special effect after refine.. 
+//= 
+//= NOTE: Requires SQL item databases.
+//= SQL logic script LIKE '%.@r >= %'
+//===== Changelogs: ==========================================
+//= 1.0 First version [jimkeecn]
+//============================================================
+
+moc_para01,12,26,6	script	Black Market Yue	481,{
+	.@menu$ = getvariableofnpc( .market_menu$, "black_market_yue_creation" );
+	
+	if (.@menu$ == "") {
+		mes "[Black Market Yue]";
+		mes "I am sorry, it seems like something went wrong.";
+		mes "I cannot find any items in our database at the moment.";
+		mes "Please contact a game master.";
+		close;
+	} else {
+		mes "[Black Market Yue]";
+		mes "shhhh, we dont sell cheap stuff...?";
+		next;
+		.@s = select(.@menu$) -1;
+		close2;
+		callshop "black_market_yue#"+ getvariableofnpc( .market_menu_array$[.@s], "black_market_yue_creation" ), 1;
+		end;
+	}
+}
+
+-	script	black_market_yue_creation	-1,{
+		end;
+
+	OnInit:
+		if (checkre(0)) {
+			.@item_db$ = "item_db_re";
+		} else {
+			.@item_db$ = "item_db";
+		}
+
+	freeloop 1;
+		setarray .market_menu_array$[0], "weapon", "armor", "card";
+		//0 = weapon, 1 = armor, 2 = card
+		for(.@i = 0; .@i < 3; .@i++){
+			.market_menu$ = .market_menu$ + .market_menu_array$[.@i] +":";
+			.@type$ = .market_menu_array$[.@i]; 
+			.@sql_string$ = "SELECT id FROM `" + .@item_db$ + 
+							"` WHERE script LIKE '%.@r >= %' AND type = '" + .@type$ + 
+							"' ORDER BY equip_level_min";
+			.@nb = query_sql(.@sql_string$,.@id_array);
+			if (.@nb > 0) {
+				npcshopdelitem "black_market_yue#"+ .@type$, 501;
+				.@price = 1000000;
+				for (.@j = 0; .@j < .@nb; .@j++ ){
+					if(.@id_array[.@j] == 18960 || .@id_array[.@j] == 20866 || .@id_array[.@j] == 15345 || .@id_array[.@j] == 480206 || .@id_array[.@j] == 480238 || .@id_array[.@j] == 470181 || .@id_array[.@j] == 480076 || .@id_array[.@j] == 490197 || .@id_array[.@j] == 490201 || .@id_array[.@j] == 830014 || .@id_array[.@j] == 800035 || .@id_array[.@j] == 550077 || .@id_array[.@j] == 1873 || .@id_array[.@j] == 28261 || .@id_array[.@j] == 21065) {
+  						// item got excluded because no image or Description
+						continue;
+					}
+					
+					npcshopadditem "black_market_yue#"+ .@type$, .@id_array[.@j], .@price + .@id_array[.@j];
+				}
+			}
+		}
+	freeloop 0;
+	end;
+	}
+
+
+
+-	shop	black_market_yue#weapon	-1,501:1000
+-	shop	black_market_yue#armor	-1,501:1000
+-	shop	black_market_yue#card	-1,501:1000
+
