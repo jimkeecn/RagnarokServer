@@ -6,17 +6,17 @@
 //= 1.0 First version [jimkeecn]
 //============================================================
 
-
 moc_para01,23,28,4	script	The Lady Gambler	772,{ 
     mes " [The Lady Gambler]";
     mes " Hey there! They call me the Lady Gambler!!!";
-    mes " Looks like you have some extra costume wanna trade? I'm up for trading your costume for some zeny. The rates? Well, they're a bit of a gamble themselves!";
+    mes " Looks like you have some extra costume wanna trade? I'm up for trading your costume for some ^FF0000 Costume Exchange Coupons ^000000. ",
+    " The rates? Well, they're a bit of a gamble themselves!";
     next;
     mes " [The Lady Gambler]" ;
-    mes " ---discount--- ---rate---";
-    mes "      90%           40% " , " - " ,
-        "      50%           58% " , " - " ,
-        "    1000%            2% ";
+    mes " | amount | rate |" ;
+    mes " |   1    | 60%  |" , 
+        " |   2    | 30%  |" , 
+        " |   5    | 10%  |" ;
     next;
     mes " [The Lady Gambler] ";
     mes " ^FF0000 Please make sure you wear the costume you wanna trade!!!!!!!!  ", 
@@ -57,37 +57,31 @@ moc_para01,23,28,4	script	The Lady Gambler	772,{
         end;
     }
 
+    if(callfunc("checkWeightPercentage", 80)){
+        mes " [The Lady Gambler] "," We cannot trade. "," Please make sure you lower your weight to 80% of your total weight. ";
+        end;
+    }
+
     .@rand_number = rand(1,100);
-    .@original_price = 0;
-    .@final_price = 0;
 
-    if(atoi(.@outer_id_array$[.@s]) <= 20000){
-            .@original_price = atoi(.@outer_id_array$[.@s]) * 10;
-    }else if(atoi(.@outer_id_array$[.@s]) <= 50000){
-            .@original_price = atoi(.@outer_id_array$[.@s]) * 20;
-    } else {
-            .@original_price = atoi(.@outer_id_array$[.@s]) * 2;
-    }
-
-    // Handling the 40% chance 
-    if (.@rand_number <= 40) { 
-        .@final_price = (.@original_price * (100 - 90 )) / 100;
+    // Handling the 60% chance 
+    if (.@rand_number <= 60) { 
+        getitem 6697,1;
         mes " [The Lady Gambler] ";
-        mes " You received "+.@final_price+" zeny!" , " Better luck next time!";
+        mes " You received 1 Coupon." , " Better luck next time!";
     }
-    // Handling the 58% chance 
-    else if (.@rand_number <= 98) { 
-        .@final_price = (.@original_price * (100 - 50 )) / 100;
+    // Handling the 30% chance 
+    else if (.@rand_number <= 90) { 
+        getitem 6697,2;
         mes " [The Lady Gambler] ";
-        mes " You received "+.@final_price+" zeny!" , " That is a fair price mate!";
+        mes " You received 2 Coupon." , " That is a fair price mate!";
     }
-    // Handling the 2% chance 
+    // Handling the 10% chance 
     else { 
-        .@final_price = .@original_price * 10;
+        getitem 6697,5;
         mes " [The Lady Gambler] ";
-        mes " You received "+.@final_price+" zeny!" , " OMG! You are the first guy to get this price!!";
+        mes " You received 5 Coupon." , " OMG! You are so lucky today!!!";
     }
-    Zeny += .@final_price;
     delitem atoi(.@outer_id_array$[.@s]),1;
     close;
     end;

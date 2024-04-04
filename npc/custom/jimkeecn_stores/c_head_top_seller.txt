@@ -2,7 +2,10 @@
 
 //======================================== Author jimkeecn
 
-prontera,155,156,4	script	C.HeadGear Seller(Top)	58,{
+prontera, 147,170,2	script	C.HeadGear Seller(Top)	10515,{
+    mes "We will now display all our costumes for you.";
+    next;
+    close2;
     callshop .Shop$,1;
     end;
 OnInit:
@@ -14,11 +17,11 @@ OnInit:
     freeloop(1);
     for(.@i = 1; .@i < getarraysize(.Items); .@i++){
         if(.Items[.@i] <= 20000){
-            npcshopadditem .Shop$,.Items[.@i], .Items[.@i] * 10 + .@basePrice;
+            npcshopadditem .Shop$,.Items[.@i], 999999999;
         }else if(.Items[.@i] <= 50000){
-            npcshopadditem .Shop$,.Items[.@i], .Items[.@i] * 20 + .@basePrice;
+            npcshopadditem .Shop$,.Items[.@i], 999999999;
         } else {
-            npcshopadditem .Shop$,.Items[.@i], .Items[.@i] * 2 + .@basePrice;
+            npcshopadditem .Shop$,.Items[.@i], 999999999;
         }
     }
     freeloop(0);

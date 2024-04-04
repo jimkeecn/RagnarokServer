@@ -1,0 +1,19 @@
+function	script	checkWeightPercentage	{
+	// Get the parameter (weight percentage threshold)
+	.@threshold = getarg(0);
+
+	// Calculate current weight percentage
+	.@currentWeight = Weight;
+	.@maxWeight = MaxWeight;
+	.@currentPercentage = (100 * .@currentWeight) / .@maxWeight;
+
+	// Check if current weight percentage exceeds the threshold
+	if (.@currentPercentage > .@threshold) {
+		return 1; // True, weight exceeds threshold
+	} else {
+		return 0; // False, weight does not exceed threshold
+	}
+}
+
+
+

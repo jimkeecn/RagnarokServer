@@ -1,0 +1,63 @@
+
+//To create an NPC in rAthena that interacts with players in the manner you described, you would need to write a script that:
+
+//Prompts the player to input an item ID.
+//Checks if the input item is categorized as a costume.
+//Checks if the player has more than 5 of a specific item (in this case, item ID 6697).
+//Removes 5 of item 6697 from the player's inventory if they have more than 5.
+//Adds the input costume item to the player's inventory.
+
+// NPC Location: prontera, 149,160,0
+
+prontera,149,174,0	script	Costume Coupon Exchange	564,{
+	mes "[Costume Coupon Exchange]";
+	mes "Hello! If you give me 5 of ^FF0000 Costume Exchange Coupon[6697] ^000000,", "I'll exchange it for a costume item of your choice.";
+	next;
+	mes "[Costume Coupon Exchange]";
+	mes "Please enter the Item ID of the costume you want:";
+	input .@costumeId;
+	next;
+	
+    mes "[Costume Coupon Exchange]";
+	mes "Please give me a moment to process...";
+	next;
+	// Check if the item is a costume
+	// This part is simplified; you might need custom logic to check if an item is a costume
+
+
+    .@esc_str$ = escape_sql(.@costumeId);
+    query_sql("select id from `item_db_re` where id = " + atoi(.@esc_str$) + " AND (location_costume_head_top = 1 OR location_costume_head_mid = 1 OR location_costume_head_low = 1 OR location_costume_garment = 1 )", .@id);
+
+    progressbar_npc "FF0000",1;
+    
+	if (getarraysize(.@id) < 1) { 
+		mes "[Costume Coupon Exchange]";
+		mes "That doesn't seem to be a valid costume item ID.";
+		close;
+	}
+
+	mes "[Costume Coupon Exchange]";
+	mes "Do you want to exchange the following item.";
+	mes "^FF0000 " + getitemname(.@id[0]) +"^000000";
+	next;
+
+	if (select("Yes.:No.") == 2) {
+		mes "[Costume Coupon Exchange]";
+		mes "Come back later.";
+		close;
+	}
+
+	// Check if player has more than 5 of item 6697
+	if (countitem(6697) > 5) {
+		// Remove 5 of item 6697
+		delitem 6697, 5;
+		// Give the player the costume item
+		getitem .@costumeId, 1;
+		mes "[Costume Coupon Exchange]";
+		mes "Thank you! I've taken 5 of ^FF0000 Costume Exchange Coupon[6697] ^000000 and given you the costume item.";
+	} else {
+		mes "[Costume Coupon Exchange]";
+		mes "It looks like you don't have enough of Costume Exchange Coupon[6697].";
+	}
+	close;
+}
