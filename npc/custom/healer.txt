@@ -84,5 +84,5 @@ ecl_in01,45,60,4	duplicate(Healer)	Healer#ecl	79
 malangdo,132,114,6	duplicate(Healer)	Healer#mal	79
 malaya,227,204,6	duplicate(Healer)	Healer#ma	79
 mora,55,152,4	duplicate(Healer)	Healer#mora	79
-moc_para01,35,20,2	duplicate(Healer)	Healer#mora	79
+moc_para01,35,20,2	duplicate(Healer)	Healer#eden	79
 

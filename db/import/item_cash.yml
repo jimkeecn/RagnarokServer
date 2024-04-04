@@ -49,6 +49,10 @@ Body:
             Price: 5
           - Item: COSTUME_FESTIVAL_BOX2
             Price: 5
+          - Item: COSTAMA_EGG21
+            Price: 20
+          - Item: SCROLL_OF_DARKNESS
+            Price: 20
     - Tab: Hot
       Items:
           - Item: Bloody_Dead_Branch
@@ -56,9 +60,7 @@ Body:
           - Item: Branch_Of_Dead_Tree
             Price: 1
           - Item: F_Max_Weight_Up_Box
-            Price: 50
-          - Item: Boarding_Halter
-            Price: 50
+            Price: 10
           - Item: CHALLENGE_KIT
             Price: 18
           - Item: NOIVE_BOX
@@ -81,11 +83,33 @@ Body:
             Price: 25
     - Tab: Limited
       Items:
-          - Item: NEW_SHADOW_CUBE
+          - Item: RWC_2012_SET_BOX
             Price: 20
-          - Item: 2013_RWC_SCROLL
+          - Item: SEALED_TURTLEG_SCROLL
+            Price: 15
+          - Item: 2018_YEAR_SHADOW_CUBE
+            Price: 15
+    - Tab: Rental
+      Items:
+          - Item: Boarding_Halter_Box7
             Price: 20
     - Tab: Scrolls
+      Items:
+          - Item: Inc_Agi_10_Scroll
+            Price: 1
+          - Item: Blessing_10_Scroll
+            Price: 1
+          - Item: Undead_Element_Scroll
+            Price: 3
+          - Item: Holy_Element_Scroll
+            Price: 3
+          - Item: F_Aspersio_5_Scroll_Box
+            Price: 5
+          - Item: F_Assumptio_5_Box
+            Price: 5
+          - Item: F_Wind_Walk_10_Box
+            Price: 10
+    - Tab: Consumables
       Items:
           - Item: Battle_Manual_X3
             Price: 10
@@ -93,12 +117,8 @@ Body:
             Price: 5
           - Item: Bubble_Gum
             Price: 5
-    - Tab: Consumables
-      Items:
-          - Item: Inc_Agi_10_Scroll
-            Price: 1
-          - Item: Blessing_10_Scroll
-            Price: 1
+          - Item: HE_Bubble_Gum
+            Price: 5
           - Item: Vit_Dish10_
             Price: 3
           - Item: Dex_Dish10_
@@ -117,24 +137,14 @@ Body:
             Price: 3
           - Item: Red_Booster
             Price: 3
-          - Item: Undead_Element_Scroll
-            Price: 3
-          - Item: Holy_Element_Scroll
-            Price: 3
           - Item: G_Limit_Power_Booster
             Price: 3
           - Item: G_Almighty
             Price: 3
-          - Item: F_Aspersio_5_Scroll_Box
-            Price: 5
-          - Item: F_Assumptio_5_Box
-            Price: 5
-          - Item: F_Wind_Walk_10_Box
-            Price: 10
     - Tab: Other
       Items:
           - Item: Inventory_Ex_Evt
-            Price: 50
+            Price: 15
           - Item: Insurance60_Package
             Price: 5
           - Item: Token_Of_Siegfried_Box
@@ -147,3 +157,5 @@ Body:
             Price: 5
           - Item: Marriage_Covenant_Box
             Price: 5
+          - Item: Cloth_Dye_Coupon_Box
+            Price: 1

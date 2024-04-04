@@ -24821,17 +24821,36 @@ Body:
             UniqueId: true
   - Group: RWC_2012_SET_BOX
     SubGroups:
-      - SubGroup: 0
+      - SubGroup: 1
         List:
           - Index: 0
-            Item: RWC_2012_Ring
+            Item: RWC_2012_Ring_
+            Rate: 500
             UniqueId: true
           - Index: 1
-            Item: RWC_2012_Pendant
+            Item: RWC_2012_Pendant_
+            Rate: 500
             UniqueId: true
           - Index: 2
-            Item: C_Wing_Of_Fly_3Day_Box
-            UniqueId: true
+            Item: Battle_Manual_X3
+            Rate: 1000
+            Amount: 1
+          - Index: 3
+            Item: CHALLENGE_KIT
+            Rate: 1500
+            Amount: 1
+          - Index: 4
+            Item: Bubble_Gum
+            Rate: 1500
+            Amount: 2
+          - Index: 5
+            Item: HD_Oridecon_50Box
+            Rate: 1000
+            Amount: 1
+          - Index: 6
+            Item: HD_Elunium_50Box
+            Rate: 1000
+            Amount: 1
   - Group: RWC_FINAL_COMP_BOX
     SubGroups:
       - SubGroup: 0
