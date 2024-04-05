@@ -25706,19 +25706,19 @@ Body:
             Announced: true
           - Index: 2
             Item: Deviling_Card
-            Rate: 10
+            Rate: 20
             Announced: true
           - Index: 3
             Item: Ghostring_Card
-            Rate: 25
+            Rate: 30
             Announced: true
           - Index: 4
             Item: Black_Glasses_
-            Rate: 2
+            Rate: 20
             Announced: true
           - Index: 5
             Item: Fallen_Angel_Wing
-            Rate: 15
+            Rate: 20
             Announced: true
           - Index: 6
             Item: Satanic_Chain_P
@@ -25757,29 +25757,13 @@ Body:
             Rate: 100
             Announced: true
           - Index: 15
-            Item: Unbreak_Weap_Box
-            Rate: 300
-          - Index: 16
-            Item: Blue_Herb_Box2
-            Rate: 1267
-          - Index: 17
-            Item: Diabolic_Scroll
-            Rate: 1500
-            Amount: 5
-          - Index: 18
-            Item: HE_Battle_Manual
-            Rate: 1500
-            Amount: 3
-          - Index: 19
             Item: Boy's_Naivety
             Rate: 1500
-          - Index: 20
-            Item: Psychic_ArmorS
+            Amount: 10
+          - Index: 16
+            Item: Gril's_Naivety
             Rate: 1500
-            Amount: 5
-          - Index: 21
-            Item: Shadow_Armor_S_Box10
-            Rate: 1500
+            Amount: 10
   - Group: SCROLL_OF_DEATH
     SubGroups:
       - SubGroup: 1
@@ -75878,8 +75862,8 @@ Body:
         List:
           - Index: 0
             Item: Fallen_Angel_Wing
-            Rate: 1
-          - Index: 1
+            Rate: 4
+          - Index: 2
             Item: Bravery_Bag
             Rate: 5
           - Index: 2
@@ -87860,77 +87844,54 @@ Body:
             Item: Sealed_TurtleG_Card
             Rate: 1
             Announced: true
-          - Index: 1
-            Item: Guarantee_Weapon_9Up
-            Rate: 10
-            Announced: true
           - Index: 2
-            Item: Guarantee_Armor_9Up
-            Rate: 10
-            Announced: true
-          - Index: 3
-            Item: Guarantee_Weapon_7Up
-            Rate: 100
-            Announced: true
-          - Index: 4
-            Item: Guarantee_Armor_7Up
-            Rate: 100
-            Announced: true
-          - Index: 5
             Item: C_Light_Darkness_Crown
             Rate: 150
             Announced: true
-          - Index: 6
+          - Index: 3
             Item: S_Spell_Flow_Armor
             Rate: 150
             Announced: true
-          - Index: 7
+          - Index: 4
             Item: S_Spell_Flow_Shoes
             Rate: 350
-          - Index: 8
+          - Index: 5
             Item: S_Spell_Flow_Shield
             Rate: 350
-          - Index: 9
+          - Index: 6
             Item: S_Caster_Weapon
             Rate: 350
-          - Index: 10
+          - Index: 7
             Item: S_Caster_earring
             Rate: 350
-          - Index: 11
+          - Index: 8
             Item: S_Caster_Pendant
             Rate: 350
-          - Index: 12
+          - Index: 9
             Item: Enchant_Stone_Box3
             Rate: 1000
-          - Index: 13
+          - Index: 10
             Item: Costume_Exchange
             Rate: 1000
-          - Index: 14
-            Item: Poison_Bottle_Box2
-            Rate: 1000
-          - Index: 15
-            Item: Comp_Battle_Manual
-            Rate: 1000
-            Amount: 2
-          - Index: 16
-            Item: Comp_Bubble_Gum
-            Rate: 729
-            Amount: 2
-          - Index: 17
+            Amount: 3
+          - Index: 11
             Item: C_Wing_Of_Fly_1Day_Box
             Rate: 1000
-          - Index: 18
+          - Index: 12
             Item: Enchant_Book
             Rate: 500
-          - Index: 19
+          - Index: 13
             Item: Blacksmith_Blessing
             Rate: 500
-          - Index: 20
+            Amount: 3
+          - Index: 14
             Item: Old_C_Album_Weapon
             Rate: 500
-          - Index: 21
+            Amount: 2
+          - Index: 15
             Item: Old_C_Album_Garment
             Rate: 500
+            Amount: 2
   - Group: SEALED_BACSOJIN_SCROLL
     SubGroups:
       - SubGroup: 1

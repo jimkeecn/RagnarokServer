@@ -8692,14 +8692,6 @@ Body:
     Type: Usable
     NoUse:
       Sitting: true
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       pet 1374;
   - Id: 12371

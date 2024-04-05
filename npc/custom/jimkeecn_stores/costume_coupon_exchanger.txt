@@ -46,7 +46,7 @@
 	}
 
 	// Check if player has more than 5 of item 6697
-	if (countitem(6697) > 5) {
+	if (countitem(6697) >= 5) {
 		// Remove 5 of item 6697
 		delitem 6697, 5;
 		// Give the player the costume item
