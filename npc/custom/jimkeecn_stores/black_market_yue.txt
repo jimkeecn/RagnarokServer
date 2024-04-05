@@ -9,7 +9,7 @@
 //= 1.0 First version [jimkeecn]
 //============================================================
 
-moc_para01,12,26,6	script	Black Market Yue	481,{
+-	script	Black Market Yue	-1,{
 	.@menu$ = getvariableofnpc( .market_menu$, "black_market_yue_creation" );
 	
 	if (.@menu$ == "") {
@@ -72,3 +72,5 @@ moc_para01,12,26,6	script	Black Market Yue	481,{
 -	shop	black_market_yue#armor	-1,501:1000
 -	shop	black_market_yue#card	-1,501:1000
 
+
+moc_para01,12,26,6	duplicate(Black Market Yue)	Black Market Yue#eden	481

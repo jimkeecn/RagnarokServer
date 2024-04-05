@@ -3,8 +3,8 @@
 moc_para01,179,23,2	script	Bright Luhir#new10	VALKYRIE_N,{
 	disable_items;
 	mes "[Bright Luhir]";
-	mes "Hello~ I am the brother of Dark Luhir. I am giving away extra stats to your Costumes.";
-    mes "Due to my ability, I cannot give you strong power as Dark Luhir provides."
+	mes "Hello~ I am the brother of Dark Luhir. I am giving away extra stats to your Headgear Costumes.";
+    mes "Due to my power, I cannot give you strong power as Dark Luhir provides.";
 	mes "Please select one costume for enchantment.";
 	next;
 
@@ -12,7 +12,7 @@ moc_para01,179,23,2	script	Bright Luhir#new10	VALKYRIE_N,{
     freeloop(1);
     .@inner_id_array$  = "";
     .@slot_id_o$ = "";
-	for(.@i = 10; .@i < 14; .@i++){
+	for(.@i = 10; .@i < 13; .@i++){
 				sleep2 10;
 				if(getequipid(.@i) == -1 ){
                         continue;

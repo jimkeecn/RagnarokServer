@@ -6,7 +6,7 @@
 //= 1.0 First version [jimkeecn]
 //============================================================
 
-moc_para01,23,28,4	script	The Lady Gambler	772,{ 
+-	script	The Lady Gambler	-1,{ 
     mes " [The Lady Gambler]";
     mes " Hey there! They call me the Lady Gambler!!!";
     mes " Looks like you have some extra costume wanna trade? I'm up for trading your costume for some ^FF0000 Costume Exchange Coupons ^000000. ",
@@ -87,3 +87,6 @@ moc_para01,23,28,4	script	The Lady Gambler	772,{
     end;
 
 }
+
+
+moc_para01,23,28,4	duplicate(The Lady Gambler)	The Lady Gambler#eden	772
