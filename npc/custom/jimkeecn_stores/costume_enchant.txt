@@ -1,0 +1,166 @@
+// Fallen_Angel_Wing Enchant
+//============================================================
+moc_para01,179,23,2	script	Bright Luhir#new10	VALKYRIE_N,{
+	disable_items;
+	mes "[Bright Luhir]";
+	mes "Hello~ I am the brother of Dark Luhir. I am giving away extra stats to your Costumes.";
+    mes "Due to my ability, I cannot give you strong power as Dark Luhir provides."
+	mes "Please select one costume for enchantment.";
+	next;
+
+    //Create Costume Menu.
+    freeloop(1);
+    .@inner_id_array$  = "";
+    .@slot_id_o$ = "";
+	for(.@i = 10; .@i < 14; .@i++){
+				sleep2 10;
+				if(getequipid(.@i) == -1 ){
+                        continue;
+                }
+                .@name$ = getitemname(getequipid(.@i));
+                explode(.@name_arrau$, .@name$, ":");
+                if(getarraysize(.@name_arrau$) > 1){
+                    .@menu$ = .@menu$ + .@name_arrau$[0] + .@name_arrau$[1] + ":";
+                }else{
+                    .@menu$ = .@menu$ + .@name$ + ":";
+                }
+                .@inner_id_array$ += getequipid(.@i) + ":";
+                .@slot_id_o$ += .@i + ":";
+	}
+    freeloop(0);
+	
+    //upon user select
+    .@s = select(.@menu$) - 1;
+    explode(.@costume_id$, .@inner_id_array$, ":");
+    explode(.@slot_id$, .@slot_id_o$, ":");
+    //  mes "You have selected " + .@costume_id$[.@s] + "."; //test if the id is correct;
+    mes " [Bright Luhir] ";
+    mes " You have selected " + getitemname(atoi(.@costume_id$[.@s])) + ".";
+    mes " Do you wanna continue???";
+    next;
+
+    switch( select("Enchant My Costume","Reset Enchantment", "I change my mind.") ) {
+        case 1:
+
+            //Initiate variable for anti-cheat
+            .@refine = getequiprefinerycnt(atoi(.@slot_id$[.@s]));
+            setarray .@card[0],
+			getequipcardid(atoi(.@slot_id$[.@s]),0),
+			getequipcardid(atoi(.@slot_id$[.@s]),1),
+			getequipcardid(atoi(.@slot_id$[.@s]),2),
+			getequipcardid(atoi(.@slot_id$[.@s]),3);
+
+            //Start Conversation
+            mes "[Bright Luhir]";
+		    mes "Only the 4th socket can get an extra stat.";
+            next;
+
+			//Change this in the future that only allow randomly enchant from all these enchantment.
+			
+            switch( select("1.Fighting spirit", "2.Magic Attack", "3.Archery", "4.Critical", "5.MaxHP", "6.MaxSP", "7.Atk speed", "8.STR", "9.AGI", "10.VIT", "11.INT", "12.DEX", "13.LUK" ) ) {
+		        case 1:
+			        setarray .@enchants[0],4811,4810;		
+			        .@string$ = "Fighting Spirit 1 or 2 will be given (ATK+HIT) range.";
+			        break;
+		        case 2:
+			        setarray .@enchants[0],4815,4814;		
+			        .@string$ = "Magic spell 1 or 2 stats will be given (MATK + Reduce change casting time).";
+			        break;
+		        case 3:
+			        setarray .@enchants[0],4832,4833;		
+			        .@string$ = "Archery 1 or 2 will be given (Range atack rate).";
+			        break;
+		        case 4:
+			        setarray .@enchants[0],4863,4864;		
+			        .@string$ = "Critical 1 or 2 will be given (Critical damage + CRI).";
+			        break;
+		        case 5:
+			        setarray .@enchants[0],4797,4799;		
+			        .@string$ = "MHP 300 or 500 will be given (Increase MHP).";
+			        break;
+		        case 6:
+			        setarray .@enchants[0],4871,4801;		
+			        .@string$ = "75 or 100 Max SP will be given (Max sp)";
+			        break;
+		        case 7:
+			        setarray .@enchants[0],4869,4872;		
+			        .@string$ = "Atack delay 1 or 2 will be given (Reduce attack delay %).";
+			        break;
+		        case 8:
+			        setarray .@enchants[0],4700,4701;		
+			        .@string$ = "STR 1 or 2 will be given";
+			        break;
+		        case 9:
+			        setarray .@enchants[0],4731,4730;		
+			        .@string$ = "AGI 1 or 2 will be given";
+			        break;
+		        case 10:
+			        setarray .@enchants[0],4740,4741;		
+			        .@string$ = "VIT 1 or 2 will be given";
+			        break;
+		        case 11:
+			        setarray .@enchants[0],4710,4711;		
+			        .@string$ = "INT 1 or 2 will be given ";
+			        break;
+		        case 12:
+			        setarray .@enchants[0],4720,4721;		
+			        .@string$ = "DEX 1 or 2 will be given";
+			        break;
+		        case 13:
+			        setarray .@enchants[0],4750,4751;		
+			        .@string$ = "LUK 1 or 2 will be given";
+			        break;
+            }
+
+			
+
+			mes "[Bright Luhir]";
+			mes .@string$ + " ^ff0000Given stats can be reset with cost of zeny.^000000 Do you want to proceed?";
+			next;
+
+			if (select( "1.Quit", "2.Yes, I want to try this." ) == 1) {
+				mes "[Bright Luhir]";
+				mes "Later then...";
+				close;
+			}
+
+            if (callfunc("F_IsEquipIDHack", atoi(.@slot_id$[.@s]), atoi(.@costume_id$[.@s])) || callfunc("F_IsEquipCardHack", atoi(.@slot_id$[.@s]), .@card[0], .@card[1], .@card[2], .@card[3]) || callfunc("F_IsEquipRefineHack", atoi(.@slot_id$[.@s]), .@refine)){ close; }
+
+            if (.@card[0] != 0) {
+			    mes "[Bright Luhir]";
+			    mes "It seems this item is already has max enchanting. Please bring another one for extra stats.";
+			    close;
+		    }
+
+            specialeffect2 EF_REPAIRWEAPON;
+            delequip atoi(.@slot_id$[.@s]);
+            getitem2 atoi(.@costume_id$[.@s]),1,1, 0,0, .@enchants[rand(2)],0,0,0;
+            close;
+        case 2:
+            mes "[Bright Luhir]";
+		    mes "Stat reset will cost you 1,000,000 zeny?";
+		    mes "Do you wish to proceed?";
+            next;
+		    if (select( "Yes", "No thanks!" ) == 1000000)
+			close;
+		    if (Zeny < 100) {
+			    mes "[Bright Luhir]";
+			    mes "You liar you don't have enough zeny!";
+			    close;
+		    }
+
+            if (getequipid(atoi(.@slot_id$[.@s])) == atoi(.@costume_id$[.@s])) {
+			    mes "[Bright Luhir]";
+			    specialeffect2 EF_REPAIRWEAPON;
+			    mes "Reseting item stats.";
+			    delequip atoi(.@slot_id$[.@s]);
+			    Zeny -= 1000000;
+			    getitem2 atoi(.@costume_id$[.@s]),1,1, 0,0, 0,0,0,0;
+                close;
+		    }
+        case 3:
+            mes " [Bright Luhir] "," Okay, no worries. Bye";
+            end;
+    }
+    end;
+}
