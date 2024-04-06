@@ -25,12 +25,11 @@
         .@sleepTime = .@remainingSeconds * 1000 - 2000;
 
         sleep .@sleepTime;
-            
-        donpcevent "HellGate_Manager::OnStart";
+        donpcevent "HellGate_Manager::OnStart"; 
         initnpctimer;
         end;
 
-    OnTimer1200000:
+    OnTimer1800000:
 
         if($is_gate_time > 0){
             killmonster $hgmap$[$rm],"All";
@@ -43,9 +42,11 @@
             $is_gate_won = 0;
             $numberOfMobkilled = 0;
             $hell_gate_player$ = "";
+
         }
         
-
+        end;
+    
     OnTimer3600000:
         
         donpcevent "HellGate_Manager::OnStart";
@@ -63,7 +64,7 @@
         $rm = rand(3);
 
         explode($hgmap$,"pay_dun00:moc_pryd03:gef_dun01",":"); //Hell Gate Maps
-        explode($hgmap_n$,"Payon Dungeon Level 1:Morroc Pyramid Level 3:Geffen Dungeon Level 2",":");
+        explode($hgmap_n$,"Payon Dungeon Level 1:Morocc Pyramid Level 3:Geffen Dungeon Level 2",":");
         setarray $hgmob[0],1015,1041,1061; //Zombies,Mummies, nightmares
         setarray $hgmob_c[0],150,200,150; //Zombies Counts,Mummies Counts, Nightmares Counts
         setmapflag $hgmap$[$rm], mf_nightenabled;
@@ -86,13 +87,13 @@
 
 
         if($numberOfMobkilled < ($totalNumber / 5)){
-            announce "[Hell Gate Event]There are too many of them!! We need backup! (" + $numberOfMobkilled + " / " + $totalNumber + ")", bc_all;
+            announce "[Hell Gate Event]There are too many of them!! We need backup! (" + $numberOfMobkilled + " / " + $totalNumber + ")", bc_map;
         }
         else if($numberOfMobkilled < ($totalNumber / 2)){
-            announce "[Hell Gate Event]Let's keep moving forward!(" + $numberOfMobkilled + " / " + $totalNumber + ")", bc_all;
+            announce "[Hell Gate Event]Let's keep moving forward!(" + $numberOfMobkilled + " / " + $totalNumber + ")", bc_map;
         }
         else if($numberOfMobkilled < $totalNumber){
-            announce "[Hell Gate Event]The Gate is losing power!!,(" + $numberOfMobkilled + " / " + $totalNumber + ")", bc_all;
+            announce "[Hell Gate Event]The Gate is losing power!!,(" + $numberOfMobkilled + " / " + $totalNumber + ")", bc_map;
         }
         else {
             $is_gate_time = 0;
@@ -157,15 +158,26 @@
             skilleffect 29,0;
             end;
         case 2:
-            mes "[Hell Gate Recruiter]";
-            mes "The Hell Gate is a mysterious portal that appears when the balance between realms is disturbed. It's said that demons and otherworldly creatures pour into our world through these gates, seeking to spread chaos and destruction.";
-            next;
-            mes "[Hell Gate Recruiter]";
-            mes "Legends tell that the gates are a consequence of the ongoing conflict between the gods and the demons, occasionally tearing the fabric of space and creating these portals.";
-            next;
-            mes "[Hell Gate Recruiter]";
-            mes "Brave adventurers who venture into the Hell Gate and manage to quell the threats from beyond are handsomely rewarded. The kingdom honors these heroes with CashShop points, which can be used to acquire valuable items to aid in your adventures.";
-            close;
+            switch(select("Story of Hell Gate:What is the mission?:Reward?")){
+                case 1:
+                    mes "[Hell Gate Recruiter]";
+                    mes "The Hell Gate is a spooky portal that pops up when things between worlds get out of balance. It lets demons and scary creatures come into our world to cause trouble.";
+                    next;
+                    mes "[Hell Gate Recruiter]";
+                    mes "People say it's because the gods and demons are fighting, and sometimes it makes these gates open up.";
+                    close;
+                case 2:
+                    mes "[Hell Gate Recruiter]";
+                    mes "Your job is to fight off the monsters around the area.";
+                    mes "The more monsters you beat, the weaker the gate gets.";
+                    close;
+                case 3:
+                    mes "[Hell Gate Recruiter]";
+                    mes "If you close the gate in time.";
+                    mes "come see me for a reward. Right now, it’s 100 Cashpoints.";
+                    close;
+            }
+           
         case 3:
 
             if(callfunc("checkHellGatePlayerList",getcharid(0)) == 0){
@@ -234,6 +246,12 @@ function	script	checkRewardedPlayerList	{
 }
 
 moc_para01,27,31,4	duplicate(Hell Gate Recruiter)	Hell Gate Recruiter#eden	707
+geffen,135,57,2	duplicate(Hell Gate Recruiter)	Hell Gate Recruiter#geffen	707
+payon,166,98,6	duplicate(Hell Gate Recruiter)	Hell Gate Recruiter#payon	707
+morocc,152,104,3	duplicate(Hell Gate Recruiter)	Hell Gate Recruiter#morroc	707
 
+//pay_dun00,19,176,6	duplicate(HellGate_Manager)	HellGate Soldier#paydun	707
+//moc_pryd03,92,92,3	duplicate(HellGate_Manager)	HellGate Soldier#mocdun	707
+//gef_dun01,119,235,3	duplicate(HellGate_Manager)	HellGate Soldier#gefdun	707
 
 
