@@ -1,0 +1,25 @@
+-	script	All_Item_Seller	-1,{
+    end;
+    OnInit:
+    .@nb = query_sql("select id from `item_db_re` ORDER BY id LIMIT 1000 Offset 1000",.@id_array);
+    freeloop 1;
+    if (.@nb > 0) {
+				npcshopdelitem "all_item_seller", 501;
+				.@price = 0;
+				for (.@j = 0; .@j < .@nb; .@j++ ){
+					npcshopadditem "all_item_seller", .@id_array[.@j], .@id_array[.@j];
+				}
+			}
+    freeloop 0;
+    end;
+
+}  
+
+
+moc_para01,12,28,6	script	All Item Seller#eden	481,{
+    callshop "all_item_seller", 1;
+    end;
+}
+
+
+-	shop	all_item_seller	-1,501:1000
