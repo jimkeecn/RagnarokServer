@@ -25758,12 +25758,24 @@ Body:
             Announced: true
           - Index: 15
             Item: Boy's_Naivety
-            Rate: 1500
+            Rate: 1200
             Amount: 10
           - Index: 16
             Item: Gril's_Naivety
-            Rate: 1500
+            Rate: 1200
             Amount: 10
+          - Index: 17
+            Item: Old_Card_Album
+            Rate: 1200
+            Amount: 2
+          - Index: 18
+            Item: HE_Bubble_Gum
+            Rate: 1200
+            Amount: 2
+          - Index: 19
+            Item: Blacksmith_Blessing
+            Rate: 1200
+            Amount: 3
   - Group: SCROLL_OF_DEATH
     SubGroups:
       - SubGroup: 1
@@ -87867,9 +87879,6 @@ Body:
           - Index: 8
             Item: S_Caster_Pendant
             Rate: 350
-          - Index: 9
-            Item: Enchant_Stone_Box3
-            Rate: 1000
           - Index: 10
             Item: Costume_Exchange
             Rate: 1000
@@ -87877,9 +87886,6 @@ Body:
           - Index: 11
             Item: C_Wing_Of_Fly_1Day_Box
             Rate: 1000
-          - Index: 12
-            Item: Enchant_Book
-            Rate: 500
           - Index: 13
             Item: Blacksmith_Blessing
             Rate: 500

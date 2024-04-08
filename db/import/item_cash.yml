@@ -77,10 +77,6 @@ Body:
             Price: 15
           - Item: HD_Bradium_Box10
             Price: 15
-          - Item: HIGH_REFINE_GUARANTEE
-            Price: 50
-          - Item: REFINE_GUARANTEE
-            Price: 25
     - Tab: Limited
       Items:
           - Item: RWC_2012_SET_BOX

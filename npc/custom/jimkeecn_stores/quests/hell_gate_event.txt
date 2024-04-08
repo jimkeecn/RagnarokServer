@@ -71,7 +71,7 @@
 
         killmonster $hgmap$[$rm],"All";
 
-        monster $hgmap$[$rm],0,0,"Furious "+ strmobinfo(1,$hgmob[0]),$hgmob[$rm], $hgmob_c[$rm], "HellGate_Manager::OnMobKilled";
+        monster $hgmap$[$rm],0,0,"Hell Gate Soldier",$hgmob[$rm], $hgmob_c[$rm], "HellGate_Manager::OnMobKilled";
 
         announce "[Hell Gate Event]Everyone attention!! Hell Gate is appeared, please sent reinforcement to "+ $hgmap_n$[$rm]+ "!", bc_all|0xFF0000;    
 

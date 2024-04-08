@@ -38,6 +38,10 @@ function	script	F_Confirm_Trade	{
 	.@hasCard = 0;
 	.@totalAmount = 0;
 
+	mes "[Card Trade CashPoint]";
+	mes "Thanks for visiting our exchange center. Please give me a sec to process our database.";
+	next;
+	progressbar_npc "FF0000",2;
 	getinventorylist;
 	//Check if player has cards 
 	freeloop(1);
