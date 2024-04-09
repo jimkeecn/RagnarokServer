@@ -1,0 +1,70 @@
+//===== rAthena Script =======================================
+//= Pet Taming Trader
+//===== Description: =========================================
+//= Trade cash point for taming item..
+//===== Changelogs: ==========================================
+//= 1.0 First version [jimkeecn]
+//============================================================
+
+-	script	pet_taming_trader	-1,{
+
+    .@cash = 30; //set this for price 
+    .@amount = 10; //set this for how many taming item per trade.
+    mes "[Pet_Taming_Trader]";
+    mes "I can exchange a random taming item from the following list for "+.@cash +" cash points:";
+    next;
+
+    if(callfunc("checkWeightPercentage",90) == 1){
+        mes "[Pet_Taming_Trader]";
+        mes "Please lower your weight before trading.";
+        close;
+    }
+
+    mes "please make sure you have enough slots for the item.";
+    next;
+    // Set the item IDs array
+    setarray .@items[0],
+        12366, // Girl's Doll
+        12370, // Girl's Naivety
+        12367, // Luxury Whisky Bottle
+        12365, // Charming Lotus
+        14569, // Knife Goblin Ring
+        12364, // Staff of Leader
+        12371, // Magical Lithography
+        12359, // Very Soft Plant
+        12360, // Very Red Juice
+        12358, // Fan of Wind
+        12361, // Delicious Shaved Ice
+        12368, // Splendid Mirror
+        12372, // Hell Contract
+        12373, // Boy's Pure Heart
+        23257; // Old Tree's Dew
+
+    // Show the list of items
+    mes "Here are the items you can receive:";
+    for (.@i = 0; .@i < getarraysize(.@items); .@i++) {
+        mes "^FF0000"+getitemname(.@items[.@i])+"^000000";
+    }
+    next;
+
+    mes "Each item costs "+ .@cash +" cash points to trade. Would you like to proceed?";
+    if (select("Yes:No") == 2) {
+        mes "Maybe next time.";
+        close;
+    }
+
+    if (#CASHPOINTS < .@cash) {
+        mes "You do not have enough cash points.";
+        close;
+    }
+
+    // Trade logic
+    .@rand = rand(getarraysize(.@items));
+    #CASHPOINTS -= .@cash;
+    getitem .@items[.@rand], .@amount;
+    mes "Trade successful! You've received an item in exchange for "+ .@cash +" cash points.";
+    close;
+}
+
+
+moc_para01,20,31,4	duplicate(pet_taming_trader)	Pet_Taming_Trader#eden	4_F_TELEPORTER

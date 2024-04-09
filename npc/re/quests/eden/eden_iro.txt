@@ -133,7 +133,7 @@ function	script	VIP_iRO_Acolyte	{
 
 // Primo d'Buffer, VIP stat bonuses
 //============================================================
-moc_para01,26,18,3	script	Primo d'Buffer	790,{
+-	script	Primo d'Buffer	-1,{ //moc_para01,26,18,3	script	Primo d'Buffer	790
 	mes "[Primo d'Buffer]";
 	mes "Hello adventurer, you look like you are itching to get out there and save the world!";
 	if (!vip_status(VIP_STATUS_ACTIVE)) {
