@@ -1,0 +1,65 @@
+//===== rAthena Script =======================================
+//= Shadow Gear Exchange
+//===== Description: =========================================
+//= Trade Shaddow Gear for Cashpoint
+//===== Changelogs: ==========================================
+//= 1.0 First version [jimkeecn]
+//============================================================
+
+-	script	Shadow_Gear_Exchange	-1,{
+    mes "[Shadow Gear Trader]";
+    mes "I can exchange your shadow gears for cash points.";
+    next;
+
+    // Retrieve the player's inventory list
+    getinventorylist;
+
+    // Initialize a string to store shadow gear names for the menu
+    .@shadow_gear_menu$ = "";
+    // Initialize an array to store shadow gear IDs
+    .@shadow_gear_ids$ = "";
+
+    freeloop(1);
+    // Loop through the inventory to find shadow gears
+    for (.@i = 0; .@i < @inventorylist_count; .@i++) {
+        if (getiteminfo(@inventorylist_id[.@i], ITEMINFO_TYPE) == IT_SHADOWGEAR && @inventorylist_equip[.@i] == 0 ) {
+            // Append the item name to the menu string and the item ID to the IDs string
+            .@shadow_gear_menu$ += getitemname(@inventorylist_id[.@i]) + ":"; //simplified using +=, also this string can be use for menu right away because menu are sepereated with ":" colons.
+            .@shadow_gear_ids$ += @inventorylist_id[.@i] + ","; //simplified using +=
+        }
+    }
+    freeloop(0);
+
+    // Check if any shadow gears were found
+    if (.@shadow_gear_menu$ == "") {
+        mes "You don't have any shadow gears in your inventory.";
+        close;
+    }
+
+    //I have remove the substring functions because it is not needed.
+
+    // Convert the IDs string into an array
+    explode(.@ids$, .@shadow_gear_ids$, ","); //I have changed here from .@ids to .@ids$ because .something$ means string array.'$'- string variable, can store text
+
+    // Presenting the shadow gear selection menu to the player
+    mes "Select the shadow gear you wish to trade for 5 cash points:";
+    .@s = select(.@shadow_gear_menu$) - 1; //select count - 1 is easier you dont have to write -1 everywhere.
+
+    // Confirm the trade
+    mes "Are you sure you want to trade ^FF0000" + getitemname(atoi(.@ids$[.@s])) + " for 5 cash points?";
+    
+    if (select("Yes:No") == 2) {
+        mes "Maybe next time.";
+        close;
+    }
+    next;
+    // Perform the trade
+    delitem atoi(.@ids$[.@s]), 1; // Correctly convert string ID to integer and remove the selected shadow gear
+    #CASHPOINTS += 5; // Add 5 cash points to the player
+    mes "Trade successful! 5 cash points have been added to your account.";
+    close;
+}
+
+
+
+moc_para01,16,32,4	duplicate(Shadow_Gear_Exchange)	Shadow_Gear_Exchange#eden	4_F_KAFRA7
