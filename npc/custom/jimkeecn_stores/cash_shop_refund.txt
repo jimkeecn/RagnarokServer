@@ -1,0 +1,77 @@
+//===== rAthena Script =======================================
+//= Black Market Yue
+//===== Description: =========================================
+//= Sells all items that has special effect after refine.. 
+//= 
+//= NOTE: Requires SQL item databases.
+//= SQL logic script LIKE '%.@r >= %'
+//===== Changelogs: ==========================================
+//= 1.0 First version [jimkeecn]
+//============================================================
+
+-	script	Cash_Shop_Redeem	-1,{
+    mes "[Cash Shop Redeem]";
+    mes "Welcome to our Redeem center, due to financial situation. We cannot fully Redeem your cash item.";
+    mes "However, we are love to receive some of your items to exchange for cashshop boxes";
+    next;
+    mes "[Cash Shop Redeem]";
+    mes "Here are the list of item we take for exchange";
+    next;
+    // Initialize the check
+    getinventorylist;
+    .@hasEligibleItem = false;
+    // Define items and amounts required for exchange
+    setarray .item_ids[0], 12370, 12373, 17251,17314, 5329, 16051, 2576, 2589, 5074, 2481, 5181, 5470, 15087, 18540, 5373,18522;
+    setarray .amounts[0], 30, 30, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,1;
+    
+    
+    // Add item names for the menu
+    freeloop(1);
+    for (.@i = 0; .@i < getarraysize(.item_ids); .@i++) {
+        .@menu$ += getitemname(.item_ids[.@i]) + " x(" + .amounts[.@i] + "):";
+    }
+    freeloop(0);
+
+    // Show menu and get player selection
+    .@s_1 = select(.@menu$) - 1;
+   
+    
+    if (countitem(.item_ids[.@s_1]) < .amounts[.@s_1]) {
+        mes "[Cash Shop Redeem]";
+        mes "You don't have enough of the required item to make the exchange.";
+        close;
+    }
+
+    mes "[Cash Shop Redeem]";
+    mes "It looks like you are ready to trade.";
+    mes "Which Cash Box would you like in exchange?";
+    next;
+    setarray .cash_ids[0], 17481, 17237;
+
+    // Add item names for the menu
+    freeloop(1);
+    for (.@i = 0; .@i < getarraysize(.cash_ids); .@i++) {
+        .@cashmenu$ += getitemname(.cash_ids[.@i]) + ":";
+    }
+    freeloop(0);
+
+    .@s_2 = select(.@cashmenu$) - 1;
+
+    mes "[Cash Shop Redeem]";
+    mes "Are you sure you want to exchange for " + getitemname(.cash_ids[.@s_2]) + " ?";
+    next;
+    if (select("Yes:No") == 2) {
+        mes "Maybe next time.";
+        close;
+    }
+
+    // Exchange process
+    delitem .item_ids[.@s_1], .amounts[.@s_1]; // Remove the required amount of the selected item
+    getitem .cash_ids[.@s_2], 1; // Give the player the selected cash box
+    mes "[Cash Shop Redeem]";
+    mes "Exchange successful! You've received the Cash Box.";
+    close;
+}
+
+
+moc_para01,17,32,4	duplicate(Cash_Shop_Redeem)	Cash Shop Redeem#eden	4_F_KAFRA7
