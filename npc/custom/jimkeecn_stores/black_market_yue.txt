@@ -73,4 +73,4 @@
 -	shop	black_market_yue#card	-1,501:1000
 
 
-moc_para01,12,26,6	duplicate(Black Market Yue)	Black Market Yue#eden	481
+moc_para01,22,31,4	duplicate(Black Market Yue)	Black Market Yue#eden	481

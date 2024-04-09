@@ -89,4 +89,4 @@
 }
 
 
-moc_para01,23,28,4	duplicate(The Lady Gambler)	The Lady Gambler#eden	772
+moc_para01,23,31,4	duplicate(The Lady Gambler)	The Lady Gambler#eden	772

@@ -62,4 +62,4 @@
 
 
 
-moc_para01,16,32,4	duplicate(Shadow_Gear_Exchange)	Shadow_Gear_Exchange#eden	4_F_KAFRA7
+moc_para01,25,31,4	duplicate(Shadow_Gear_Exchange)	Shadow_Gear_Exchange#eden	4_F_KAFRA7

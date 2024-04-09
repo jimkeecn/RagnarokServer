@@ -74,4 +74,4 @@
 }
 
 
-moc_para01,17,32,4	duplicate(Cash_Shop_Redeem)	Cash Shop Redeem#eden	4_F_KAFRA7
+moc_para01,24,31,4	duplicate(Cash_Shop_Redeem)	Cash Shop Redeem#eden	4_F_KAFRA7
