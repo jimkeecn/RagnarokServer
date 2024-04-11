@@ -53,6 +53,8 @@ Body:
             Price: 20
           - Item: SCROLL_OF_DARKNESS
             Price: 20
+          - Item: Test_Item_Group
+            Price: 1
     - Tab: Hot
       Items:
           - Item: Bloody_Dead_Branch

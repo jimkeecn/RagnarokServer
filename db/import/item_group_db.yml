@@ -46,3 +46,20 @@
 Header:
   Type: ITEM_GROUP_DB
   Version: 3
+
+Body:
+  - Group: Test_Item_Group
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 0
+            Item: Nagan
+            Rate: 1
+          - Index: 1
+            Item: Ice_Falchon
+            Rate: 1
+          - Index: 1
+            Item: Fire_Brand
+            Rate: 1
+
+
