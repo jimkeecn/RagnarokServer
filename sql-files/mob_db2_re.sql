@@ -164,7 +164,7 @@ CREATE TABLE `mob_db2_re` (
   `drop10_index` tinyint(2) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY (`name_aegis`)
-) ENGINE=MyISAM;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 # rAthena Dev Team
 #REPLACE INTO `mob_db2_re` (`id`,`name_aegis`,`name_english`,`name_japanese`,`level`,`hp`,`base_exp`,`job_exp`,`mvp_exp`,`attack`,`attack2`,`defense`,`magic_defense`,`agi`,`vit`,`int`,`dex`,`luk`,`attack_range`,`skill_range`,`chase_range`,`size`,`race`,`element`,`element_level`,`walk_speed`,`attack_delay`,`attack_motion`,`damage_motion`,`ai`,`mode_looter`,`mode_castsensoridle`,`mode_norandomwalk`,`mode_nocast`,`mode_angry`,`mode_changetargetmelee`,`mvpdrop1_item`,`mvpdrop1_rate`,`mvpdrop2_item`,`mvpdrop2_rate`,`mvpdrop3_item`,`mvpdrop3_rate`,`drop1_item`,`drop1_rate`,`drop2_item`,`drop2_rate`,`drop3_item`,`drop3_rate`,`drop4_item`,`drop4_rate`,`drop5_item`,`drop5_rate`,`drop6_item`,`drop6_rate`,`drop7_item`,`drop7_rate`,`drop8_item`,`drop8_rate`,`drop8_nosteal`) VALUES (1900,'VALARIS','Valaris','Valaris',99,668000,107250,37895,13000,3220,4040,35,45,152,96,85,120,95,2,10,10,'Large','Demon','Dark',3,100,1068,768,576,'25',true,true,true,true,true,true,'Seed_Of_Yggdrasil',1000,'Baphomet_Doll',400,'Evil_Horn',3800,'Crescent_Scythe',200,'Magestic_Goat',200,'Clip',800,'Emperium',500,'Old_Violet_Box',3000,'Oridecon',4300,'Elunium',5600,'Baphomet_Card',1,true);

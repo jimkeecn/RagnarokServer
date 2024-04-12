@@ -117,4 +117,4 @@ CREATE TABLE `item_db_re` (
   `unequip_script` text,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `UniqueAegisName` (`name_aegis`)
-) ENGINE=MyISAM;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

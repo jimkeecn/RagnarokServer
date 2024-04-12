@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `mob_skill_db2_re` (
   `VAL5` mediumint(9) DEFAULT NULL,
   `EMOTION` text,
   `CHAT` text
-) ENGINE=MyISAM;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 # Custom Mob Skill Database
 #
