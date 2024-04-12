@@ -11176,6 +11176,9 @@
 	export_constant(MER_DIETER);
 	export_constant(MER_ELEANOR);
 
+	//Custom
+	export_constant(IG_TEST_ITEM_GROUP);
+
 	#undef export_constant
 	#undef export_constant2
 	#undef export_parameter

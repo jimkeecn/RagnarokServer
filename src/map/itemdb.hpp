@@ -2762,6 +2762,9 @@ enum e_random_item_group {
 	IG_CHAOS_EMERALD_PACK_,
 
 	IG_MAX,
+
+	//Custom
+	IG_TEST_ITEM_GROUP
 };
 
 /// Enum for bound/sell restricted selling
