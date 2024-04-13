@@ -49,10 +49,6 @@ Body:
             Price: 5
           - Item: COSTUME_FESTIVAL_BOX2
             Price: 5
-          - Item: COSTAMA_EGG21
-            Price: 20
-          - Item: SCROLL_OF_DARKNESS
-            Price: 20
     - Tab: Hot
       Items:
           - Item: Bloody_Dead_Branch
@@ -85,10 +81,20 @@ Body:
             Price: 15
           - Item: 2018_YEAR_SHADOW_CUBE
             Price: 15
+          - Item: COSTAMA_EGG21
+            Price: 20
+          - Item: SCROLL_OF_DARKNESS
+            Price: 20
     - Tab: Rental
       Items:
           - Item: Boarding_Halter_Box7
             Price: 20
+    - Tab: Permanent
+      Items:
+          - Item: RuneKnight_Accessories_A_Box
+            Price: 100
+          - Item: ArchBishop_Accessory_A_Box
+            Price: 100
     - Tab: Scrolls
       Items:
           - Item: Inc_Agi_10_Scroll

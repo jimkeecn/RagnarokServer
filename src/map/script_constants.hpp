@@ -11177,7 +11177,36 @@
 	export_constant(MER_ELEANOR);
 
 	//Custom
-	export_constant(IG_TEST_ITEM_GROUP);
+	export_constant(IG_RUNEKNIGHT_ACCESSORIES_A_BOX);
+	export_constant(IG_RUNEKNIGHT_ACCESSORIES_B_BOX);
+	export_constant(IG_RUNEKNIGHT_ACCESSORIES_C_BOX);
+	export_constant(IG_RUNEKNIGHT_ARMOR_A_BOX);
+	export_constant(IG_RUNEKNIGHT_ARMOR_B_BOX);
+	export_constant(IG_RUNEKNIGHT_ARMOR_C_BOX);
+	export_constant(IG_RUNEKNIGHT_GARMENT_A_BOX);
+	export_constant(IG_RUNEKNIGHT_GARMENT_B_BOX);
+	export_constant(IG_RUNEKNIGHT_HEADGEAR_A_BOX);
+	export_constant(IG_RUNEKNIGHT_HEADGEAR_B_BOX);
+	export_constant(IG_RUNEKNIGHT_HEADGEAR_C_BOX);
+	export_constant(IG_RUNEKNIGHT_SHIELD_A_BOX);
+	export_constant(IG_RUNEKNIGHT_SHIELD_B_BOX);
+	export_constant(IG_RUNEKNIGHT_SHIELD_C_BOX);
+	export_constant(IG_RUNEKNIGHT_SHOES_A_BOX);
+	export_constant(IG_RUNEKNIGHT_SHOES_B_BOX);
+	export_constant(IG_RUNEKNIGHT_SHOES_C_BOX);
+	export_constant(IG_RUNEKNIGHT_WEAPON_A_BOX);
+	export_constant(IG_RUNEKNIGHT_WEAPON_B_BOX);
+	export_constant(IG_RUNEKNIGHT_WEAPON_C_BOX);
+	export_constant(IG_ARCHBISHOP_ACCESSORY_A_BOX);
+	export_constant(IG_ARCHBISHOP_ARMOR_A_BOX);
+	export_constant(IG_ARCHBISHOP_ARMOR_B_BOX);
+	export_constant(IG_ARCHBISHOP_FOOTGEAR_B_BOX);
+	export_constant(IG_ARCHBISHOP_GARMENT_A_BOX);
+	export_constant(IG_ARCHBISHOP_HEADGEAR_A_BOX);
+	export_constant(IG_ARCHBISHOP_HEADGEAR_B_BOX);
+	export_constant(IG_ARCHBISHOP_SHIELD_A_BOX);
+	export_constant(IG_ARCHBISHOP_WEAPON_A_BOX);
+	export_constant(IG_ARCHBISHOP_WEAPON_B_BOX);
 
 	#undef export_constant
 	#undef export_constant2

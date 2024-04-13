@@ -42,24 +42,856 @@
 #          Clear               Whether the current datas should be removed. (Optional)
 #       Clear                  Remove the given SubGroup. (Optional)
 ###########################################################################
-
+#
+#Note all cash box will start from 15000000, 
+#Currently at 15000030
+################################################
 Header:
   Type: ITEM_GROUP_DB
   Version: 3
 
 Body:
-  - Group: Test_Item_Group
+  - Group: RuneKnight_Accessories_A_Box #15000001
     SubGroups:
       - SubGroup: 1
         List:
-          - Index: 0
-            Item: Nagan
-            Rate: 1
-          - Index: 1
-            Item: Ice_Falchon
-            Rate: 1
-          - Index: 1
-            Item: Fire_Brand
-            Rate: 1
+        - Index: 0
+          Item: Ur_Seal
+          Rate: 5
+        - Index: 1
+          Item: Recovery_Ring
+          Rate: 1
+        - Index: 2
+          Item: Bakonawa_Tattoo
+          Rate: 1
+        - Index: 3
+          Item: Peuz_Seal
+          Rate: 5
+        - Index: 4
+          Item: Bradium_Brooch
+          Rate: 5
+        - Index: 5
+          Item: Ring_Of_Flame_Lord
+          Rate: 3
+        - Index: 6
+          Item: Ring_Of_Resonance
+          Rate: 1
+  - Group: RuneKnight_Accessories_B_Box #15000002
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Fairy_Leaf_Powder
+          Rate: 1
+        - Index: 1
+          Item: Earring_Of_Sarah_L
+          Rate: 3
+        - Index: 2
+          Item: Earring_Of_Sarah_R
+          Rate: 1
+        - Index: 3
+          Item: Temporal_Ring
+          Rate: 1
+        - Index: 4
+          Item: Glove_Of_Smith
+          Rate: 3
+        - Index: 5
+          Item: Giant_Protection
+          Rate: 3
+        - Index: 6
+          Item: Perverse_Demon_Mask
+          Rate: 1
+        - Index: 7
+          Item: Verus_Core
+          Rate: 1
+        - Index: 8
+          Item: Bloody_Iron_Ball_
+          Rate: 1
+  - Group: RuneKnight_Accessories_C_Box #15000003
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Fenrir_Chain
+          Rate: 1
+        - Index: 1
+          Item: RingofJupiter
+          Rate: 1
+        - Index: 2
+          Item: E_Illusion_B_L
+          Rate: 1
+        - Index: 3
+          Item: Illusion_B_R
+          Rate: 1
+        - Index: 4
+          Item: aegis_490319
+          Rate: 1
+        - Index: 5
+          Item: aegis_490413
+          Rate: 1
+        - Index: 6
+          Item: Memento_Mori
+          Rate: 1
+        - Index: 7
+          Item: Jasper_Ring
+          Rate: 1
+        - Index: 8
+          Item: Immortal_Dog_Tag
+          Rate: 1
+  - Group: RuneKnight_Armor_A_Box #15000004
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Krieger_Suit1
+          Rate: 5
+        - Index: 1
+          Item: Valkyrie_Armor
+          Rate: 8
+        - Index: 2
+          Item: Brynhild
+          Rate: 1
+        - Index: 3
+          Item: Dragon_Vest
+          Rate: 5
+        - Index: 4
+          Item: G_Strings
+          Rate: 3
+  - Group: RuneKnight_Armor_B_Box #15000005
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Ur_Plate
+          Rate: 5
+        - Index: 1
+          Item: EvilDragon_Armor
+          Rate: 2
+        - Index: 2
+          Item: Hero_Plate
+          Rate: 4
+        - Index: 3
+          Item: Holy_Coat
+          Rate: 2
+        - Index: 4
+          Item: Fafnir_Scale_J
+          Rate: 1
+        - Index: 5
+          Item: Consultation_RobeJ
+          Rate: 1
+        - Index: 6
+          Item: Overwhelm_Vit_Armor
+          Rate: 1
+        - Index: 7
+          Item: Abyss_Dress
+          Rate: 1
+        - Index: 8
+          Item: Nature_Dress
+          Rate: 1
+        - Index: 9
+          Item: Icefall_Dress
+          Rate: 1
+        - Index: 10
+          Item: Fire_Dragon_Coat
+          Rate: 1
+        - Index: 11
+          Item: Armor_of_Rosary
+          Rate: 1
+        - Index: 12
+          Item: Overwhelm_Str_Armor
+          Rate: 1
+        - Index: 13
+          Item: Peuz_Plate
+          Rate: 5
+        - Index: 14
+          Item: Overwhelm_Agi_Armor
+          Rate: 1
+        - Index: 15
+          Item: Overwhelm_Luk_Armor
+          Rate: 1
+  - Group: RuneKnight_Armor_C_Box #15000006
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: aegis_450216
+          Rate: 1
+        - Index: 1
+          Item: Samael_Dress
+          Rate: 1
+        - Index: 2
+          Item: E_Illusion_Armor_A
+          Rate: 1
+        - Index: 3
+          Item: Auto_Armor_A
+          Rate: 1
+  - Group: RuneKnight_Garment_A_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Temporal_M_Str
+          Rate: 1
+        - Index: 1
+          Item: Temporal_M_Agi
+          Rate: 1
+        - Index: 2
+          Item: Skin_Of_Gwiber
+          Rate: 1
+        - Index: 3
+          Item: Anony_As_Muffler
+          Rate: 1
+        - Index: 4
+          Item: Temporal_M_Dex
+          Rate: 1
+        - Index: 5
+          Item: Temporal_M_Luk
+          Rate: 1
+        - Index: 6
+          Item: Dragon_Manteau
+          Rate: 1
+  - Group: RuneKnight_Garment_B_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: E_Illusion_Engine_B
+          Rate: 1
+        - Index: 1
+          Item: Fafnir_Manteau
+          Rate: 1
+        - Index: 2
+          Item: Arabian_Manteau
+          Rate: 1
+  - Group: RuneKnight_Headgear_A_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Rideword_Hat
+          Rate: 1
+        - Index: 1
+          Item: Black_Glasses
+          Rate: 2
+        - Index: 2
+          Item: Sunglasses_
+          Rate: 2
+        - Index: 3
+          Item: Ribbon_Black
+          Rate: 1
+        - Index: 4
+          Item: Black_Ribbon_
+          Rate: 1
+        - Index: 5
+          Item: Crow_Tengu_Mask
+          Rate: 1
+  - Group: RuneKnight_Headgear_B_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Mob_Scarf
+          Rate: 1
+        - Index: 1
+          Item: Vanargand_Helm
+          Rate: 1
+        - Index: 2
+          Item: Black_Devil_Mask_
+          Rate: 1
+        - Index: 3
+          Item: Mini_Glasses_
+          Rate: 2
+        - Index: 4
+          Item: Heart_Wing_Hairband
+          Rate: 1
+        - Index: 5
+          Item: Old_Rune_Circlet
+          Rate: 1
+        - Index: 6
+          Item: Red_Baby_Dragon
+          Rate: 2
+        - Index: 7
+          Item: Baron_Evil_Eye
+          Rate: 1
+        - Index: 8
+          Item: Eyes_Of_Illusion
+          Rate: 1
+        - Index: 9
+          Item: New_Wave_Sunglasses
+          Rate: 2
+        - Index: 10
+          Item: New_Wave_Sunglasses_
+          Rate: 1
+        - Index: 11
+          Item: K_New_Wave_Sunglasses
+          Rate: 1
+        - Index: 12
+          Item: Diabolus_Wing
+          Rate: 1
+        - Index: 13
+          Item: Protect_Feathers
+          Rate: 1
+        - Index: 14
+          Item: Heavenly_Order
+          Rate: 2
+        - Index: 15
+          Item: Heavenly_Order_
+          Rate: 1
+        - Index: 16
+          Item: Strawberry_In_Mouth_
+          Rate: 1
+        - Index: 17
+          Item: Tengu_Scroll
+          Rate: 1
+        - Index: 18
+          Item: Protect_cloth
+          Rate: 1
+        - Index: 19
+          Item: Evil_Marcher_Hat
+          Rate: 1
+        - Index: 20
+          Item: Mercury_Helm
+          Rate: 1
+        - Index: 21
+          Item: CD_In_Mouth
+          Rate: 1
+        - Index: 22
+          Item: LittleGarden
+          Rate: 1
+  - Group: RuneKnight_Headgear_C_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Turkey_Hat
+          Rate: 1
+        - Index: 1
+          Item: Cat_Shampoo_Hat
+          Rate: 1
+        - Index: 2
+          Item: Fafnir_Helm
+          Rate: 1
+        - Index: 3
+          Item: Eyes_Of_Illusion_
+          Rate: 1
+        - Index: 4
+          Item: Victory_Wing_Ear
+          Rate: 1
+        - Index: 5
+          Item: Victory_Wing_Ear_
+          Rate: 1
+        - Index: 6
+          Item: Victory_Ear_JP
+          Rate: 1
+        - Index: 7
+          Item: Victory_Ear_JP_
+          Rate: 1
+        - Index: 8
+          Item: Demons_Familiar
+          Rate: 1
+        - Index: 9
+          Item: Guardian_Claus
+          Rate: 1
+        - Index: 10
+          Item: Einherial_Mantle
+          Rate: 1
+        - Index: 11
+          Item: Sacred_Lapel
+          Rate: 1
+        - Index: 12
+          Item: Comp_Crow_Tengu_Mask
+          Rate: 1
+        - Index: 13
+          Item: aegis_400488
+          Rate: 1
+        - Index: 14
+          Item: Cons_Of_Earth_J
+          Rate: 1
+        - Index: 15
+          Item: ScarfOfHero_J
+          Rate: 1
+        - Index: 16
+          Item: CD_In_MouthK
+          Rate: 1
+  - Group: RuneKnight_Shield_A_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Valkyrja's_Shield
+          Rate: 1
+        - Index: 1
+          Item: Immuned_Shield
+          Rate: 1
+        - Index: 2
+          Item: Platinum_Shield
+          Rate: 1
+        - Index: 3
+          Item: White_Gold_Shield
+          Rate: 1
+        - Index: 4
+          Item: Mad_Bunny
+          Rate: 1
+  - Group: RuneKnight_Shield_B_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Excelion_Shield
+          Rate: 1
+        - Index: 1
+          Item: aegis_28985
+          Rate: 1
+        - Index: 2
+          Item: Scutum
+          Rate: 1
+        - Index: 3
+          Item: Mad_Bunny_K
+          Rate: 1
+        - Index: 4
+          Item: Mad_Bunny_K_
+          Rate: 1
+  - Group: RuneKnight_Shield_C_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Illusion_Shield_A
+          Rate: 1
+        - Index: 1
+          Item: Illusion_Shield_B
+          Rate: 1
+        - Index: 2
+          Item: aegis_460050
+          Rate: 1
+        - Index: 3
+          Item: Mad_Bunny_K_LT
+          Rate: 1
+  - Group: RuneKnight_Shoes_A_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Variant_Shoes
+          Rate: 5
+        - Index: 1
+          Item: Variant_Shoes_M
+          Rate: 3
+        - Index: 2
+          Item: Sleipnir
+          Rate: 1
+        - Index: 3
+          Item: Sleipnir_C
+          Rate: 1
+        - Index: 4
+          Item: Black_Leather_Boots_
+          Rate: 5
+        - Index: 5
+          Item: Black_Leather_Boots
+          Rate: 3
+        - Index: 6
+          Item: Sprint_Shoes
+          Rate: 3
+  - Group: RuneKnight_Shoes_B_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Temporal_Dex_Boots
+          Rate: 2
+        - Index: 1
+          Item: Temporal_Dex_Boots_
+          Rate: 1
+        - Index: 2
+          Item: Enhanced_Variant_Shoes
+          Rate: 2
+        - Index: 3
+          Item: Pororoca_Shoes
+          Rate: 1
+        - Index: 4
+          Item: Ancient_Hero_Boots
+          Rate: 1
+        - Index: 5
+          Item: Booster_shoes
+          Rate: 1
+        - Index: 6
+          Item: Anony_Sm_Shoes
+          Rate: 1
+        - Index: 7
+          Item: Temporal_Str_Boots_
+          Rate: 1
+        - Index: 8
+          Item: Temporal_Str_Boots
+          Rate: 2
+        - Index: 9
+          Item: Temporal_Luk_Boots
+          Rate: 2
+  - Group: RuneKnight_Shoes_C_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: E_Illusion_Leg_A
+          Rate: 1
+        - Index: 1
+          Item: Rune_Greave_JP
+          Rate: 1
+        - Index: 2
+          Item: aaegis_470206
+          Rate: 1
+        - Index: 3
+          Item: aegis_470247
+          Rate: 1
+        - Index: 4
+          Item: Peep_Toe_Sandals
+          Rate: 1
+  - Group: RuneKnight_Weapon_A_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Tae_Goo_Lyeon
+          Rate: 1
+        - Index: 1
+          Item: Hunting_Spear
+          Rate: 2
+        - Index: 2
+          Item: Hunting_Spear_M
+          Rate: 1
+        - Index: 3
+          Item: Gelerdria_
+          Rate: 1
+        - Index: 4
+          Item: Arcanite_Hammer_EXE
+          Rate: 1
+        - Index: 5
+          Item: Moonlight_Sword
+          Rate: 1
+        - Index: 6
+          Item: Gungnir
+          Rate: 2
+        - Index: 7
+          Item: Gungnir_
+          Rate: 1
+        - Index: 8
+          Item: Battle_Hook
+          Rate: 1
+        - Index: 9
+          Item: Battle_Hook_
+          Rate: 1
+        - Index: 10
+          Item: Long_Horn
+          Rate: 2
+        - Index: 11
+          Item: Long_Horn_M
+          Rate: 1
+        - Index: 12
+          Item: Cardo
+          Rate: 1
+        - Index: 13
+          Item: Hell_Fire
+          Rate: 2
+        - Index: 14
+          Item: Hell_Fire_S
+          Rate: 1
+        - Index: 15
+          Item: Violet_Fear
+          Rate: 1
+        - Index: 16
+          Item: Alca_Bringer
+          Rate: 1
+  - Group: RuneKnight_Weapon_B_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Up_Dragonic_Slayer
+          Rate: 1
+        - Index: 1
+          Item: Up_Dragonic_Slayer
+          Rate: 1
+        - Index: 2
+          Item: Moonlight_Sword_C
+          Rate: 1
+        - Index: 3
+          Item: Valkyrie_Hammer
+          Rate: 1
+        - Index: 4
+          Item: FullForce
+          Rate: 1
+        - Index: 5
+          Item: Twin_Edge_R
+          Rate: 1
+        - Index: 6
+          Item: Two_Hand_Spear_170
+          Rate: 1
+        - Index: 7
+          Item: Alca_Bringer_
+          Rate: 1
+  - Group: RuneKnight_Weapon_C_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Jirant_Spear
+          Rate: 1
+        - Index: 1
+          Item: Thanos_TSword_AD
+          Rate: 1
+        - Index: 2
+          Item: Beam_Claymore_AD
+          Rate: 1
+  - Group: ArchBishop_Accessory_A_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Archpriest_Ring
+          Rate: 1
+        - Index: 1
+          Item: Valkyrie_Drop
+          Rate: 1
+        - Index: 2
+          Item: Perverse_Demon_Mask
+          Rate: 1
+        - Index: 3
+          Item: Recovery_Ring
+          Rate: 2
+        - Index: 5
+          Item: Angelic_Ring
+          Rate: 5
+        - Index: 6
+          Item: Medal_Acolyte
+          Rate: 5
+        - Index: 7
+          Item: Diabolus_Ring
+          Rate: 5
+        - Index: 8
+          Item: Bradium_Earing
+          Rate: 5
+  - Group: ArchBishop_Armor_A_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Orleans_Gown
+          Rate: 3
+        - Index: 1
+          Item: Diabolus_Robe
+          Rate: 3
+        - Index: 2
+          Item: Brynhild
+          Rate: 1
+        - Index: 3
+          Item: Wind_Sprits_Armor_
+          Rate: 1
+        - Index: 4
+          Item: Water_Sprits_Armor_
+          Rate: 1
+        - Index: 5
+          Item: Flame_Sprits_Armor_
+          Rate: 1
+        - Index: 6
+          Item: Valkyrie_Armor
+          Rate: 3
+  - Group: ArchBishop_Armor_B_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Abyss_Dress
+          Rate: 1
+        - Index: 1
+          Item: Kardui_Robe
+          Rate: 1
+        - Index: 2
+          Item: Holy_Coat
+          Rate: 3
+        - Index: 3
+          Item: Nectar_Suit
+          Rate: 1
+        - Index: 4
+          Item: Geffen_Mage_Robe
+          Rate: 1
+        - Index: 5
+          Item: Azure_Dragon_Armor
+          Rate: 3
+        - Index: 6
+          Item: Armor_Chiu_J
+          Rate: 1
+        - Index: 7
+          Item: Kirin_Armor
+          Rate: 1
+  - Group: ArchBishop_Footgear_B_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Shoes_Of_Punishment_
+          Rate: 1
+        - Index: 1
+          Item: Shoes_Of_Pilgrim
+          Rate: 1
+        - Index: 2
+          Item: Shoes_Of_Servival
+          Rate: 1
+        - Index: 3
+          Item: Enhanced_Variant_Shoes
+          Rate: 3
+        - Index: 4
+          Item: Temporal_Dex_Boots_
+          Rate: 1
+        - Index: 5
+          Item: Temporal_Int_Boots_
+          Rate: 2
+        - Index: 6
+          Item: Variant_Shoes
+          Rate: 5
+        - Index: 7
+          Item: Diabolus_Boots
+          Rate: 5
+  - Group: ArchBishop_Garment_A_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Etran_Shirt
+          Rate: 1
+        - Index: 1
+          Item: Skin_Of_Typhon
+          Rate: 1
+        - Index: 2
+          Item: G_Strings_
+          Rate: 1
+  - Group: ArchBishop_Headgear_A_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: DVAngelNurseCap
+          Rate: 1
+        - Index: 1
+          Item: Spring_Rabbit_Hat
+          Rate: 1
+        - Index: 2
+          Item: Crown_Of_Deceit
+          Rate: 1
+        - Index: 3
+          Item: Dress_Hat
+          Rate: 1
+        - Index: 4
+          Item: Drooping_White_Kitty
+          Rate: 1
+        - Index: 5
+          Item: Rabbit_Bonnet
+          Rate: 1
+        - Index: 6
+          Item: K_Rabbit_Bonnet
+          Rate: 1
+        - Index: 7
+          Item: Black_Glasses
+          Rate: 3
+        - Index: 8
+          Item: Pencil_In_Mouth
+          Rate: 1
+        - Index: 9
+          Item: Ninja_Scroll
+          Rate: 1
+        - Index: 10
+          Item: Sunglasses_
+          Rate: 1
+        - Index: 11
+          Item: Sunglasses
+          Rate: 3
+  - Group: ArchBishop_Headgear_B_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: King_Of_Spirit_Circlet
+          Rate: 1
+        - Index: 1
+          Item: Crown_Of_Saint_Jp
+          Rate: 1
+        - Index: 2
+          Item: Yggdrasil_Crown
+          Rate: 1
+        - Index: 3
+          Item: Old_Mitra
+          Rate: 1
+        - Index: 4
+          Item: Shrine_Maiden_Hat
+          Rate: 1
+        - Index: 5
+          Item: Cat_Ears_Beret
+          Rate: 1
+        - Index: 6
+          Item: LoveLove_Balloon
+          Rate: 1
+        - Index: 7
+          Item: Mob_Scarf
+          Rate: 1
+  - Group: ArchBishop_Shield_A_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Mad_Bunny
+          Rate: 1
+        - Index: 1
+          Item: Round_Buckler
+          Rate: 1
+        - Index: 2
+          Item: Valkyrja's_Shield_C
+          Rate: 1
+        - Index: 3
+          Item: Bible_Of_Promise2
+          Rate: 1
+  - Group: ArchBishop_Weapon_A_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Holy_Stick
+          Rate: 1
+        - Index: 1
+          Item: Divine_Cross_
+          Rate: 1
+        - Index: 2
+          Item: Wand_Of_Affection
+          Rate: 1
+        - Index: 3
+          Item: Wand_Of_Affection2
+          Rate: 1
+        - Index: 4
+          Item: Krieger_Onehand_Staff2
+          Rate: 1
+        - Index: 5
+          Item: Healing_Staff_
+          Rate: 1
+        - Index: 6
+          Item: Healing_Staff
+          Rate: 1
+        - Index: 7
+          Item: Recovery_Light
+          Rate: 1
+        - Index: 8
+          Item: Croce_Staff
+          Rate: 1
+  - Group: ArchBishop_Weapon_B_Box
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Mace_Of_Judgement
+          Rate: 1
+        - Index: 1
+          Item: Mace_Of_Judgement2
+          Rate: 1
+        - Index: 2
+          Item: Staff_Of_Elder
+          Rate: 1
+
+
 
 
