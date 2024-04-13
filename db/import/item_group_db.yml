@@ -775,60 +775,87 @@ Body:
           Rate: 1
         - Index: 2
           Item: Crown_Of_Deceit
-          Rate: 1
+          Rate: 2
         - Index: 3
           Item: Dress_Hat
           Rate: 1
         - Index: 4
           Item: Drooping_White_Kitty
-          Rate: 1
+          Rate: 3
         - Index: 5
           Item: Rabbit_Bonnet
-          Rate: 1
+          Rate: 4
         - Index: 6
           Item: K_Rabbit_Bonnet
-          Rate: 1
+          Rate: 2
         - Index: 7
           Item: Black_Glasses
           Rate: 3
         - Index: 8
           Item: Pencil_In_Mouth
-          Rate: 1
+          Rate: 3
         - Index: 9
           Item: Ninja_Scroll
           Rate: 1
         - Index: 10
           Item: Sunglasses_
-          Rate: 1
+          Rate: 3
         - Index: 11
           Item: Sunglasses
-          Rate: 3
+          Rate: 5
   - Group: ArchBishop_Headgear_B_Box
     SubGroups:
       - SubGroup: 1
         List:
         - Index: 0
-          Item: King_Of_Spirit_Circlet
+          Item: DVAngelNurseCap
           Rate: 1
         - Index: 1
-          Item: Crown_Of_Saint_Jp
+          Item: Spring_Rabbit_Hat
           Rate: 1
         - Index: 2
-          Item: Yggdrasil_Crown
-          Rate: 1
+          Item: Crown_Of_Deceit
+          Rate: 2
         - Index: 3
-          Item: Old_Mitra
+          Item: Dress_Hat
           Rate: 1
         - Index: 4
+          Item: Drooping_White_Kitty
+          Rate: 3
+        - Index: 5
+          Item: Rabbit_Bonnet
+          Rate: 3
+        - Index: 6
+          Item: K_Rabbit_Bonnet
+          Rate: 2
+        - Index: 7
+          Item: Pencil_In_Mouth
+          Rate: 3
+        - Index: 8
+          Item: Ninja_Scroll
+          Rate: 1
+        - Index: 9
+          Item: King_Of_Spirit_Circlet
+          Rate: 1
+        - Index: 10
+          Item: Crown_Of_Saint_Jp
+          Rate: 1
+        - Index: 11
+          Item: Yggdrasil_Crown
+          Rate: 3
+        - Index: 12
+          Item: Old_Mitra
+          Rate: 1
+        - Index: 13
           Item: Shrine_Maiden_Hat
           Rate: 1
-        - Index: 5
+        - Index: 14
           Item: Cat_Ears_Beret
           Rate: 1
-        - Index: 6
+        - Index: 15
           Item: LoveLove_Balloon
-          Rate: 1
-        - Index: 7
+          Rate: 3
+        - Index: 16
           Item: Mob_Scarf
           Rate: 1
   - Group: ArchBishop_Shield_A_Box
@@ -843,10 +870,16 @@ Body:
           Rate: 1
         - Index: 2
           Item: Valkyrja's_Shield_C
-          Rate: 1
+          Rate: 2
         - Index: 3
           Item: Bible_Of_Promise2
           Rate: 1
+        - Index: 4
+          Item: Valkyrja's_Shield
+          Rate: 3
+        - Index: 5
+          Item:Evt_D_H_Bible_K
+          Rate: 3
   - Group: ArchBishop_Weapon_A_Box
     SubGroups:
       - SubGroup: 1
@@ -883,12 +916,39 @@ Body:
       - SubGroup: 1
         List:
         - Index: 0
-          Item: Mace_Of_Judgement
-          Rate: 1
+          Item: Holy_Stick
+          Rate: 2
         - Index: 1
-          Item: Mace_Of_Judgement2
+          Item: Divine_Cross_
           Rate: 1
         - Index: 2
+          Item: Wand_Of_Affection
+          Rate: 3
+        - Index: 3
+          Item: Wand_Of_Affection2
+          Rate: 1
+        - Index: 4
+          Item: Krieger_Onehand_Staff2
+          Rate: 1
+        - Index: 5
+          Item: Healing_Staff_
+          Rate: 1
+        - Index: 6
+          Item: Healing_Staff
+          Rate: 3
+        - Index: 7
+          Item: Recovery_Light
+          Rate: 3
+        - Index: 8
+          Item: Croce_Staff
+          Rate: 3
+        - Index: 9
+          Item: Mace_Of_Judgement
+          Rate: 1
+        - Index: 10
+          Item: Mace_Of_Judgement2
+          Rate: 1
+        - Index: 11
           Item: Staff_Of_Elder
           Rate: 1
 
