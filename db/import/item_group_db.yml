@@ -51,7 +51,7 @@ Header:
   Version: 3
 
 Body:
-  - Group: RuneKnight_Accessories_A_Box #15000001
+  - Group: RuneKnight_Accessories_A_Box 
     SubGroups:
       - SubGroup: 1
         List:
@@ -76,7 +76,7 @@ Body:
         - Index: 6
           Item: Ring_Of_Resonance
           Rate: 1
-  - Group: RuneKnight_Accessories_B_Box #15000002
+  - Group: RuneKnight_Accessories_B_Box 
     SubGroups:
       - SubGroup: 1
         List:
@@ -107,7 +107,7 @@ Body:
         - Index: 8
           Item: Bloody_Iron_Ball_
           Rate: 1
-  - Group: RuneKnight_Accessories_C_Box #15000003
+  - Group: RuneKnight_Accessories_C_Box 
     SubGroups:
       - SubGroup: 1
         List:
@@ -138,7 +138,7 @@ Body:
         - Index: 8
           Item: Immortal_Dog_Tag
           Rate: 1
-  - Group: RuneKnight_Armor_A_Box #15000004
+  - Group: RuneKnight_Armor_A_Box 
     SubGroups:
       - SubGroup: 1
         List:
@@ -157,7 +157,7 @@ Body:
         - Index: 4
           Item: G_Strings
           Rate: 3
-  - Group: RuneKnight_Armor_B_Box #15000005
+  - Group: RuneKnight_Armor_B_Box 
     SubGroups:
       - SubGroup: 1
         List:
@@ -209,7 +209,7 @@ Body:
         - Index: 15
           Item: Overwhelm_Luk_Armor
           Rate: 1
-  - Group: RuneKnight_Armor_C_Box #15000006
+  - Group: RuneKnight_Armor_C_Box 
     SubGroups:
       - SubGroup: 1
         List:
@@ -362,9 +362,6 @@ Body:
     SubGroups:
       - SubGroup: 1
         List:
-        - Index: 0
-          Item: Turkey_Hat
-          Rate: 1
         - Index: 1
           Item: Cat_Shampoo_Hat
           Rate: 1
@@ -878,7 +875,7 @@ Body:
           Item: Valkyrja's_Shield
           Rate: 3
         - Index: 5
-          Item:Evt_D_H_Bible_K
+          Item: Evt_D_H_Bible_K
           Rate: 3
   - Group: ArchBishop_Weapon_A_Box
     SubGroups:

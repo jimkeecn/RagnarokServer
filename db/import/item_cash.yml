@@ -92,9 +92,65 @@ Body:
     - Tab: Permanent
       Items:
           - Item: RuneKnight_Accessories_A_Box
+            Price: 20
+          - Item: RuneKnight_Accessories_B_Box
+            Price: 40
+          - Item: RuneKnight_Accessories_C_Box
+            Price: 100
+          - Item: RuneKnight_Armor_A_Box
+            Price: 20
+          - Item: RuneKnight_Armor_B_Box
+            Price: 40
+          - Item: RuneKnight_Armor_C_Box
+            Price: 100
+          - Item: RuneKnight_Garment_A_Box
+            Price: 20
+          - Item: RuneKnight_Garment_B_Box
+            Price: 50
+          - Item: RuneKnight_Headgear_A_Box
+            Price: 20
+          - Item: RuneKnight_Headgear_B_Box
+            Price: 40
+          - Item: RuneKnight_Headgear_C_Box
+            Price: 100
+          - Item: RuneKnight_Shield_A_Box
+            Price: 20
+          - Item: RuneKnight_Shield_B_Box
+            Price: 40
+          - Item: RuneKnight_Shield_C_Box
+            Price: 100
+          - Item: RuneKnight_Shoes_A_Box
+            Price: 20
+          - Item: RuneKnight_Shoes_B_Box
+            Price: 40
+          - Item: RuneKnight_Shoes_C_Box
+            Price: 100
+          - Item: RuneKnight_Weapon_A_Box
+            Price: 20
+          - Item: RuneKnight_Weapon_B_Box
+            Price: 40
+          - Item: RuneKnight_Weapon_C_Box
             Price: 100
           - Item: ArchBishop_Accessory_A_Box
-            Price: 100
+            Price: 30
+          - Item: ArchBishop_Armor_A_Box
+            Price: 30
+          - Item: ArchBishop_Armor_B_Box
+            Price: 60
+          - Item: ArchBishop_Footgear_B_Box
+            Price: 40
+          - Item: ArchBishop_Garment_A_Box
+            Price: 40
+          - Item: ArchBishop_Headgear_A_Box
+            Price: 25
+          - Item: ArchBishop_Headgear_B_Box
+            Price: 50
+          - Item: ArchBishop_Shield_A_Box
+            Price: 30
+          - Item: ArchBishop_Weapon_A_Box
+            Price: 25
+          - Item: ArchBishop_Weapon_B_Box
+            Price: 50
     - Tab: Scrolls
       Items:
           - Item: Inc_Agi_10_Scroll
