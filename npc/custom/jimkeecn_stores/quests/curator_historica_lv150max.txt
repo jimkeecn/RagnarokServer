@@ -7,10 +7,11 @@
 //Transparent Plate 7352 7353 7354 7355 (research for  Juperos Ruins Center.)
 //Chivalry Emblem 1004 (find king and slayer demo in Glast Heim Chivalry )
 //Will of the Darkness  7340(Rachel Sanctuary)
-//Twin Horn Helm or Single Horned Helmet  6323,6324(Kamidal Tunnel or Sacabara Hole)
+//Twin Horn Helm or Single Horned Helmet  6323,6324(Kamidal Tunnel or Scaraba Hole)
 //===== Changelogs: ==========================================
 //= 1.0 First version [jimkeecn]
 //= 1.1 Add Quest icon, Add More background, Add Level Checking [jimkeecn]
+//= 2.0 Add Curator Historica Hunting Quest, reformat the dialog. [jimkeecn]
 //============================================================
 
 moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
@@ -22,7 +23,8 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
     mes "We offer^FF0000 cash points ^000000in exchange for high-value artifacts.";
     next;
 
-    menu "Tell me about the artifacts.",L_Info,"I want to sell",L_Sell,"I am not interested",L_NotInterested;
+
+    menu "About those artifacts.",L_Info,"Tell me about the hunting quest.",L_Hunting,"I am not interested",L_NotInterested;
 
     
     L_NotInterested:
@@ -34,10 +36,10 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
         while (1){
         .@loop = 0;
         mes "[Curator Historica]";
-        mes "we are seeking the following 4 artifacts from you.";
+        mes "we are seeking the following 3 artifacts from you.";
         next;
         while(.@loop == 0){
-            switch(select("Transparent Plate:Chivalry Emblem:Will of the Darkness:Horned Helmet:I have known enough.")){
+            switch(select("Transparent Plate:Will of the Darkness:Horned Helmet:I want to trade:Leave.")){
                 case 1:
                     mes "^FF0000Transparent Plate^000000";
                     mes "There are four types of Transparent Plates, each made from different crystalline materials found deep within Juperos Ruins.";
@@ -48,39 +50,110 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
                     set .@loop,1;
 					break;
                 case 2:
-                    mes "^FF0000Chivalry Emblem^000000";
-                    mes "This emblem is a symbol of the knighthood that once flourished within the walls of Glast Heim Chivalry.";
-                    next;
-                    mes "Studying these emblems helps historians learn about the values, rank, and influences of knights during Rune-Midgarts' golden age of chivalry.";
-                    mes "It provides insights into the social structure and military practices of that era.";
-                    next;
-                    set .@loop,1;
-					break;
-                case 3:
                     mes "^FF0000Will of the Darkness^000000";
                     mes "This artifact is said to contain the essence of dark power that once seeped through Rachel Sanctuary.";
                     mes "It is of great interest because it holds clues to the ancient curse that fell upon this sacred place, and understanding it could unlock secrets of ancient spiritual practices and divine worship.";
                     next;
                     set .@loop,1;
 					break;
-                case 4:
+                case 3:
                     mes "^FF0000Horned Helmet^000000";
-                    mes "These helmets, whether twin-horned or single-horned, are relics from the fierce Sacabara warriors of the Scabara Hole.";
+                    mes "These helmets, whether twin-horn or single-horn, are relics from the fierce Scaraba warriors of the Scaraba Hole.";
                     next;
                     mes "They are not only rare armaments but also significant cultural artifacts, offering insights into the battle gear and warrior culture of an almost forgotten subterranean race.";
                     next;
                     set .@loop,1;
 					break;
+                case 4:
+                    callsub L_Sell;
+                    end;
                 case 5:
                     close;
                     end;
             }
         }
-        }
+    }
         
         
+    L_Hunting:
 
-       
+        .@quest_status = checkquest(60002,Hunting);
+        if (.@quest_status == 0 || .@quest_status == 1){
+            callsub L_Hunting_Inc;
+            end;
+        } else if(.@quest_status == 2){
+            callsub L_Hunting_C;
+            end;
+        }
+
+        .@sleep_quest_status = checkquest(60001,PLAYTIME);
+        if (.@sleep_quest_status == 0 || .@sleep_quest_status == 1){
+            callsub L_Hunting_Sleep;
+            end;
+        }
+        mes "[Curator Historica]";
+        mes "In our pursuit to expand the annals of Midgard's history, we've stumbled upon an intriguing research opportunity.";
+        mes "Recent research suggests that the behaviors of certain species across the continent mirror historical cycles significant to Midgard's past. ";
+        mes "These patterns could reveal insights into historical events that shaped our world";
+        next;
+        mes "You are tasked to engage with these creatures to gather critical data for our studies.";
+        mes "The creatures in question are:";
+        mes "^FF0000Scaraba, Dimik, Agav^000000.";
+        next;
+        mes "We'll reward you greatly for your efforts and the risks involved.";
+        mes "Do you want to accept this quest?";
+        next;
+        switch(select("Yes.:No.")){
+            case 1:
+                if(BaseLevel < .minL){
+                    mes "[Curator Historica]";
+                    mes "You do not match with our requirement.";
+                    mes "Please come back with a little more stronger.";
+                    mes "required level ^FF0000" + .minL;
+                    close;
+                }
+
+                if(BaseLevel > .maxL){
+                    mes "[Curator Historica]";
+                    mes "We no longer require your service, we have gained massive progress on our research.";
+                    close;
+                }
+                setquest 60002;
+                mes "[Curator Historica]";
+                mes "Thanks for accepting the challenge since the area are dangerous even for experience adventure like you.";
+                mes "You can check out the area that list in my artifacts list.";
+                mes "Wish you best luck";
+                close;
+                end;
+
+
+
+
+            case 2:
+                mes "[Curator Historica]";
+                mes "I hope to see you again when you are ready to contribute to our research.";
+                close;
+        }
+
+    L_Hunting_Inc:
+        mes "[Curator Historica]";
+        mes "Looks like you have not yet fullfilled your duty. Please comeback after finish your report.";
+        close;
+
+    L_Hunting_C:
+        mes "[Curator Historica]";
+		mes "Good work~!!";
+		mes "Our researchers are so happy with your work. they will appreciate what you have done.";
+        close2;
+        erasequest 60002;
+		setquest 60001;
+        #cash += 400;
+        end;     
+
+    L_Hunting_Sleep:
+        mes "[Curator Historica]";
+        mes "Sorry, We are currently reading your last report. Please come back after sometime..";
+        close; 
 
     L_Sell:
 
@@ -98,7 +171,7 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
             close;
         }
 
-        .@menu$ = "Transparent Plate:Chivalry Emblem:Will of the Darkness:Scabara Horned Helmet:close";
+        .@menu$ = "Transparent Plate:Will of the Darkness:Scabara Horned Helmet:close";
 
         mes "[Curator Historica]";
         mes "Please select the which artifacts you are willing to sell.";
@@ -128,20 +201,13 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
                     }
 
                 case 2:
-                    .@rqamount = 1;
-                    mes "[Curator Historica]";
-                    mes "We will buy ^FF0000" + .@rqamount + "^000000 of them for 1 cashpoint.";
-                    next;
-                    callsub S_GiveReward,1004,.@rqamount;
-                    end;
-                case 3:
                     .@rqamount = 30;
                     mes "[Curator Historica]";
                     mes "We will buy ^FF0000" + .@rqamount + "^000000 of them for 1 cashpoint.";
                     next;
                     callsub S_GiveReward,7340,.@rqamount;
                     end;
-                case 4:
+                case 3:
                     .@rqamount = 30;
                     .@submenu2$ = "Twin Horned Helmet:Single Horned Helmet";
                     mes "[Curator Historica]";
@@ -156,7 +222,7 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
                             callsub S_GiveReward,6324,.@rqamount;
                             end;
                     }
-                case 5:
+                case 4:
                     mes "[Curator Historica]";
                     mes "See you next time.";
                     close;
@@ -202,7 +268,7 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
     OnInit:
         .maxL = 150;
         .minL = 90;
-        .@quest_c1$ = "checkquest(60001) == -1 && BaseLevel >= " + .minL + " && BaseLevel <= " + .maxL;
+        .@quest_c1$ = "checkquest(60002) == -1 && BaseLevel >= " + .minL + " && BaseLevel <= " + .maxL;
         questinfo QTYPE_QUEST, QMARK_NONE, .@quest_c1$;
         end;
 
