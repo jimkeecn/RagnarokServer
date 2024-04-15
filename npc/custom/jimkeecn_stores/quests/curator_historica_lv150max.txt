@@ -1,0 +1,124 @@
+//Transparent Plate 7352 7353 7354 7355 (research for  Juperos Ruins Center.)
+//Chivalry Emblem 1004 (find king and slayer demo in Glast Heim Chivalry )
+//Will of the Darkness  7340(Rachel Sanctuary)
+//Twin Horn Helm or Single Horned Helmet  6324(Kamidal Tunnel)
+
+-	script	curator_historica_lv150max	-1,{
+    
+    mes "[Curator Historica]";
+    mes "Greetings, adventurer! I am known as Curator Historica, the gatherer of artifacts for global research.";
+    mes "I work with renowned research agencies around the world to push the boundaries of historical knowledge.";
+    mes "We offer ^#FF0000 cash points ^#000000 in exchange for high-value artifacts.";
+    next;
+
+    menu "Tell me about the artifacts.",L_Info,"I want to sell",L_Sell,"I am not interested",L_NotInterested;
+
+    L_NotInterested:
+        mes "I hope to see you again when you are ready to contribute to our research.";
+        close;
+
+    L_Info:
+        mes "[Curator Historica]";
+        mes "we are seeking the following artifacts from you.";
+        mes "^FF0000 Transparent Plate ^000000";
+        mes "Obtainable by defeating Dimik in center of Juperos Dungeon .";
+        mes "^FF0000 Chivalry Emblem ^000000";
+        mes "Obtainable by defeating mobs in Glast Heim Chivalry.";
+        mes "^FF0000 Will of the Darkness ^000000";
+        mes "Obtainable by defeating mobs in Rachel Sanctuary.";
+        mes "^FF0000 Single Horned Helmet ^000000";
+        mes "Obtainable by defeating sacabaras in Scabara Hole.";
+        close;
+        end;
+
+    L_Sell:
+        if(BaseLevel >= 150){
+            mes "Apologies, but we no longer require your artifacts as our research needs have been met. Thank you.";
+            close;
+        }
+        .@menu$ = "Transparent Plate:Chivalry Emblem:Will of the Darkness:Single Horned Helmet:close";
+
+        mes "[etc redeem]";
+
+            switch(select(.@menu$)){
+                case 1:
+                    .@rqamount = 10;
+                    .@submenu$ = "Transparent Plate(7352):Transparent Plate(7353):Transparent Plate(7354):Transparent Plate(7355)";
+                    mes "[Curator Historica]";
+                    mes "We will buy ^FF0000" + .@rqamount + "^000000 of them for 1 cashpoint.";
+                    mes "Please select which type of Transparent Plate you wish to sell.";
+                    next;
+                    switch(select(.@submenu$)){
+                        case 1:
+                            callsub S_GiveReward,7352,.@rqamount;
+                            end;
+                        case 2:
+                            callsub S_GiveReward,7353,.@rqamount;
+                            end;
+                        case 3:
+                            callsub S_GiveReward,7354,.@rqamount;
+                            end;
+                        case 4:
+                            callsub S_GiveReward,7355,.@rqamount;
+                            end;
+                    }
+
+                case 2:
+                    .@rqamount = 2;
+                    mes "[Curator Historica]";
+                    mes "We will buy ^FF0000" + .@rqamount + "^000000 of them for 1 cashpoint.";
+                    next;
+                    callsub S_GiveReward,1004,.@rqamount;
+                    end;
+                case 3:
+                    .@rqamount = 100;
+                    mes "[Curator Historica]";
+                    mes "We will buy ^FF0000" + .@rqamount + "^000000 of them for 1 cashpoint.";
+                    next;
+                    callsub S_GiveReward,7340,.@rqamount;
+                    end;
+                case 4:
+                    .@rqamount = 100;
+                    mes "[Curator Historica]";
+                    mes "We will buy ^FF0000" + .@rqamount + "^000000 of them for 1 cashpoint.";
+                    next;
+                    callsub S_GiveReward,6324,.@rqamount;
+                    end;
+                case 5:
+                    mes "See you next time.";
+                    close;
+            }
+
+    S_GiveReward:
+        @id = getarg(0);          // Item ID
+        .@rqamount = getarg(1);    // Required amount of the item for one cash point
+        .@amount = countitem(.@id); // Amount of the item the player has
+
+        if (.@amount < .@rqamount) {
+            mes "[Curator Historica]";
+            mes "You don't have enough of the required item to claim the reward.";
+            close;
+        }
+
+        // Calculate how many cash points the player can get
+        .@cashpoints = .@amount / .@rqamount; // Integer division to get full cash points
+        .@removable_amount = .@cashpoints * .@rqamount; // Calculate total artifacts to be removed
+
+        // Remove the calculated amount of item from player
+        delitem .@id, .@removable_amount;
+
+        // Add corresponding cash points to the player's account
+        #CASHPOINTS += .@cashpoints;
+
+        // Inform the player of the transaction
+        mes "[Curator Historica]";
+        mes "You have exchanged " + .@removable_amount + " of item ID " + .@id + " for " + .@cashpoints + " cash points.";
+        close;
+        end;
+    
+
+}
+
+moc_para01,33,34,6	duplicate(curator_historica_lv150max)	#eden	481
+
+
