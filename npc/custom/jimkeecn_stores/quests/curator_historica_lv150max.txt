@@ -1,60 +1,104 @@
 
 
 //===== rAthena Script =======================================
-//= Hell Door Open
+//= Curator Historica
 //===== Description: =========================================
-//= Buy items from player for exchange of cash point.
+//Buy items from player for exchange of cash point.
 //Transparent Plate 7352 7353 7354 7355 (research for  Juperos Ruins Center.)
 //Chivalry Emblem 1004 (find king and slayer demo in Glast Heim Chivalry )
 //Will of the Darkness  7340(Rachel Sanctuary)
-//Twin Horn Helm or Single Horned Helmet  6324(Kamidal Tunnel)
+//Twin Horn Helm or Single Horned Helmet  6323,6324(Kamidal Tunnel or Sacabara Hole)
 //===== Changelogs: ==========================================
 //= 1.0 First version [jimkeecn]
+//= 1.1 Add Quest icon, Add More background, Add Level Checking [jimkeecn]
 //============================================================
 
--	script	curator_historica_lv150max	-1,{
-    
-    
-    
-
+moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
+   
     mes "[Curator Historica]";
     mes "Greetings, adventurer! I am known as Curator Historica, the gatherer of artifacts for global research.";
     next;
     mes "I work with renowned research agencies around the world to push the boundaries of historical knowledge.";
-    mes "We offer ^FF0000 cash points ^000000 in exchange for high-value artifacts.";
+    mes "We offer^FF0000 cash points ^000000in exchange for high-value artifacts.";
     next;
 
     menu "Tell me about the artifacts.",L_Info,"I want to sell",L_Sell,"I am not interested",L_NotInterested;
 
+    
     L_NotInterested:
         mes "I hope to see you again when you are ready to contribute to our research.";
         close;
         end;
 
     L_Info:
+        while (1){
+        .@loop = 0;
         mes "[Curator Historica]";
         mes "we are seeking the following 4 artifacts from you.";
         next;
-        mes "^FF0000Transparent Plate^000000";
-        mes "Obtainable by defeating Dimik in center of Juperos Dungeon .";
-        next;
-        mes "^FF0000Chivalry Emblem^000000";
-        mes "Obtainable by defeating mobs in Glast Heim Chivalry.";
-        next;
-        mes "^FF0000Will of the Darkness^000000";
-        mes "Obtainable by defeating mobs in Rachel Sanctuary.";
-        next;
-        mes "^FF0000Single Horned Helmet^000000";
-        mes "Obtainable by defeating sacabaras in Scabara Hole.";
-        close;
-        end;
+        while(.@loop == 0){
+            switch(select("Transparent Plate:Chivalry Emblem:Will of the Darkness:Horned Helmet:I have known enough.")){
+                case 1:
+                    mes "^FF0000Transparent Plate^000000";
+                    mes "There are four types of Transparent Plates, each made from different crystalline materials found deep within Juperos Ruins.";
+                    next;
+                    mes "These plates are believed to be part of the ancient technology used by the lost civilization of Juperos to enhance their robotic creations.";
+                    mes "Researchers are eager to study their composition to understand more about ancient technologies and their applications.";
+                    next;
+                    set .@loop,1;
+					break;
+                case 2:
+                    mes "^FF0000Chivalry Emblem^000000";
+                    mes "This emblem is a symbol of the knighthood that once flourished within the walls of Glast Heim Chivalry.";
+                    next;
+                    mes "Studying these emblems helps historians learn about the values, rank, and influences of knights during Rune-Midgarts' golden age of chivalry.";
+                    mes "It provides insights into the social structure and military practices of that era.";
+                    next;
+                    set .@loop,1;
+					break;
+                case 3:
+                    mes "^FF0000Will of the Darkness^000000";
+                    mes "This artifact is said to contain the essence of dark power that once seeped through Rachel Sanctuary.";
+                    mes "It is of great interest because it holds clues to the ancient curse that fell upon this sacred place, and understanding it could unlock secrets of ancient spiritual practices and divine worship.";
+                    next;
+                    set .@loop,1;
+					break;
+                case 4:
+                    mes "^FF0000Horned Helmet^000000";
+                    mes "These helmets, whether twin-horned or single-horned, are relics from the fierce Sacabara warriors of the Scabara Hole.";
+                    next;
+                    mes "They are not only rare armaments but also significant cultural artifacts, offering insights into the battle gear and warrior culture of an almost forgotten subterranean race.";
+                    next;
+                    set .@loop,1;
+					break;
+                case 5:
+                    close;
+                    end;
+            }
+        }
+        }
+        
+        
+
+       
 
     L_Sell:
-        if(BaseLevel >= 150){
-            mes "Apologies, but we no longer require your artifacts as our research needs have been met. Thank you.";
+
+        if(BaseLevel < .minL){
+            mes "[Curator Historica]";
+            mes "You do not match with our requirement.";
+            mes "Please come back with a little more stronger.";
+            mes "required level ^FF0000" + .minL;
             close;
         }
-        .@menu$ = "Transparent Plate:Chivalry Emblem:Will of the Darkness:Single Horned Helmet:close";
+
+        if(BaseLevel > .maxL){
+            mes "[Curator Historica]";
+            mes "We no longer require your items, we have gained massive progress on our research.";
+            close;
+        }
+
+        .@menu$ = "Transparent Plate:Chivalry Emblem:Will of the Darkness:Scabara Horned Helmet:close";
 
         mes "[Curator Historica]";
         mes "Please select the which artifacts you are willing to sell.";
@@ -62,7 +106,7 @@
 
             switch(select(.@menu$)){
                 case 1:
-                    .@rqamount = 10;
+                    .@rqamount = 5;
                     .@submenu$ = "Transparent Plate(7352):Transparent Plate(7353):Transparent Plate(7354):Transparent Plate(7355)";
                     mes "[Curator Historica]";
                     mes "We will buy ^FF0000" + .@rqamount + "^000000 of them for 1 cashpoint.";
@@ -84,26 +128,34 @@
                     }
 
                 case 2:
-                    .@rqamount = 2;
+                    .@rqamount = 1;
                     mes "[Curator Historica]";
                     mes "We will buy ^FF0000" + .@rqamount + "^000000 of them for 1 cashpoint.";
                     next;
                     callsub S_GiveReward,1004,.@rqamount;
                     end;
                 case 3:
-                    .@rqamount = 100;
+                    .@rqamount = 30;
                     mes "[Curator Historica]";
                     mes "We will buy ^FF0000" + .@rqamount + "^000000 of them for 1 cashpoint.";
                     next;
                     callsub S_GiveReward,7340,.@rqamount;
                     end;
                 case 4:
-                    .@rqamount = 100;
+                    .@rqamount = 30;
+                    .@submenu2$ = "Twin Horned Helmet:Single Horned Helmet";
                     mes "[Curator Historica]";
                     mes "We will buy ^FF0000" + .@rqamount + "^000000 of them for 1 cashpoint.";
+                    mes "Please select which Scabara horn you wish to sell.";
                     next;
-                    callsub S_GiveReward,6324,.@rqamount;
-                    end;
+                    switch(select(.@submenu2$)){
+                        case 1:
+                            callsub S_GiveReward,6323,.@rqamount;
+                            end;
+                        case 2:
+                            callsub S_GiveReward,6324,.@rqamount;
+                            end;
+                    }
                 case 5:
                     mes "[Curator Historica]";
                     mes "See you next time.";
@@ -147,9 +199,16 @@
         close;
         end;
     
+    OnInit:
+        .maxL = 150;
+        .minL = 90;
+        .@quest_c1$ = "checkquest(60001) == -1 && BaseLevel >= " + .minL + " && BaseLevel <= " + .maxL;
+        questinfo QTYPE_QUEST, QMARK_NONE, .@quest_c1$;
+        end;
 
 }
 
-moc_para01,33,34,5	duplicate(curator_historica_lv150max)	Curator Historica#eden	57
+
+//moc_para01,33,34,5	duplicate(curator_historica_lv150max)	Curator Historica#eden	57
 
 
