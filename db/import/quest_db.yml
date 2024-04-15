@@ -50,11 +50,11 @@ Header:
   Version: 3
 
 Body:
-  - Id: 60001
-    Title: Curator Historica Quest
+  - Id: 100001
+    Title: Curator Historica 1hTimer
     TimeLimit: +1h
-  - Id: 60002
-    Title: Curator Historica Hunting1
+  - Id: 100002
+    Title: Curator Historica Hunting
     Targets:
       - Mob: HORN_SCARABA
         Count: 200
