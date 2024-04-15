@@ -1,14 +1,27 @@
+
+
+//===== rAthena Script =======================================
+//= Hell Door Open
+//===== Description: =========================================
+//= Buy items from player for exchange of cash point.
 //Transparent Plate 7352 7353 7354 7355 (research for  Juperos Ruins Center.)
 //Chivalry Emblem 1004 (find king and slayer demo in Glast Heim Chivalry )
 //Will of the Darkness  7340(Rachel Sanctuary)
 //Twin Horn Helm or Single Horned Helmet  6324(Kamidal Tunnel)
+//===== Changelogs: ==========================================
+//= 1.0 First version [jimkeecn]
+//============================================================
 
 -	script	curator_historica_lv150max	-1,{
     
+    
+    
+
     mes "[Curator Historica]";
     mes "Greetings, adventurer! I am known as Curator Historica, the gatherer of artifacts for global research.";
+    next;
     mes "I work with renowned research agencies around the world to push the boundaries of historical knowledge.";
-    mes "We offer ^#FF0000 cash points ^#000000 in exchange for high-value artifacts.";
+    mes "We offer ^FF0000 cash points ^000000 in exchange for high-value artifacts.";
     next;
 
     menu "Tell me about the artifacts.",L_Info,"I want to sell",L_Sell,"I am not interested",L_NotInterested;
@@ -16,17 +29,22 @@
     L_NotInterested:
         mes "I hope to see you again when you are ready to contribute to our research.";
         close;
+        end;
 
     L_Info:
         mes "[Curator Historica]";
-        mes "we are seeking the following artifacts from you.";
-        mes "^FF0000 Transparent Plate ^000000";
+        mes "we are seeking the following 4 artifacts from you.";
+        next;
+        mes "^FF0000Transparent Plate^000000";
         mes "Obtainable by defeating Dimik in center of Juperos Dungeon .";
-        mes "^FF0000 Chivalry Emblem ^000000";
+        next;
+        mes "^FF0000Chivalry Emblem^000000";
         mes "Obtainable by defeating mobs in Glast Heim Chivalry.";
-        mes "^FF0000 Will of the Darkness ^000000";
+        next;
+        mes "^FF0000Will of the Darkness^000000";
         mes "Obtainable by defeating mobs in Rachel Sanctuary.";
-        mes "^FF0000 Single Horned Helmet ^000000";
+        next;
+        mes "^FF0000Single Horned Helmet^000000";
         mes "Obtainable by defeating sacabaras in Scabara Hole.";
         close;
         end;
@@ -38,7 +56,9 @@
         }
         .@menu$ = "Transparent Plate:Chivalry Emblem:Will of the Darkness:Single Horned Helmet:close";
 
-        mes "[etc redeem]";
+        mes "[Curator Historica]";
+        mes "Please select the which artifacts you are willing to sell.";
+        next;
 
             switch(select(.@menu$)){
                 case 1:
@@ -85,25 +105,36 @@
                     callsub S_GiveReward,6324,.@rqamount;
                     end;
                 case 5:
+                    mes "[Curator Historica]";
                     mes "See you next time.";
                     close;
+                    end;
             }
+        end;
 
     S_GiveReward:
-        @id = getarg(0);          // Item ID
+        .@id = getarg(0);          // Item ID
         .@rqamount = getarg(1);    // Required amount of the item for one cash point
         .@amount = countitem(.@id); // Amount of the item the player has
 
+        
         if (.@amount < .@rqamount) {
             mes "[Curator Historica]";
             mes "You don't have enough of the required item to claim the reward.";
             close;
         }
 
+
         // Calculate how many cash points the player can get
         .@cashpoints = .@amount / .@rqamount; // Integer division to get full cash points
         .@removable_amount = .@cashpoints * .@rqamount; // Calculate total artifacts to be removed
 
+        .@confirm = select("Do you wish to sell " + .@removable_amount + " of " + getitemname(.@id) + ":Sorry, I Change my mind.");
+
+        if(.@confirm > 1){
+            mes "I hope to see you again when you are ready to contribute to our research.";
+            close;
+        }
         // Remove the calculated amount of item from player
         delitem .@id, .@removable_amount;
 
@@ -112,13 +143,13 @@
 
         // Inform the player of the transaction
         mes "[Curator Historica]";
-        mes "You have exchanged " + .@removable_amount + " of item ID " + .@id + " for " + .@cashpoints + " cash points.";
+        mes "You have exchanged " + .@removable_amount + " of " + getitemname(.@id) + " for " + .@cashpoints + " cash points.";
         close;
         end;
     
 
 }
 
-moc_para01,33,34,6	duplicate(curator_historica_lv150max)	#eden	481
+moc_para01,33,34,5	duplicate(curator_historica_lv150max)	Curator Historica#eden	57
 
 
