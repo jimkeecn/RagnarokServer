@@ -107,6 +107,9 @@ Body:
         - Index: 8
           Item: Bloody_Iron_Ball_
           Rate: 1
+        - Index: 9
+          Item: StormStone
+          Rate: 2
   - Group: RuneKnight_Accessories_C_Box 
     SubGroups:
       - SubGroup: 1

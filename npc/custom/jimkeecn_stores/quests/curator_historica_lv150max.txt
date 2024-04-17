@@ -15,7 +15,8 @@
 //============================================================
 
 moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
-   
+    
+    cutin "verus_aures",2;
     mes "[Curator Historica]";
     mes "Greetings, adventurer! I am known as Curator Historica, the gatherer of artifacts for global research.";
     next;
@@ -23,8 +24,8 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
     mes "We offer^FF0000 cash points ^000000in exchange for high-value artifacts.";
     next;
 
-
-    menu "About those artifacts.",L_Info,"Tell me about the hunting quest.",L_Hunting,"I am not interested",L_NotInterested;
+    cutin "", 255;
+    menu "About those artifacts.",L_Info,"I want to trade my artifacts.", L_Sell,"Tell me about the hunting quest.",L_Hunting,"I am not interested",L_NotInterested;
 
     
     L_NotInterested:
@@ -39,7 +40,7 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
         mes "we are seeking the following 3 artifacts from you.";
         next;
         while(.@loop == 0){
-            switch(select("Transparent Plate:Will of the Darkness:Horned Helmet:I want to trade:Leave.")){
+            switch(select("Transparent Plate:Will of the Darkness:Horned Helmet:Leave.")){
                 case 1:
                     mes "^FF0000Transparent Plate^000000";
                     mes "There are four types of Transparent Plates, each made from different crystalline materials found deep within Juperos Ruins.";
@@ -65,11 +66,9 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
                     set .@loop,1;
 					break;
                 case 4:
-                    callsub L_Sell;
-                    end;
-                case 5:
                     close;
                     end;
+                   
             }
         }
     }
@@ -118,11 +117,12 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
                     mes "We no longer require your service, we have gained massive progress on our research.";
                     close;
                 }
-                setquest 100002;
+                
                 mes "[Curator Historica]";
                 mes "Thanks for accepting the challenge since the area are dangerous even for experience adventure like you.";
                 mes "You can check out the area that list in my artifacts list.";
                 mes "Wish you best luck";
+                setquest 100002;
                 close;
                 end;
 
@@ -147,7 +147,7 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
         close2;
         erasequest 100002;
 		setquest 100001;
-        #cash += 400;
+        #CASHPOINTS += 400;
         end;     
 
     L_Hunting_Sleep:

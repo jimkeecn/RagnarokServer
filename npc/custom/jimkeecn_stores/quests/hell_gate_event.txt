@@ -83,7 +83,7 @@
 
         $numberOfMobkilled++;
 
-        monster $hgmap$[$rm],0,0,"Hell Gate Soldier", 1, "HellGate_Manager::OnMobKilled";
+        monster $hgmap$[$rm],0,0,"Hell Gate Soldier", $hgmob[$rm],1, "HellGate_Manager::OnMobKilled";
 
 
         if($numberOfMobkilled < ($totalNumber / 5)){
