@@ -374,14 +374,8 @@ Body:
         - Index: 3
           Item: Eyes_Of_Illusion_
           Rate: 1
-        - Index: 4
-          Item: Victory_Wing_Ear
-          Rate: 1
         - Index: 5
           Item: Victory_Wing_Ear_
-          Rate: 1
-        - Index: 6
-          Item: Victory_Ear_JP
           Rate: 1
         - Index: 7
           Item: Victory_Ear_JP_
@@ -395,23 +389,14 @@ Body:
         - Index: 10
           Item: Einherial_Mantle
           Rate: 1
-        - Index: 11
-          Item: Sacred_Lapel
-          Rate: 1
         - Index: 12
           Item: Comp_Crow_Tengu_Mask
-          Rate: 1
-        - Index: 13
-          Item: aegis_400488
           Rate: 1
         - Index: 14
           Item: Cons_Of_Earth_J
           Rate: 1
         - Index: 15
           Item: ScarfOfHero_J
-          Rate: 1
-        - Index: 16
-          Item: CD_In_MouthK
           Rate: 1
   - Group: RuneKnight_Shield_A_Box
     SubGroups:
