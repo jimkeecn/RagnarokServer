@@ -669,6 +669,9 @@ Body:
         - Index: 8
           Item: Bradium_Earing
           Rate: 5
+        - Index: 9
+          Item: RingOfAdoramus
+          Rate: 1
   - Group: ArchBishop_Armor_A_Box
     SubGroups:
       - SubGroup: 1
@@ -857,6 +860,12 @@ Body:
           Rate: 3
         - Index: 16
           Item: Mob_Scarf
+          Rate: 1
+        - Index: 17
+          Item: FortunetellinSealed
+          Rate: 1
+        - Index: 18
+          Item: Floating_Ball
           Rate: 1
   - Group: ArchBishop_Shield_A_Box
     SubGroups:
