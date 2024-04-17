@@ -1767,7 +1767,7 @@ Body:
     AttackDelay: 1072
     AttackMotion: 672
     DamageMotion: 384
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -1826,7 +1826,7 @@ Body:
     AttackDelay: 768
     AttackMotion: 768
     DamageMotion: 576
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -2146,7 +2146,7 @@ Body:
     AttackDelay: 480
     AttackMotion: 480
     DamageMotion: 288
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -2764,7 +2764,7 @@ Body:
     AttackDelay: 1148
     AttackMotion: 648
     DamageMotion: 300
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -3983,7 +3983,7 @@ Body:
     AttackDelay: 768
     AttackMotion: 768
     DamageMotion: 480
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 07
     Class: Boss
     Modes:
@@ -4042,7 +4042,7 @@ Body:
     AttackDelay: 1678
     AttackMotion: 780
     DamageMotion: 648
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -5246,7 +5246,7 @@ Body:
     AttackDelay: 620
     AttackMotion: 420
     DamageMotion: 360
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -5393,7 +5393,7 @@ Body:
     AttackDelay: 872
     AttackMotion: 1344
     DamageMotion: 432
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -6929,7 +6929,7 @@ Body:
     AttackDelay: 864
     AttackMotion: 1000
     DamageMotion: 480
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -7084,7 +7084,7 @@ Body:
     AttackDelay: 1276
     AttackMotion: 576
     DamageMotion: 288
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -7420,7 +7420,7 @@ Body:
     AttackDelay: 868
     AttackMotion: 768
     DamageMotion: 288
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -7526,7 +7526,7 @@ Body:
     AttackDelay: 1020
     AttackMotion: 1020
     DamageMotion: 288
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -8878,7 +8878,7 @@ Body:
     AttackDelay: 1248
     AttackMotion: 500
     DamageMotion: 360
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -11626,7 +11626,7 @@ Body:
     AttackDelay: 468
     AttackMotion: 468
     DamageMotion: 288
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -11686,7 +11686,7 @@ Body:
     AttackDelay: 608
     AttackMotion: 408
     DamageMotion: 336
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -12642,7 +12642,7 @@ Body:
     AttackDelay: 868
     AttackMotion: 768
     DamageMotion: 480
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -14511,7 +14511,7 @@ Body:
     AttackDelay: 900
     AttackMotion: 1000
     DamageMotion: 500
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -16693,7 +16693,7 @@ Body:
     AttackDelay: 1446
     AttackMotion: 1296
     DamageMotion: 360
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -17434,7 +17434,7 @@ Body:
     AttackDelay: 1290
     AttackMotion: 1140
     DamageMotion: 576
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -18637,7 +18637,7 @@ Body:
     AttackDelay: 588
     AttackMotion: 816
     DamageMotion: 420
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -20712,7 +20712,7 @@ Body:
     AttackDelay: 874
     AttackMotion: 1344
     DamageMotion: 576
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -21548,7 +21548,7 @@ Body:
     AttackDelay: 854
     AttackMotion: 2016
     DamageMotion: 480
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 10
     Class: Boss
     Modes:
@@ -23734,7 +23734,7 @@ Body:
     AttackDelay: 1020
     AttackMotion: 288
     DamageMotion: 144
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -25196,7 +25196,7 @@ Body:
     AttackDelay: 128
     AttackMotion: 1104
     DamageMotion: 240
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -25474,7 +25474,7 @@ Body:
     AttackDelay: 576
     AttackMotion: 960
     DamageMotion: 480
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -27944,7 +27944,7 @@ Body:
     AttackDelay: 504
     AttackMotion: 912
     DamageMotion: 432
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -28099,7 +28099,7 @@ Body:
     AttackDelay: 576
     AttackMotion: 432
     DamageMotion: 360
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 10
     Class: Boss
     Modes:
@@ -29004,7 +29004,7 @@ Body:
     AttackDelay: 115
     AttackMotion: 816
     DamageMotion: 504
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -29482,7 +29482,7 @@ Body:
     AttackDelay: 432
     AttackMotion: 936
     DamageMotion: 360
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -29957,7 +29957,7 @@ Body:
     AttackDelay: 1152
     AttackMotion: 576
     DamageMotion: 432
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -30558,7 +30558,7 @@ Body:
     AttackDelay: 576
     AttackMotion: 576
     DamageMotion: 480
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -31184,7 +31184,7 @@ Body:
     AttackDelay: 1344
     AttackMotion: 2880
     DamageMotion: 576
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -31723,7 +31723,7 @@ Body:
     AttackDelay: 432
     AttackMotion: 840
     DamageMotion: 216
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -32014,7 +32014,7 @@ Body:
     AttackDelay: 576
     AttackMotion: 600
     DamageMotion: 240
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -33659,7 +33659,7 @@ Body:
     AttackDelay: 212
     AttackMotion: 384
     DamageMotion: 360
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -35199,7 +35199,7 @@ Body:
     AttackDelay: 432
     AttackMotion: 432
     DamageMotion: 360
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -35314,7 +35314,7 @@ Body:
     AttackDelay: 212
     AttackMotion: 504
     DamageMotion: 432
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -35777,7 +35777,7 @@ Body:
     AttackDelay: 1536
     AttackMotion: 864
     DamageMotion: 432
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -36690,7 +36690,7 @@ Body:
     AttackDelay: 312
     AttackMotion: 624
     DamageMotion: 432
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -41510,7 +41510,7 @@ Body:
     AttackDelay: 868
     AttackMotion: 768
     DamageMotion: 480
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 01
     Class: Boss
     Modes:
@@ -42091,7 +42091,7 @@ Body:
     AttackDelay: 1152
     AttackMotion: 1152
     DamageMotion: 576
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -42891,7 +42891,7 @@ Body:
     AttackDelay: 864
     AttackMotion: 1000
     DamageMotion: 360
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -43936,7 +43936,7 @@ Body:
     AttackDelay: 432
     AttackMotion: 432
     DamageMotion: 360
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -45437,7 +45437,7 @@ Body:
     AttackDelay: 576
     AttackMotion: 576
     DamageMotion: 360
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -45812,7 +45812,7 @@ Body:
     AttackDelay: 864
     AttackMotion: 1000
     DamageMotion: 360
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -47406,7 +47406,7 @@ Body:
     AttackDelay: 432
     AttackMotion: 864
     DamageMotion: 360
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -48743,7 +48743,7 @@ Body:
     AttackDelay: 76
     AttackMotion: 864
     DamageMotion: 288
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -49381,7 +49381,7 @@ Body:
     AttackDelay: 576
     AttackMotion: 1380
     DamageMotion: 360
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -49485,7 +49485,7 @@ Body:
     AttackDelay: 1344
     AttackMotion: 2592
     DamageMotion: 432
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -49589,7 +49589,7 @@ Body:
     AttackDelay: 900
     AttackMotion: 792
     DamageMotion: 432
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -49694,7 +49694,7 @@ Body:
     AttackDelay: 900
     AttackMotion: 648
     DamageMotion: 480
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -53068,7 +53068,7 @@ Body:
     AttackDelay: 854
     AttackMotion: 2016
     DamageMotion: 480
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 10
     Class: Boss
     Modes:
@@ -53694,7 +53694,7 @@ Body:
     AttackDelay: 504
     AttackMotion: 624
     DamageMotion: 360
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
   - Id: 2379
     AegisName: XMAS_SMOKEY_SOCK
@@ -77776,7 +77776,7 @@ Body:
     AttackDelay: 100
     AttackMotion: 576
     DamageMotion: 480
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -85106,7 +85106,7 @@ Body:
     AttackDelay: 872
     AttackMotion: 1344
     DamageMotion: 432
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -85165,7 +85165,7 @@ Body:
     AttackDelay: 1072
     AttackMotion: 672
     DamageMotion: 384
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -85224,7 +85224,7 @@ Body:
     AttackDelay: 1020
     AttackMotion: 1020
     DamageMotion: 288
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -85285,7 +85285,7 @@ Body:
     AttackDelay: 1678
     AttackMotion: 780
     DamageMotion: 648
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -85344,7 +85344,7 @@ Body:
     AttackDelay: 1020
     AttackMotion: 288
     DamageMotion: 144
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -88319,7 +88319,7 @@ Body:
     AttackDelay: 432
     AttackMotion: 840
     DamageMotion: 216
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     MvpDrops:
@@ -89159,7 +89159,7 @@ Body:
     AttackDelay: 772
     AttackMotion: 672
     DamageMotion: 360
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -91014,7 +91014,7 @@ Body:
     AttackDelay: 900
     AttackMotion: 1000
     DamageMotion: 500
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 04
     Class: Boss
     Modes:
@@ -96371,7 +96371,7 @@ Body:
     AttackDelay: 1020
     AttackMotion: 144
     DamageMotion: 288
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -96518,7 +96518,7 @@ Body:
     AttackDelay: 608
     AttackMotion: 408
     DamageMotion: 336
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -96618,7 +96618,7 @@ Body:
     AttackDelay: 1020
     AttackMotion: 500
     DamageMotion: 768
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     MvpDrops:
       - Item: Old_Card_Album
@@ -96670,7 +96670,7 @@ Body:
     AttackDelay: 868
     AttackMotion: 768
     DamageMotion: 480
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     MvpDrops:
       - Item: Blue_Coif_
@@ -97616,10 +97616,10 @@ Body:
 #    AegisName: PLASMA_SPT
 #  - Id: 20610
 #    AegisName: REGINLEIF
-#    DamageTaken: 10
+#    DamageTaken: 90
 #  - Id: 20611
 #    AegisName: INGRID
-#    DamageTaken: 10
+#    DamageTaken: 90
 #  - Id: 20612
 #    AegisName: FERUS_P
 #  - Id: 20613
@@ -98957,7 +98957,7 @@ Body:
     AttackDelay: 768
     AttackMotion: 768
     DamageMotion: 480
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Modes:
       Mvp: true
@@ -102600,7 +102600,7 @@ Body:
     AttackDelay: 1440
     AttackMotion: 2880
     DamageMotion: 576
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -103038,7 +103038,7 @@ Body:
     AttackDelay: 672
     AttackMotion: 1344
     DamageMotion: 768
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
@@ -103475,7 +103475,7 @@ Body:
     AttackDelay: 517
     AttackMotion: 1134
     DamageMotion: 480
-    DamageTaken: 10
+    DamageTaken: 90
     Ai: 21
     Class: Boss
     Modes:
