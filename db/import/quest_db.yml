@@ -57,11 +57,11 @@ Body:
     Title: Curator Historica Hunting
     Targets:
       - Mob: HORN_SCARABA
-        Count: 200
+        Count: 80
       - Mob: DIMIK_1
-        Count: 200
+        Count: 80
       - Mob: AGAV
-        Count: 200
+        Count: 80
 
 
       

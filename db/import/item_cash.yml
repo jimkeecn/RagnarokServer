@@ -79,12 +79,42 @@ Body:
             Price: 15
           - Item: SEALED_TURTLEG_SCROLL
             Price: 15
-          - Item: 2018_YEAR_SHADOW_CUBE
+          - Item: ALL_SHADOW_CUBE
+            Price: 5
+          - Item: S_ENCHANT_STONE_BOX
             Price: 15
           - Item: COSTAMA_EGG21
             Price: 20
           - Item: SCROLL_OF_DARKNESS
             Price: 20
+          - Item: Stone_Robe_Box
+            Price: 100
+          - Item: Stone_Robe2_Box
+            Price: 100
+          - Item: Stone_Top_Box
+            Price: 100
+          - Item: Stone_Top2_Box
+            Price: 100
+          - Item: Stone_Middle_Box
+            Price: 100
+          - Item: Stone_Middle2_Box
+            Price: 100
+          - Item: Stone_Bottom_Box
+            Price: 100
+          - Item: Stone_Bottom2_Box
+            Price: 100
+          - Item: CLASS_SHADOW_WP_CUBE
+            Price: 100
+          - Item: CLASS_SHADOW_AM_CUBE
+            Price: 100
+          - Item: CLASS_SHADOW_SU_CUBE
+            Price: 100
+          - Item: CLASS_SHADOW_SD_CUBE
+            Price: 100
+          - Item: CLASS_SHADOW_PD_CUBE
+            Price: 100
+          - Item: CLASS_SHADOW_EA_CUBE
+            Price: 100
     - Tab: Rental
       Items:
           - Item: Boarding_Halter_Box7

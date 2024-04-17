@@ -90,6 +90,12 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
             callsub L_Hunting_Sleep;
             end;
         }
+
+        if(.@sleep_quest_status == 2){
+            erasequest 100001;
+        }
+
+        
         mes "[Curator Historica]";
         mes "In our pursuit to expand the annals of Midgard's history, we've stumbled upon an intriguing research opportunity.";
         mes "Recent research suggests that the behaviors of certain species across the continent mirror historical cycles significant to Midgard's past. ";
