@@ -42,7 +42,7 @@
         1484, 1471, 1497, 21053, 600016, 13413, 1185, 21018, 1191, 21004, 600028, 28430, 28564, 15169, 15072, 15074, 2374,
         2349, 2347, 2345, 15087, 18862, 15103, 22225, 22189, 22170, 20797, 2371, 20962, 19426, 19469, 5968, 18580, 18972,
         18791, 5457, 5564, 18600, 5211, 5372, 5568, 5593, 5401, 5574, 5362, 18917, 28502, 2162, 1631, 16013, 16018, 2017,
-        1657, 1660, 1641, 26107, 1666, 1625, 1659, 1647;
+        1657, 1660, 1641, 26107, 1666, 1625, 1659, 1647,2137,2722,28632,2743,2788;
 
       // Convert the IDs string into an array
     explode(.@ids$, .@gear_ids$, ","); //I have changed here from .@ids to .@ids$ because .something$ means string array.'$'- string variable, can store text
@@ -51,7 +51,7 @@
     next;
     .@s = select(.@gear_menu$) - 1; //select count - 1 is easier you dont have to write -1 everywhere.
     .@found = inarray(.item_ids, atoi(.@ids$[.@s]));
-
+    
     if(.@found != -1 && countitem(atoi(.@ids$[.@s])) > 0) {
         mes "Are you sure you want to melt ^FF0000" + getitemname(atoi(.@ids$[.@s]));
         next;

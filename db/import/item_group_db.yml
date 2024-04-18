@@ -744,12 +744,15 @@ Body:
         List:
         - Index: 0
           Item: Etran_Shirt
-          Rate: 1
+          Rate: 2
         - Index: 1
           Item: Skin_Of_Typhon
-          Rate: 1
+          Rate: 2
         - Index: 2
           Item: G_Strings_
+          Rate: 2
+        - Index: 3
+          Item: Fairy_Of_Eden
           Rate: 1
   - Group: ArchBishop_Headgear_A_Box
     SubGroups:
@@ -852,6 +855,9 @@ Body:
         - Index: 18
           Item: Floating_Ball
           Rate: 1
+        - Index: 19
+          Item: Garden_Of_Eden
+          Rate: 1
   - Group: ArchBishop_Shield_A_Box
     SubGroups:
       - SubGroup: 1
@@ -874,6 +880,9 @@ Body:
         - Index: 5
           Item: Evt_D_H_Bible_K
           Rate: 3
+        - Index: 6
+          Item: aegis_460050
+          Rate: 1
   - Group: ArchBishop_Weapon_A_Box
     SubGroups:
       - SubGroup: 1
