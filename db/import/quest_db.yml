@@ -62,6 +62,38 @@ Body:
         Count: 80
       - Mob: AGAV
         Count: 80
+  - Id: 100003
+    Title: Curator Historica 1hTimer
+    TimeLimit: +1h
+  - Id: 100004
+    Title: Curator Historica Hunting
+    Targets:
+      - Mob: I_ANTLER_SCARABA
+        Count: 80
+      - Mob: I_HORN_SCARABA2
+        Count: 80
+      - Mob: I_HORN_SCARABA
+        Count: 80
+  - Id: 100005
+    Title: Curator Historica 1hTimer
+    TimeLimit: +1h
+  - Id: 100006
+    Title: Curator Historica Hunting
+    Targets:
+      - Mob: DR_BASILISK2
+        Count: 120
+      - Mob: DR_MANDRAGORA
+        Count: 120
+  - Id: 100007
+    Title: Curator Historica 1hTimer
+    TimeLimit: +1h
+  - Id: 100008
+    Title: Curator Historica Hunting
+    Targets:
+      - Mob: CENERE
+        Count: 120
+      - Mob: ANTIQUE_BOOK
+        Count: 120
 
 
       

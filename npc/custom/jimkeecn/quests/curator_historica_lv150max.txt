@@ -15,7 +15,8 @@
 //============================================================
 
 moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
-    
+
+
     cutin "verus_aures",2;
     mes "[Curator Historica]";
     mes "Greetings, adventurer! I am known as Curator Historica, the gatherer of artifacts for global research.";
@@ -76,24 +77,27 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
         
     L_Hunting:
 
-        .@quest_status = checkquest(100002,Hunting);
-        if (.@quest_status == 0 || .@quest_status == 1){
-            callsub L_Hunting_Inc;
-            end;
-        } else if(.@quest_status == 2){
-            callsub L_Hunting_C;
-            end;
+        for( .@i = 0; .@i <= getarraysize(.questArray); .@i++ ){
+             .@quest_status = checkquest(.questArray[.@i],Hunting);
+            if (.@quest_status == 0 || .@quest_status == 1){
+                callsub L_Hunting_Inc,.questArray[.@i];
+                end;
+            } else if(.@quest_status == 2){
+                callsub L_Hunting_C,.questArray[.@i];
+                end;
+            }
         }
 
-        .@sleep_quest_status = checkquest(100001,PLAYTIME);
-        if (.@sleep_quest_status == 0 || .@sleep_quest_status == 1){
-            callsub L_Hunting_Sleep;
-            end;
+        for( .@i = 0; .@i <= getarraysize(.questArray); .@i++ ){
+             .@sleep_quest_status = checkquest(.questArray[.@i],PLAYTIME);
+            if (.@sleep_quest_status == 0 || .@quest_status == 1){
+                callsub L_Hunting_Sleep;
+                end;
+            } else if(.@sleep_quest_status == 2){
+                erasequest .questArray[.@i] - 1;
+            }
         }
-
-        if(.@sleep_quest_status == 2){
-            erasequest 100001;
-        }
+       
 
         
         mes "[Curator Historica]";
@@ -102,9 +106,6 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
         mes "These patterns could reveal insights into historical events that shaped our world";
         next;
         mes "You are tasked to engage with these creatures to gather critical data for our studies.";
-        mes "The creatures in question are:";
-        mes "^FF0000Scaraba, Dimik, Agav^000000.";
-        next;
         mes "We'll reward you greatly for your efforts and the risks involved.";
         mes "Do you want to accept this quest?";
         next;
@@ -128,7 +129,7 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
                 mes "Thanks for accepting the challenge since the area are dangerous even for experience adventure like you.";
                 mes "You can check out the area that list in my artifacts list.";
                 mes "Wish you best luck";
-                setquest 100002;
+                setquest $curatorCurrentQuest;
                 close;
                 end;
 
@@ -151,8 +152,8 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
 		mes "Good work~!!";
 		mes "Our researchers are so happy with your work. they will appreciate what you have done.";
         close2;
-        erasequest 100002;
-		setquest 100001;
+        erasequest getarg(0);
+		setquest getarg(0) - 1;
         #CASHPOINTS += 400;
         end;     
 
@@ -193,16 +194,16 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
                     next;
                     switch(select(.@submenu$)){
                         case 1:
-                            callsub S_GiveReward,7352,.@rqamount;
+                            callsub S_ExchangeReward,7352,.@rqamount;
                             end;
                         case 2:
-                            callsub S_GiveReward,7353,.@rqamount;
+                            callsub S_ExchangeReward,7353,.@rqamount;
                             end;
                         case 3:
-                            callsub S_GiveReward,7354,.@rqamount;
+                            callsub S_ExchangeReward,7354,.@rqamount;
                             end;
                         case 4:
-                            callsub S_GiveReward,7355,.@rqamount;
+                            callsub S_ExchangeReward,7355,.@rqamount;
                             end;
                     }
 
@@ -211,7 +212,7 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
                     mes "[Curator Historica]";
                     mes "We will buy ^FF0000" + .@rqamount + "^000000 of them for 1 cashpoint.";
                     next;
-                    callsub S_GiveReward,7340,.@rqamount;
+                    callsub S_ExchangeReward,7340,.@rqamount;
                     end;
                 case 3:
                     .@rqamount = 30;
@@ -222,10 +223,10 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
                     next;
                     switch(select(.@submenu2$)){
                         case 1:
-                            callsub S_GiveReward,6323,.@rqamount;
+                            callsub S_ExchangeReward,6323,.@rqamount;
                             end;
                         case 2:
-                            callsub S_GiveReward,6324,.@rqamount;
+                            callsub S_ExchangeReward,6324,.@rqamount;
                             end;
                     }
                 case 4:
@@ -236,7 +237,7 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
             }
         end;
 
-    S_GiveReward:
+    S_ExchangeReward:
         .@id = getarg(0);          // Item ID
         .@rqamount = getarg(1);    // Required amount of the item for one cash point
         .@amount = countitem(.@id); // Amount of the item the player has
@@ -274,8 +275,16 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
     OnInit:
         .maxL = 150;
         .minL = 90;
-        .@quest_c1$ = "checkquest(100002) == -1 && BaseLevel >= " + .minL + " && BaseLevel <= " + .maxL;
+        setarray .questArray[0],100002,100004,100006,100008;
+        $curatorCurrentQuest = .questArray[rand(0,3)];
+        .@quest_c1$ = "checkquest(100002) == -1 && checkquest(100004) == -1 && checkquest(100006) == -1 && checkquest(100008) == -1 && BaseLevel >= " + .minL + " && BaseLevel <= " + .maxL;     
         questinfo QTYPE_QUEST, QMARK_NONE, .@quest_c1$;
+        initnpctimer;
+        end;
+
+    OnTimer6000000:
+        $curatorCurrentQuest = .questArray[rand(0,3)];
+        initnpctimer;
         end;
 
 }
