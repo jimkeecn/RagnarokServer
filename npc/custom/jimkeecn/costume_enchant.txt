@@ -3,7 +3,7 @@
 moc_para01,179,23,2	script	Bright Luhir#new10	VALKYRIE_N,{
 	disable_items;
 	mes "[Bright Luhir]";
-	mes "Hello~ I am the brother of Dark Luhir. I am giving away extra stats to your Headgear Costumes.";
+	mes "Hello~ I am the brother of Dark Luhir. I am giving away extra stats to your Headgear Costumes on ^FF0000first slot^000000.";
     mes "Due to my power, I cannot give you strong power as Dark Luhir provides.";
 	mes "Please select one costume for enchantment.";
 	next;
@@ -134,7 +134,7 @@ moc_para01,179,23,2	script	Bright Luhir#new10	VALKYRIE_N,{
 
             specialeffect2 EF_REPAIRWEAPON;
             delequip atoi(.@slot_id$[.@s]);
-            getitem2 atoi(.@costume_id$[.@s]),1,1, 0,0, .@enchants[rand(2)],0,0,0;
+            getitem2 atoi(.@costume_id$[.@s]),1,1, 0,0, .@enchants[rand(2)],.@card[1],.@card[2],.@card[3];
             close;
         case 2:
             mes "[Bright Luhir]";
@@ -155,7 +155,7 @@ moc_para01,179,23,2	script	Bright Luhir#new10	VALKYRIE_N,{
 			    mes "Reseting item stats.";
 			    delequip atoi(.@slot_id$[.@s]);
 			    Zeny -= 1000000;
-			    getitem2 atoi(.@costume_id$[.@s]),1,1, 0,0, 0,0,0,0;
+			    getitem2 atoi(.@costume_id$[.@s]),1,1, 0,0, 0,.@card[1],.@card[2],.@card[3];
                 close;
 		    }
         case 3:

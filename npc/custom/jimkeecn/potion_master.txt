@@ -1,0 +1,60 @@
+-	script	Potion_Master	-1,{
+    mes "[Potion Master]";
+    mes "Welcome! Which potion would you like me to craft for you?";
+    next;
+    switch(select("Condensed White Potion:Light Blue Potion")) {
+        case 1:
+            .@potion_id = 547; // Condensed White Potion
+            .@herb_id = 509;   // White Herb
+            .@potion_name$ = "Condensed White Potion";
+            break;
+        case 2:
+            .@potion_id = 11502; // Light Blue Potion
+            .@herb_id = 510;     // Blue Herb
+            .@potion_name$ = "Light Blue Potion";
+            break;
+    }
+
+    mes "How many " + .@potion_name$ + " do you want to craft?";
+    input .@amount;
+    next;
+
+    if (.@amount <= 0) {
+        mes "Please enter a valid number.";
+        close;
+    }
+
+    .@total_cost = .@amount * 5000; // 5000 zeny per potion attempt
+    if (Zeny < .@total_cost) {
+        mes "You need " + .@total_cost + " zeny to make " + .@amount + " " + .@potion_name$ + ".";
+        close;
+    }
+
+    if (countitem(.@herb_id) < .@amount) {
+        mes "You need at least " + .@amount + " " + getitemname(.@herb_id) + " to craft " + .@amount + " " + .@potion_name$ + ".";
+        close;
+    }
+
+    .@success_count = 0;
+    for (.@i = 0; .@i < .@amount; .@i++) {
+        if (rand(100) < 80) { // 80% success rate
+            getitem .@potion_id, 1;
+            .@success_count++;
+        }
+    }
+
+    // Subtract the cost and used herbs
+    delitem .@herb_id, .@amount; // Herbs are consumed regardless of success
+    Zeny -= .@total_cost;        // Charge the zeny cost
+
+    if (.@success_count > 0) {
+        mes "Successfully crafted " + .@success_count + " " + .@potion_name$ + ".";
+    } else {
+        mes "Failed to craft any " + .@potion_name$ + ".";
+    }
+    
+    mes "Thank you for using my services.";
+    close;
+}
+
+moc_para01,169,33,4	duplicate(Potion_Master)	Potion Master#eden	4_M_ALCHE_B

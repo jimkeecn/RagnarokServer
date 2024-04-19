@@ -12,6 +12,7 @@
 //= 1.0 First version [jimkeecn]
 //= 1.1 Add Quest icon, Add More background, Add Level Checking [jimkeecn]
 //= 2.0 Add Curator Historica Hunting Quest, reformat the dialog. [jimkeecn]
+//= 3.0 Add More quest to the chain. random change the quest per hour[jimkeecn]
 //============================================================
 
 moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
@@ -77,7 +78,7 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
         
     L_Hunting:
 
-        for( .@i = 0; .@i <= getarraysize(.questArray); .@i++ ){
+        for( .@i = 0; .@i < getarraysize(.questArray); .@i++ ){
              .@quest_status = checkquest(.questArray[.@i],Hunting);
             if (.@quest_status == 0 || .@quest_status == 1){
                 callsub L_Hunting_Inc,.questArray[.@i];
@@ -88,8 +89,8 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
             }
         }
 
-        for( .@i = 0; .@i <= getarraysize(.questArray); .@i++ ){
-             .@sleep_quest_status = checkquest(.questArray[.@i],PLAYTIME);
+        for( .@i = 0; .@i < getarraysize(.questArray); .@i++ ){
+             .@sleep_quest_status = checkquest(.questArray[.@i] - 1,PLAYTIME);
             if (.@sleep_quest_status == 0 || .@quest_status == 1){
                 callsub L_Hunting_Sleep;
                 end;

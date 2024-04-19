@@ -1,0 +1,110 @@
+moc_para01,33,34,7	script	HD Refiner#eden	2_M_SAGE_OLD,{
+    mes "[HD Refiner]";
+    mes "Welcome,  I am the power of HD refiner. I can help you to refine your armor or weapon to a certain level.";
+    mes "I will charge 20k for each refinement that we done.";
+    mes "Its not a qurantee to make certain level base on pobability of refining";
+    next;
+    mes "make sure you wear your gear on you to proceed.";
+    mes "Which gear you wanna refine?";
+    next;
+
+
+    // Retrieve the player's inventory list
+    getinventorylist;
+    // Initialize a string to store shadow gear names for the menu
+    .@gear_menu$ = "";
+    // Initialize an array to store shadow gear IDs
+    .@gear_ids$ = "";
+    // Initialize an array to store shadow gear IDs
+    .@gear_idx$ = "";
+    freeloop(1);
+    // Loop through the inventory to find  gears that are worn
+    for (.@i = 0; .@i < @inventorylist_count; .@i++) {
+        if (@inventorylist_equip[.@i] == EQP_HAND_L || @inventorylist_equip[.@i] == EQP_HAND_R ||  @inventorylist_equip[.@i] == EQP_HEAD_TOP
+        ||  @inventorylist_equip[.@i] == EQP_ARMOR ||  @inventorylist_equip[.@i] == EQP_SHOES || @inventorylist_equip[.@i] == EQP_GARMENT) {
+            // Append the item name to the menu string and the item ID to the IDs string
+            .@gear_menu$  += getitemname(@inventorylist_id[.@i]) + ":"; 
+            .@gear_idx$ += @inventorylist_idx[.@i] + ","; 
+        }
+    }
+    freeloop(0);
+
+     if (.@gear_menu$ == "") {
+        mes "You don't have any gears on you.";
+        close;
+    }
+
+    // Convert the ID index string into an array
+    explode(.@idx$, .@gear_idx$, ","); 
+    //Check refinement rate on the item;
+    .@index = atoi(.@idx$[.@s]);
+    .@gearid = @inventorylist_id[.@index];
+    .@refine = @inventorylist_refine[.@index];
+    setarray .@cards[0],
+			@inventorylist_card1[.@index],
+			@inventorylist_card2[.@index],
+			@inventorylist_card3[.@index],
+			@inventorylist_card4[.@index];
+
+    .@s = select(.@gear_menu$) - 1; //select count - 1 is easier you dont have to write -1 everywhere.
+
+    mes "Are you sure you want to refine ^FF0000 +" +  .@refine + " " + getitemname(.@gearid);
+    next;
+
+    if (select("Yes:No") == 2) {
+            mes "Maybe next time.";
+            close;
+    }
+
+    mes "Please make sure you have all your material ready.";
+    mes "Please input provide the level of refinement. less than ^FF000014^000000";
+    next;
+
+    input .@level;
+
+    if(@inventorylist_equip[.@index] == EQP_HAND_L || @inventorylist_equip[.@index] == EQP_HEAD_TOP || @inventorylist_equip[.@index] == EQP_ARMOR || 
+    @inventorylist_equip[.@index] == EQP_SHOES || @inventorylist_equip[.@index] == EQP_GARMENT ){
+        .@type = 0; //0 = armor , 1 = weapon
+    }else{
+        .@type = 1;
+    }
+
+    if(.@level < .@refine){
+        mes "You cannot downgrade your refine level";
+        end;
+    }
+
+    while(.@refine < .@level){
+        .@ore = callfunc("getOre",.@refine,.@type);
+
+        if(.@refine == 4){
+            .@chance = 60;
+        } else if(.@refine == 5 || .@refine == 6){
+            .@chance = 40;
+        } else if(.@refine == 7 || .@refine == 8){
+            .@chance = 20;
+        } else if(.@refine == 9){
+            .@chance = 9;
+        }
+    }
+
+
+
+    function    getOre  {
+        if(getarg(0) < 10){
+            if(getarg(1) == 0){ //armor
+                return 6241; //HD Elunium
+            }else{
+                return 6225; //HD Carnium
+            }
+        }else{
+            if(getarg(1) == 0){ //weapon
+                return 6240; //HD Oridecon
+            }else{
+                return 6226; //HD Bradium
+            }
+        }
+    }
+
+
+}
