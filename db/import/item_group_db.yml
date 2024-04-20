@@ -381,7 +381,7 @@ Body:
           Item: Victory_Ear_JP_
           Rate: 1
         - Index: 8
-          Item: Demons_Familiar
+          Item: Demons_Familiar_
           Rate: 1
         - Index: 9
           Item: Guardian_Claus
@@ -519,7 +519,7 @@ Body:
           Item: E_Illusion_Leg_A
           Rate: 1
         - Index: 1
-          Item: Rune_Greave_JP
+          Item: Rune_Greave_JP_
           Rate: 1
         - Index: 2
           Item: aaegis_470206
@@ -734,10 +734,13 @@ Body:
           Rate: 2
         - Index: 6
           Item: Variant_Shoes
-          Rate: 5
+          Rate: 3
         - Index: 7
           Item: Diabolus_Boots
-          Rate: 5
+          Rate: 3
+        - Index: 8
+          Item: Moaning_of_EvilSpirits
+          Rate: 1
   - Group: ArchBishop_Garment_A_Box
     SubGroups:
       - SubGroup: 1
@@ -753,6 +756,9 @@ Body:
           Rate: 2
         - Index: 3
           Item: Fairy_Of_Eden
+          Rate: 1
+        - Index: 4
+          Item: Temporal_M_Int
           Rate: 1
   - Group: ArchBishop_Headgear_A_Box
     SubGroups:
@@ -953,6 +959,12 @@ Body:
           Rate: 1
         - Index: 11
           Item: Staff_Of_Elder
+          Rate: 1
+        - Index: 12
+          Item: Up_Saint_Hall
+          Rate: 1
+        - Index: 13
+          Item: Ein_1HHAMMER
           Rate: 1
 
 

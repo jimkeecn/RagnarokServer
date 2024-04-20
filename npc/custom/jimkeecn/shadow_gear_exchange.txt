@@ -55,8 +55,8 @@
     next;
     // Perform the trade
     delitem atoi(.@ids$[.@s]), 1; // Correctly convert string ID to integer and remove the selected shadow gear
-    #CASHPOINTS += 5; // Add 5 cash points to the player
-    mes "Trade successful! 5 cash points have been added to your account.";
+    #CASHPOINTS += 3; // Add 5 cash points to the player
+    mes "Trade successful! 3 cash points have been added to your account.";
     close;
 }
 
