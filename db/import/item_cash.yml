@@ -247,3 +247,17 @@ Body:
             Price: 5
           - Item: Cloth_Dye_Coupon_Box
             Price: 1
+          - Item: Snow_Rabbit_Egg
+            Price: 1000
+          - Item: Blue_Unicorn_Egg
+            Price: 1500
+          - Item: Ep17_2_C_Admin1_Egg
+            Price: 1000
+          - Item: Roost_Of_Skelion
+            Price: 1000
+          - Item: E_Duckling_Egg
+            Price: 2000
+          - Item: Scatletoncarrier
+            Price: 1000
+          - Item: Spring_Rabbit_Egg
+            Price: 1500
