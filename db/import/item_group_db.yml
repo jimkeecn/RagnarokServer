@@ -966,6 +966,66 @@ Body:
         - Index: 13
           Item: Ein_1HHAMMER
           Rate: 1
+  - Group: CLOSEDMIND_BOX
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 0
+            Item: Hurt_Mind
+            Rate: 1
+          - Index: 1
+            Item: KindHeart
+            Rate: 1
+          - Index: 2
+            Item: Old_Card_Album
+            Rate: 500
+            Amount: 3
+          - Index: 3
+            Item: Magic_Card_Album
+            Rate: 350
+          - Index: 4
+            Item: Hot_Tee
+            Rate: 1700
+            Amount: 20
+          - Index: 5
+            Item: Bloody_Dead_Branch
+            Rate: 150
+          - Index: 6
+            Item: Old_Violet_Box
+            Rate: 907
+            Amount: 3
+          - Index: 7
+            Item: CLASS_SHADOW_WP_CUBE
+            Rate: 50
+          - Index: 8
+            Item: CLASS_SHADOW_AM_CUBE
+            Rate: 50
+          - Index: 9
+            Item: Sweet_Canape
+            Rate: 2100
+            Amount: 20
+          - Index: 10
+            Item: Bloody_Coin
+            Rate: 50
+            Amount: 500
+          - Index: 11
+            Item: Gold
+            Rate: 300
+            Amount: 20
+          - Index: 12
+            Item: CLASS_SHADOW_SU_CUBE
+            Rate: 50
+          - Index: 13
+            Item: CLASS_SHADOW_SD_CUBE
+            Rate: 50
+          - Index: 14
+            Item: CLASS_SHADOW_PD_CUBE
+            Rate: 50
+          - Index: 15
+            Item: CLASS_SHADOW_EA_CUBE
+            Rate: 50
+
+
 
 
 

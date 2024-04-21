@@ -1,0 +1,26 @@
+-	script	Wise_Old_Man	-1,{ 
+    end; 
+}
+
+
+
+prt_fild08,164,362,4	duplicate(Wise_Old_Man)	Borken Wagon#pron	4_EP18_WAGON
+prt_fild08,161,360,2	duplicate(Wise_Old_Man)	Wise Old Man#pron	1_M_ORIENT01
+prt_fild08,166,360,6	duplicate(Wise_Old_Man)	Adventurous Youth#pron	1_F_04
+
+prt_fild08,166,368,6	duplicate(Wise_Old_Man)	Curious Scholar#pron	1_F_MARIA
+
+prt_fild08,173,367,6	duplicate(Wise_Old_Man)	fairy1#pron	4_F_FAIRYKID
+prt_fild08,175,368,4	duplicate(Wise_Old_Man)	fairy2#pron	4_F_FAIRYKID5
+prt_fild08,173,364,8	duplicate(Wise_Old_Man)	fairy3#pron	4_F_FAIRYKID2
+prt_fild08,175,364,1	duplicate(Wise_Old_Man)	fairy4#pron	4_F_FAIRYKID4
+
+prt_fild08,173,361,8	duplicate(Wise_Old_Man)	Mysterious Wanderer#pron	4_KID01
+prt_fild08,177,361,2	duplicate(Wise_Old_Man)	Mysterious Wanderer#pron	1_F_PUBGIRL
+
+prt_fild08,155,365,4	duplicate(Wise_Old_Man)	Camel#pron	4_DST_CAMEL
+prt_fild08,153,364,4	duplicate(Wise_Old_Man)	Desert Resident 1#pron	4_M_RACHMAN2
+prt_fild08,155,364,6	duplicate(Wise_Old_Man)	Desert Resident 2#pron	4_M_RACHMAN1
+prt_fild08,157,365,8	duplicate(Wise_Old_Man)	Desert Resident Lady#pron	4_F_DESERT
+
+

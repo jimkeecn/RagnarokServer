@@ -1143,3 +1143,9 @@ Header:
 #      - Item: Zombie_Master_Card
 #        Rate: 1
 #        StealProtected: true
+
+
+Body:
+  - Id: 21089
+    AegisName: WANDERING_DUCK
+    Name: Wandering Duck

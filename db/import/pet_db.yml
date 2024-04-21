@@ -484,3 +484,24 @@ Header:
 #    AttackRate: 300
 #    RetaliateRate: 300
 #    ChangeTargetRate: 800
+
+Body:
+  - Mob: WANDERING_DUCK
+    TameItem: E_Glittering_Doll_B
+    EggItem: E_Duckling_Egg
+    EquipItem: C_Twinkle_Star_Button
+    FoodItem: Wad_Of_Cotton
+    Fullness: 2   # unknown
+    HungryDelay: 120   # unknown
+    IntimacyFed: 15   # unknown
+    CaptureRate: 0   # unknown
+    SpecialPerformance: false   # unknown
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      
+      if (.@i == PET_INTIMATE_CORDIAL) {
+         bonus bPerfectHitRate,5;
+      }
+      else if (.@i == PET_INTIMATE_LOYAL) {
+         bonus bPerfectHitRate,10;
+      }
