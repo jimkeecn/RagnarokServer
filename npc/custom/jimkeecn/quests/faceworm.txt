@@ -2857,7 +2857,7 @@ dali,89,61,2	script	Faceworm Exchange	4_M_SAGE_C,{
 	next;
 
 	getinventorylist;
-	setarray .@items[0],13089,20718,20717;
+	setarray .@items[0],13089,20718,20717,13090;
 	freeloop(1);
     // Loop through the inventory to find  gears that are not worn
     for (.@i = 0; .@i < @inventorylist_count; .@i++) {
@@ -2901,8 +2901,8 @@ dali,89,61,2	script	Faceworm Exchange	4_M_SAGE_C,{
 
 	S_Reward:
 		getinventorylist;
-		mes getarg(0),getarg(1),getarg(2),getarg(3);
-		next;
+		//mes getarg(0),getarg(1),getarg(2),getarg(3);
+		//next;
 		.@rid = getarg(0);
 		.@id = getarg(1);
 		.@refine = getarg(2);
@@ -2928,6 +2928,7 @@ dali,89,61,2	script	Faceworm Exchange	4_M_SAGE_C,{
 						getitem 6697,2;
 						break;
 				}
+				break;
 			case 20718:
 				switch(.@rid){
 					case 6635:
@@ -2956,8 +2957,51 @@ dali,89,61,2	script	Faceworm Exchange	4_M_SAGE_C,{
 							getitem 6697,.@refine;
 							break;
 						}
-						
 				}
+				break;			
+			case 20717:
+				switch(.@rid){
+					case 6635:
+						if(.@refine == 0){
+							getitem 6635,1;
+							break;
+						}else{
+							getitem 6635,.@refine / 2;
+							break;
+						}
+						
+					case 616:
+						if(.@refine == 0){
+							getitem 616,1;
+							break;
+						}else{
+							getitem 616,.@refine / 2;
+							break;
+						}
+						
+					case 6697:
+						if(.@refine == 0){
+							getitem 6697,1;
+							break;
+						}else{
+							getitem 6697,.@refine;
+							break;
+						}
+				}
+				break;			
+			case 13090:
+				switch(.@rid){
+					case 6635:
+						getitem 6635,5;
+						break;
+					case 616:
+						getitem 616,5;
+						break;
+					case 6697:
+						getitem 6697,5;
+						break;
+				}
+				break;
 		}
 		
 		mes "Thanks for the business.";

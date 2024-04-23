@@ -70,7 +70,6 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
                 case 4:
                     close;
                     end;
-                   
             }
         }
     }

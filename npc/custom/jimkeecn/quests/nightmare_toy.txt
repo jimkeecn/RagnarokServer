@@ -1361,15 +1361,10 @@ OnStart:
 1@xm_d,210,141,3	script	Packaged Present#1	4_TREASURE_BOX,{
 	specialeffect EF_COIN;
 	disablenpc();
-	initnpctimer;
-	end;
-
-OnTimer1000:
 	switch( atoi(strnpcinfo(2)) ) {
 	case 1:
 		.@num = rand(14,18);
-		for ( .@i = 0; .@i < .@num; .@i++ )
-			getitem 7642,.@num; // Bloody_Coin
+		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 150)
 			makeitem 644,1, 'xm_d_map$,209,141;// Gift_Box;
 		if (rand(1,1000) > 600)
@@ -1379,8 +1374,7 @@ OnTimer1000:
 		break;
 	case 2:
 		.@num = rand(13,17);
-		for ( .@i = 0; .@i < .@num; .@i++ )
-			getitem 7642,.@num; // Bloody_Coin
+		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 400)
 			makeitem 603,1, 'xm_d_map$,213,141;// Old_Blue_Box
 		if (rand(1,1000) > 700)
@@ -1390,8 +1384,7 @@ OnTimer1000:
 		break;
 	case 3:
 		.@num = rand(12,16);
-		for ( .@i = 0; .@i < .@num; .@i++ )
-			getitem 7642,.@num; // Bloody_Coin
+		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 850)
 			makeitem 7229,1, 'xm_d_map$,217,141;// Silver_Bullion
 		if (rand(1,1000) > 800)
@@ -1401,8 +1394,7 @@ OnTimer1000:
 		break;
 	case 4:
 		.@num = rand(14,18);
-		for ( .@i = 0; .@i < .@num; .@i++ )
-			getitem 7642,.@num; // Bloody_Coin
+		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 700)
 			makeitem 7228,1, 'xm_d_map$,221,141;// Gold_Bullion
 		if (rand(1,1000) > 600)
@@ -1412,8 +1404,7 @@ OnTimer1000:
 		break;
 	case 5:
 		.@num = rand(13,17);
-		for ( .@i = 0; .@i < .@num; .@i++ )
-			getitem 7642,.@num; // Bloody_Coin
+		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 150)
 			makeitem 644,1, 'xm_d_map$,225,141;// Gift_Box
 		if (rand(1,1000) > 700)
@@ -1423,8 +1414,7 @@ OnTimer1000:
 		break;
 	case 6:
 		.@num = rand(12,16);
-		for ( .@i = 0; .@i < .@num; .@i++ )
-			getitem 7642,.@num; // Bloody_Coin
+		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 400)
 			makeitem 603,1, 'xm_d_map$,209,136;// Old_Blue_Box
 		if (rand(1,1000) > 800)
@@ -1434,8 +1424,7 @@ OnTimer1000:
 		break;
 	case 7:
 		.@num = rand(14,18);
-		for ( .@i = 0; .@i < .@num; .@i++ )
-			getitem 7642,.@num; // Bloody_Coin
+		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 850)
 			makeitem 7229,1, 'xm_d_map$,213,136;// Silver_Bullion
 		if (rand(1,1000) > 600)
@@ -1445,8 +1434,7 @@ OnTimer1000:
 		break;
 	case 8:
 		.@num = rand(13,17);
-		for ( .@i = 0; .@i < .@num; .@i++ )
-			getitem 7642,.@num; // Bloody_Coin
+		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 700)
 			makeitem 7228,1, 'xm_d_map$,217,136;// Gold_Bullion
 		if (rand(1,1000) > 700)
@@ -1456,8 +1444,7 @@ OnTimer1000:
 		break;
 	case 9:
 		.@num = rand(12,16);
-		for ( .@i = 0; .@i < .@num; .@i++ )
-			getitem 7642,.@num; // Bloody_Coin
+		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 150)
 			makeitem 644,1, 'xm_d_map$,221,136;// Gift_Box
 		if (rand(1,1000) > 800)
@@ -1467,8 +1454,7 @@ OnTimer1000:
 		break;
 	case 10:
 		.@num = rand(14,18);
-		for ( .@i = 0; .@i < .@num; .@i++ )
-			getitem 7642,.@num; // Bloody_Coin
+		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 400)
 			makeitem 603,1, 'xm_d_map$,225,136;// Old_Blue_Box
 		if (rand(1,1000) > 600)
@@ -1477,7 +1463,6 @@ OnTimer1000:
 			makeitem 22534,1, 'xm_d_map$,227,136;// Closedmind_Box
 		break;
 	}
-	stopnpctimer;
 	end;
 }
 1@xm_d,214,141,3	duplicate(Packaged Present#1)	Packaged Present#2	4_TREASURE_BOX
