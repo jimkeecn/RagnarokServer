@@ -63,9 +63,6 @@ Body:
       - Mob: AGAV
         Count: 80
   - Id: 100003
-    Title: Curator Historica 1hTimer
-    TimeLimit: +1h
-  - Id: 100004
     Title: Curator Historica Hunting
     Targets:
       - Mob: I_ANTLER_SCARABA
@@ -74,26 +71,62 @@ Body:
         Count: 80
       - Mob: I_HORN_SCARABA
         Count: 80
-  - Id: 100005
-    Title: Curator Historica 1hTimer
-    TimeLimit: +1h
-  - Id: 100006
+  - Id: 100004
     Title: Curator Historica Hunting
     Targets:
       - Mob: DR_BASILISK2
         Count: 120
       - Mob: DR_MANDRAGORA
         Count: 120
-  - Id: 100007
-    Title: Curator Historica 1hTimer
-    TimeLimit: +1h
-  - Id: 100008
+  - Id: 100005
     Title: Curator Historica Hunting
     Targets:
       - Mob: CENERE
         Count: 120
       - Mob: ANTIQUE_BOOK
         Count: 120
+  - Id: 100006
+    Title: Souls Collector 1hTimer
+    TimeLimit: +1h
+  - Id: 100007
+    Title: Souls Collector Hunting
+    Targets:
+      - Mob: BIG_BELL
+        Count: 80
+      - Mob: TIMEHOLDER
+        Count: 1
+  - Id: 100008
+    Title: Souls Collector Hunting
+    Targets:
+      - Mob: ZOMBIE_GUARD
+        Count: 120
+      - Mob: IMMOTAL_CORPS
+        Count: 120
+  - Id: 100009
+    Title: Souls Collector Hunting
+    Targets:
+      - Mob: KASA
+        Count: 80
+      - Mob: SALAMANDER
+        Count: 80
+      - Mob: IFRIT
+        Count: 1
+  - Id: 100010
+    Title: Souls Collector Hunting
+    Targets:
+      - Mob: BANSHEE
+        Count: 80
+      - Mob: NECROMANCER
+        Count: 80
+      - Mob: BEELZEBUB
+        Count: 1
+  - Id: 100011
+    Title: Souls Collector Hunting
+    Targets:
+      - Mob: I_ANTLER_SCARABA
+        Count: 80
+      - Mob: I_QUEEN_SCARABA
+        Count: 1
 
 
       

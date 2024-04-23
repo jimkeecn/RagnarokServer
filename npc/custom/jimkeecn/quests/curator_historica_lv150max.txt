@@ -89,12 +89,12 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
         }
 
         for( .@i = 0; .@i < getarraysize(.questArray); .@i++ ){
-             .@sleep_quest_status = checkquest(.questArray[.@i] - 1,PLAYTIME);
+             .@sleep_quest_status = checkquest(100001,PLAYTIME);
             if (.@sleep_quest_status == 0 || .@quest_status == 1){
                 callsub L_Hunting_Sleep;
                 end;
             } else if(.@sleep_quest_status == 2){
-                erasequest .questArray[.@i] - 1;
+                erasequest 100001;
             }
         }
        
@@ -153,7 +153,7 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
 		mes "Our researchers are so happy with your work. they will appreciate what you have done.";
         close2;
         erasequest getarg(0);
-		setquest getarg(0) - 1;
+		setquest 100001;
         #CASHPOINTS += 400;
         end;     
 
