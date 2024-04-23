@@ -1,0 +1,12 @@
+moc_para01,26,21,6	script	Storage Manager#eden	721,{
+    mes "I can open storage for you";
+    next;
+    if(select("Storage:Storage2") == 2){
+        close2;
+        openstorage2 1,STOR_MODE_GET|STOR_MODE_PUT;
+    }else{
+        close2;
+	    openstorage;
+        end;
+    }
+}

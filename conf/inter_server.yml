@@ -41,7 +41,7 @@ Body:
     Name: "Storage"
     Table: storage
   - ID: 1
-    Name: "Storage"
+    Name: "Storage2"
     Table: storage2
 
 Footer:
