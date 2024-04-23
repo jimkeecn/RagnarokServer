@@ -3,32 +3,25 @@
 //===== rAthena Script =======================================
 //= Souls Collector
 //===== Description: =========================================
-//Buy items from player for exchange of cash point.
-//Transparent Plate 7352 7353 7354 7355 (research for  Juperos Ruins Center.)
-//Chivalry Emblem 1004 (find king and slayer demo in Glast Heim Chivalry )
-//Will of the Darkness  7340(Rachel Sanctuary)
-//Twin Horn Helm or Single Horned Helmet  6323,6324(Kamidal Tunnel or Scaraba Hole)
+//Hunting Souls from powerful mobs including MVP
 //===== Changelogs: ==========================================
 //= 1.0 First version [jimkeecn]
 //============================================================
 
-moc_para01,33,34,7	script	Souls Collector#eden	2_M_SAGE_OLD,{
+moc_para01,37,34,7	script	Souls Collector#eden	4_M_MOCASS1,{
 
-
-    cutin "verus_aures",2;
     mes "[Souls Collector]";
-    mes "Greetings, adventurer! I am known as Souls Collector, the gatherer of artifacts for global research.";
+    mes "Ah, seeker of the dark arts! You have come to the right place. I am the Souls Collector, entrusted with harnessing the essences of formidable adversaries.";
     next;
-    mes "I work with renowned research agencies around the world to push the boundaries of historical knowledge.";
-    mes "We offer^FF0000 cash points ^000000in exchange for high-value artifacts.";
+    mes "The shadows whisper of great power locked within the souls of Midgard's mightiest. It is these souls I seek, and for them, I offer generous rewards.";
+    mes "I provide ^FF0000cash points^000000 in exchange for the souls of high-value MVPs.";
     next;
 
-    cutin "", 255;
-    menu "Tell me about the hunting quest.",L_Hunting,"I am not interested",L_NotInterested;
-
+    menu "Tell me more about these souls.", L_Hunting, "I am not interested.", L_NotInterested;
+    
     
     L_NotInterested:
-        mes "I hope to see you again when you are ready to contribute to our research.";
+        mes "May the shadows guide you until we meet again.";
         close;
         end;
         
@@ -47,47 +40,45 @@ moc_para01,33,34,7	script	Souls Collector#eden	2_M_SAGE_OLD,{
         }
 
         for( .@i = 0; .@i < getarraysize(.questArray); .@i++ ){
-             .@sleep_quest_status = checkquest(.questArray[.@i] - 1,PLAYTIME);
+             .@sleep_quest_status = checkquest(100006,PLAYTIME);
             if (.@sleep_quest_status == 0 || .@quest_status == 1){
                 callsub L_Hunting_Sleep;
                 end;
             } else if(.@sleep_quest_status == 2){
-                erasequest .questArray[.@i] - 1;
+                erasequest 100006;
             }
         }
        
 
         
         mes "[Souls Collector]";
-        mes "In our pursuit to expand the annals of Midgard's history, we've stumbled upon an intriguing research opportunity.";
-        mes "Recent research suggests that the behaviors of certain species across the continent mirror historical cycles significant to Midgard's past. ";
-        mes "These patterns could reveal insights into historical events that shaped our world";
+        mes "Our archives are missing crucial essences that could unlock ancient, forbidden knowledge.";
+        mes "Capturing the souls of specific MVPs could help bridge the gaps in our dark archives.";
         next;
-        mes "You are tasked to engage with these creatures to gather critical data for our studies.";
-        mes "We'll reward you greatly for your efforts and the risks involved.";
-        mes "Do you want to accept this quest?";
+        mes "Your role would be to confront these entities and secure their souls. The risks are high, but so are the rewards.";
+        next;
+        mes "Are you prepared to accept this dark quest?";
         next;
         switch(select("Yes.:No.")){
             case 1:
                 if(BaseLevel < .minL){
                     mes "[Souls Collector]";
-                    mes "You do not match with our requirement.";
-                    mes "Please come back with a little more stronger.";
-                    mes "required level ^FF0000" + .minL;
+                    mes "Alas, you are not yet ready to walk this perilous path.";
+                    mes "Return when you have reached level ^FF0000" + .minL + "^000000.";
                     close;
                 }
 
                 if(BaseLevel > .maxL){
                     mes "[Souls Collector]";
-                    mes "We no longer require your service, we have gained massive progress on our research.";
+                    mes "You surpass our needs, mighty warrior. Our research has advanced beyond the need for your services.";
                     close;
                 }
                 
                 mes "[Souls Collector]";
-                mes "Thanks for accepting the challenge since the area are dangerous even for experience adventure like you.";
-                mes "You can check out the area that list in my artifacts list.";
-                mes "Wish you best luck";
-                setquest $curatorCurrentQuest;
+                mes "Very well. May the abyss gaze back into you favorably.";
+                mes "Check the list in my grimoire for the specific MVP souls required.";
+                mes "Fortune to those who walk with shadows.";
+                setquest $soulColCurrentQuest;
                 close;
                 end;
 
@@ -96,43 +87,43 @@ moc_para01,33,34,7	script	Souls Collector#eden	2_M_SAGE_OLD,{
 
             case 2:
                 mes "[Souls Collector]";
-                mes "I hope to see you again when you are ready to contribute to our research.";
+                mes "Very well. Should you ever decide to embrace your darker calling, return here.";
                 close;
         }
 
     L_Hunting_Inc:
         mes "[Souls Collector]";
-        mes "Looks like you have not yet fullfilled your duty. Please comeback after finish your report.";
+        mes "It seems you have yet to fulfill your grim duty. Return once you have the required souls.";
         close;
 
     L_Hunting_C:
         mes "[Souls Collector]";
-		mes "Good work~!!";
-		mes "Our researchers are so happy with your work. they will appreciate what you have done.";
+		mes "Excellent! Your contribution has furthered our dark cause.";
+        mes "Our cabal is pleased and grants you these points as a token of our gratitude.";
         close2;
         erasequest getarg(0);
-		setquest getarg(0) - 1;
+		setquest 100006;
         #CASHPOINTS += 400;
         end;     
 
     L_Hunting_Sleep:
         mes "[Souls Collector]";
-        mes "Sorry, We are currently reading your last report. Please come back after sometime..";
+        mes "Patience, hunter. We are still deciphering the energies from your last delivery. Return later.";
         close; 
 
 
     OnInit:
         .maxL = 175;
         .minL = 150;
-        setarray .questArray[0],100002,100004,100006,100008;
-        $curatorCurrentQuest = .questArray[rand(0,3)];
-        .@quest_c1$ = "checkquest(100002) == -1 && checkquest(100004) == -1 && checkquest(100006) == -1 && checkquest(100008) == -1 && BaseLevel >= " + .minL + " && BaseLevel <= " + .maxL;     
+        setarray .questArray[0],100007,100008,100009,100010,100011;
+        $soulColCurrentQuest = .questArray[rand(0,4)];
+        .@quest_c1$ = "checkquest(100007) == -1 && checkquest(100008) == -1 && checkquest(100009) == -1 && checkquest(100010) == -1 && checkquest(100011) == -1 &&  BaseLevel >= " + .minL + " && BaseLevel <= " + .maxL;     
         questinfo QTYPE_QUEST, QMARK_NONE, .@quest_c1$;
         initnpctimer;
         end;
 
     OnTimer6000000:
-        $curatorCurrentQuest = .questArray[rand(0,3)];
+        $soulColCurrentQuest = .questArray[rand(0,4)];
         initnpctimer;
         end;
 

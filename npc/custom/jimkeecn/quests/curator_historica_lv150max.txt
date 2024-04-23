@@ -275,9 +275,9 @@ moc_para01,33,34,7	script	Curator Historica#eden	2_M_SAGE_OLD,{
     OnInit:
         .maxL = 150;
         .minL = 90;
-        setarray .questArray[0],100002,100004,100006,100008;
+        setarray .questArray[0],100002,100003,100004,100005;
         $curatorCurrentQuest = .questArray[rand(0,3)];
-        .@quest_c1$ = "checkquest(100002) == -1 && checkquest(100004) == -1 && checkquest(100006) == -1 && checkquest(100008) == -1 && BaseLevel >= " + .minL + " && BaseLevel <= " + .maxL;     
+        .@quest_c1$ = "checkquest(100002) == -1 && checkquest(100003) == -1 && checkquest(100004) == -1 && checkquest(100005) == -1 && BaseLevel >= " + .minL + " && BaseLevel <= " + .maxL;     
         questinfo QTYPE_QUEST, QMARK_NONE, .@quest_c1$;
         initnpctimer;
         end;
