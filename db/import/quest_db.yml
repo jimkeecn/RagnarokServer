@@ -50,6 +50,9 @@ Header:
   Version: 3
 
 Body:
+  - Id: 5112
+    Title: Laboratory Restricted Access
+    TimeLimit: 4h
   - Id: 100001
     Title: Curator Historica 1hTimer
     TimeLimit: +1h

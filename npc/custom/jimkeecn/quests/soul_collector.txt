@@ -115,15 +115,15 @@ moc_para01,37,34,7	script	Souls Collector#eden	4_M_MOCASS1,{
     OnInit:
         .maxL = 175;
         .minL = 150;
-        setarray .questArray[0],100007,100008,100009,100010,100011;
-        $soulColCurrentQuest = .questArray[rand(0,4)];
+        setarray .questArray[0],100007,100008,100009,100011;//100010 tempo removed until the boss is fixed
+        $soulColCurrentQuest = .questArray[rand(0,3)];
         .@quest_c1$ = "checkquest(100007) == -1 && checkquest(100008) == -1 && checkquest(100009) == -1 && checkquest(100010) == -1 && checkquest(100011) == -1 &&  BaseLevel >= " + .minL + " && BaseLevel <= " + .maxL;     
         questinfo QTYPE_QUEST, QMARK_NONE, .@quest_c1$;
         initnpctimer;
         end;
 
     OnTimer6000000:
-        $soulColCurrentQuest = .questArray[rand(0,4)];
+        $soulColCurrentQuest = .questArray[rand(0,3)];
         initnpctimer;
         end;
 

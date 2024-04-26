@@ -1454,7 +1454,7 @@ OnInstanceInit:
 	.@menu$ = "Begin the final match.";
 	}
 
-	if(callfunc("F_GetNumSuffix",('GMT_1QUE-10)) > 1 && callfunc("F_GetNumSuffix",('GMT_1QUE-9)) <= 10){
+	if('GMT_1QUE-10 > 0 && 'GMT_1QUE-10 <= 10){
 		#CASHPOINTS += 50;
 	}else{
 		#CASHPOINTS += 100;

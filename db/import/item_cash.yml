@@ -246,7 +246,9 @@ Body:
           - Item: Marriage_Covenant_Box
             Price: 5
           - Item: Cloth_Dye_Coupon_Box
-            Price: 1
+            Price: 100
+          - Item: J_Shop_Coupon2
+            Price: 100
           - Item: Snow_Rabbit_Egg
             Price: 1000
           - Item: Blue_Unicorn_Egg

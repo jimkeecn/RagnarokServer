@@ -997,9 +997,11 @@ Body:
           - Index: 7
             Item: CLASS_SHADOW_WP_CUBE
             Rate: 50
+            Amount: 1
           - Index: 8
             Item: CLASS_SHADOW_AM_CUBE
             Rate: 50
+            Amount: 1
           - Index: 9
             Item: Sweet_Canape
             Rate: 2100
@@ -1015,15 +1017,19 @@ Body:
           - Index: 12
             Item: CLASS_SHADOW_SU_CUBE
             Rate: 50
+            Amount: 1
           - Index: 13
             Item: CLASS_SHADOW_SD_CUBE
             Rate: 50
+            Amount: 1
           - Index: 14
             Item: CLASS_SHADOW_PD_CUBE
             Rate: 50
+            Amount: 1
           - Index: 15
             Item: CLASS_SHADOW_EA_CUBE
             Rate: 50
+            Amount: 1
 
 
 

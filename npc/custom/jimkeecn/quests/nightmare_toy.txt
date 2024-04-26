@@ -1363,7 +1363,7 @@ OnStart:
 	disablenpc();
 	switch( atoi(strnpcinfo(2)) ) {
 	case 1:
-		.@num = rand(14,18);
+		.@num = rand(24,38);
 		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 150)
 			makeitem 644,1, 'xm_d_map$,209,141;// Gift_Box;
@@ -1373,7 +1373,7 @@ OnStart:
 			makeitem 22534,1, 'xm_d_map$,211,141;// Closedmind_Box
 		break;
 	case 2:
-		.@num = rand(13,17);
+		.@num = rand(23,37);
 		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 400)
 			makeitem 603,1, 'xm_d_map$,213,141;// Old_Blue_Box
@@ -1383,7 +1383,7 @@ OnStart:
 			makeitem 13442,1, 'xm_d_map$,215,141;// Old_Parasol
 		break;
 	case 3:
-		.@num = rand(12,16);
+		.@num = rand(22,36);
 		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 850)
 			makeitem 7229,1, 'xm_d_map$,217,141;// Silver_Bullion
@@ -1393,7 +1393,7 @@ OnStart:
 			makeitem 2486,1, 'xm_d_map$,219,141;// Shadow_Walk_
 		break;
 	case 4:
-		.@num = rand(14,18);
+		.@num = rand(24,38);
 		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 700)
 			makeitem 7228,1, 'xm_d_map$,221,141;// Gold_Bullion
@@ -1403,7 +1403,7 @@ OnStart:
 			makeitem 22534,1, 'xm_d_map$,223,141;// Closedmind_Box
 		break;
 	case 5:
-		.@num = rand(13,17);
+		.@num = rand(23,37);
 		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 150)
 			makeitem 644,1, 'xm_d_map$,225,141;// Gift_Box
@@ -1413,7 +1413,7 @@ OnStart:
 			makeitem 2976,1, 'xm_d_map$,227,141;// Red_Lantern
 		break;
 	case 6:
-		.@num = rand(12,16);
+		.@num = rand(22,36);
 		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 400)
 			makeitem 603,1, 'xm_d_map$,209,136;// Old_Blue_Box
@@ -1423,7 +1423,7 @@ OnStart:
 			makeitem 2977,1, 'xm_d_map$,211,136;// Hurt_Mind
 		break;
 	case 7:
-		.@num = rand(14,18);
+		.@num = rand(24,38);
 		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 850)
 			makeitem 7229,1, 'xm_d_map$,213,136;// Silver_Bullion
@@ -1433,7 +1433,7 @@ OnStart:
 			makeitem 22534,1, 'xm_d_map$,215,136;// Closedmind_Box
 		break;
 	case 8:
-		.@num = rand(13,17);
+		.@num = rand(23,37);
 		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 700)
 			makeitem 7228,1, 'xm_d_map$,217,136;// Gold_Bullion
@@ -1443,7 +1443,7 @@ OnStart:
 			makeitem 2978,1, 'xm_d_map$,219,136;// KindHeart
 		break;
 	case 9:
-		.@num = rand(12,16);
+		.@num = rand(22,36);
 		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 150)
 			makeitem 644,1, 'xm_d_map$,221,136;// Gift_Box
@@ -1453,7 +1453,7 @@ OnStart:
 			makeitem 18848,1, 'xm_d_map$,223,136;// Lush_Rose
 		break;
 	case 10:
-		.@num = rand(14,18);
+		.@num = rand(24,58);
 		getitem 7642,.@num; // Bloody_Coin
 		if (rand(1,1000) > 400)
 			makeitem 603,1, 'xm_d_map$,225,136;// Old_Blue_Box
