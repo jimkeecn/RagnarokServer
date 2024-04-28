@@ -607,6 +607,10 @@ lhz_dun_n,145,265,4	script	Silent Mind#JCv2	4_CENERE,{
 lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 	disable_items;
 	npctalk "Kkk... I can... sense...", "", bc_self;
+	if(BaseLevel < 130){
+		mes "[Wandering Mind]";
+		mes "You are not suppose to be here, please come back after level 130.";
+	}
 	mes "[Wandering Mind]";
 	mes "Kkk... I can... sense...the grudges...of countless...subjects...";
 	next;
@@ -617,7 +621,7 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 	mes "[Wandering Mind]";
 	mes "I need... grudge's... grudge's... strong... power... It will help... both me... and you... all... Kkk...";
 	next;
-	switch( select( "Old Helmet enchant", "Old Helmet reset", "Old Helmet enchant description" ) ) {
+	switch( select( "Helmet enchant", "Helmet reset", "Old Helmet enchant description" ) ) {
 	case 1:
 		npctalk "Hand over... grudge... grudge...", "", bc_self;
 		mes "[Wandering Mind]";
@@ -625,28 +629,11 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 		mes "^FF0000*If you bring Cursed Fragment, you can enchant it into the Old Helmet.*^000000";
 		next;
 		.@equip_id = getequipid(EQI_HEAD_TOP);
-		switch(.@equip_id) {
-			case 18971:// Old_Rune_Circlet
-			case 18972:// Old_Mitra
-			case 18973:// Old_Driver_Band_R
-			case 18974:// Old_Driver_Band_Y
-			case 18975:// Old_Shadow_Handicraft
-			case 18976:// Old_Minstrel_Song_Hat
-			case 18977:// Old_Midas_Whisper
-			case 18978:// Old_Magic_Stone_Hat
-			case 18979:// Old_Blazing_Soul
-			case 18980:// Old_Wind_Whisper
-			case 18981:// Old_Dying_Swan
-			case 18982:// Old_Circlet_Of_Bone
-			case 18983:// Old_Protect_Of_Crown
-			case 18984:// Old_Camo_RabbitHood
-				break;
-			default:
-				npctalk "Destroy it... Destroy it...", "", bc_self;
-				mes "[Wandering Mind]";
-				mes "This is... interesting... In that helmet... there is no fragrance... filled with a special power... Do you want... destruction...? kkk...";
-				mes "^FF0000*Enchantment using Cursed Fragment is only possible in the Old Helmet.*^000000";
-				close;
+		.@equipe_level = getiteminfo(.@equip_id,ITEMINFO_EQUIPLEVELMIN);
+
+		if(.@equipe_level < 100){
+			mes "[Wandering Mind]";
+			mes "I only enchant powerful headgear that requires min 100 base level.";
 		}
 		mes "[Wandering Mind]";
 	
@@ -927,29 +914,7 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 		close;
 	case 2:
 		.@equip_id = getequipid(EQI_HEAD_TOP);
-		switch(.@equip_id) {
-			case 18971:// Old_Rune_Circlet
-			case 18972:// Old_Mitra
-			case 18973:// Old_Driver_Band_R
-			case 18974:// Old_Driver_Band_Y
-			case 18975:// Old_Shadow_Handicraft
-			case 18976:// Old_Minstrel_Song_Hat
-			case 18977:// Old_Midas_Whisper
-			case 18978:// Old_Magic_Stone_Hat
-			case 18979:// Old_Blazing_Soul
-			case 18980:// Old_Wind_Whisper
-			case 18981:// Old_Dying_Swan
-			case 18982:// Old_Circlet_Of_Bone
-			case 18983:// Old_Protect_Of_Crown
-			case 18984:// Old_Camo_RabbitHood
-				break;
-			default:
-				npctalk "Destroy it... Destroy it...", "", bc_self;
-				mes "[Wandering Mind]";
-				mes "This is... interesting... In that helmet... there is no fragrance... filled with a special power... Do you want... destruction...? kkk...";
-				mes "^FF0000*Enchantment using Cursed Fragments is only possible in the Old Helmet.*^000000";
-				close;
-		}
+
 		setarray .@card[0], getequipcardid(EQI_HEAD_TOP,0), getequipcardid(EQI_HEAD_TOP,1), getequipcardid(EQI_HEAD_TOP,2), getequipcardid(EQI_HEAD_TOP,3);
 		.@refine = getequiprefinerycnt(EQI_HEAD_TOP);
 
