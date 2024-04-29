@@ -1030,6 +1030,165 @@ Body:
             Item: CLASS_SHADOW_EA_CUBE
             Rate: 50
             Amount: 1
+  - Group: DORAM_BOX_A
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Ein_SAFETY_PENDL
+          Rate: 3
+        - Index: 1
+          Item: Ein_SAFETY_EPAULL
+          Rate: 2
+        - Index: 2
+          Item: Ein_SAFETY_EPAULR
+          Rate: 3
+        - Index: 3
+          Item: Ein_SAFETY_PENDR
+          Rate: 2
+        - Index: 4
+          Item: Glittering_Cat_Choker
+          Rate: 1
+        - Index: 5
+          Item: PlumpyWormCharm
+          Rate: 3
+        - Index: 6
+          Item: FreshTunaCharm
+          Rate: 2
+        - Index: 7
+          Item: ShiningTwigCharm
+          Rate: 1
+        - Index: 8
+          Item: HigherRabbitCharm
+          Rate: 3
+        - Index: 9
+          Item: HigherSaurelCharm
+          Rate: 2
+        - Index: 10
+          Item: HigherLeafCharm
+          Rate: 3
+        - Index: 11
+          Item: F_Ein_1H_Foxtail
+          Rate: 3
+        - Index: 12
+          Item: Ein_1H_Foxtail
+          Rate: 2
+        - Index: 13
+          Item: Up_MeawFoxtail
+          Rate: 1
+        - Index: 14
+          Item: CassockA_STR
+          Rate: 3
+        - Index: 15
+          Item: Fluffy_Shark_Pajama
+          Rate: 2
+  - Group: DORAM_BOX_B
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Cute_Frog_Raincoat
+          Rate: 1
+        - Index: 1
+          Item: E_Auto_Armor_A
+          Rate: 2
+        - Index: 2
+          Item: E_Auto_Armor_B
+          Rate: 3
+        - Index: 3
+          Item: Auto_Armor_A
+          Rate: 2
+        - Index: 4
+          Item: Auto_Armor_B
+          Rate: 1
+        - Index: 5
+          Item: Cassock_Boots
+          Rate: 3
+        - Index: 6
+          Item: Fluffy_FishShoes_J
+          Rate: 2
+        - Index: 7
+          Item: Fluffy_DandelionShoes_J
+          Rate: 1
+        - Index: 8
+          Item: Pretty_PigShoes
+          Rate: 3
+  - Group: DORAM_BOX_C
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Temporal_Str_Boots_
+          Rate: 2
+        - Index: 1
+          Item: Auto_Leg_A
+          Rate: 3
+        - Index: 2
+          Item: E_Auto_Leg_A
+          Rate: 1
+        - Index: 3
+          Item: E_Auto_Leg_B
+          Rate: 2
+        - Index: 4
+          Item: Auto_Leg_B
+          Rate: 3
+        - Index: 5
+          Item: Cassock_Manteau
+          Rate: 1
+        - Index: 6
+          Item: Baby_Boar_Bib
+          Rate: 2
+        - Index: 7
+          Item: Temporal_M_Str
+          Rate: 3
+        - Index: 8
+          Item: E_Auto_Engine_A
+          Rate: 1
+        - Index: 9
+          Item: E_Auto_Engine_B
+          Rate: 2
+        - Index: 10
+          Item: Auto_Engine_A
+          Rate: 3
+        - Index: 11
+          Item: Auto_Engine_B
+          Rate: 1
+        - Index: 12
+          Item: Fluffy_Lovely_Fox
+          Rate: 3
+        - Index: 13
+          Item: Purple_Cat_Ears_Beret
+          Rate: 2
+        - Index: 14
+          Item: Freyja_Crown_J
+          Rate: 1
+        - Index: 15
+          Item: Diving_Goggles
+          Rate: 3
+        - Index: 16
+          Item: Comp_Classical_Fhat
+          Rate: 2
+        - Index: 17
+          Item: Comp_Crow_Tengu_Mask
+          Rate: 1
+        - Index: 18
+          Item: Crow_Tengu_Mask
+          Rate: 2
+        - Index: 19
+          Item: Tengu_Scroll
+          Rate: 1
+        - Index: 20
+          Item: Sagittarius_DiademK
+          Rate: 3
+        - Index: 21
+          Item: Sagittarius_DiademK_LT
+          Rate: 2
+        - Index: 22
+          Item: Yummy_Lollipop
+          Rate: 1
+        - Index: 23
+          Item: Bloody_Knight_Shield__
+          Rate: 3
 
 
 

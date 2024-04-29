@@ -357,31 +357,38 @@ geffen_in,175,112,4	script	Lea	2_F_MAGICMASTER,{
 			mes "The ^4d4dffloan deposit is 500,000z^000000. The deposit has adjusted as the Magic Book has changed.";
 			close;
 		case 4:
-			if ((BaseLevel > 139) && (mac_book < 1) && ((getskilllv(2217) > 0) || (getskilllv(2213) > 0))) {
-				mes "[Lea]";
-				mes "Did... Did you just say the Ultimate Magic Book?";
+            mes "[Lea]";
+			mes "Oh, do you want the Superior Magic Books? The policy has been changed to accept loan deposits unconditionally, instead of the existing demanding loan conditions.";
+			mes "The Superior Magic Book ^4d4dffloan deposit is 500,000z^000000.";
+			next;
+			mes "[Lea]";
+			mes "What kind of Magic Book do you want?";
+            next;
+			if ((BaseLevel > 139) && ((getskilllv(2217) > 0) || (getskilllv(2213) > 0))) {
+				set .@i, select("Let me think.:Magic Book (Comet):Magic Book (Tetra Vortex)")-1;
+                mes "[Lea]";
+                if (!.@i) {
+                    mes "No problem.";
+                    close;
+                }
+                setarray .@Books[0],100073,100074;
+                if (countitem(.@Books[.@i-1])) {
+                    mes "You already have that Magic Book. You can't borrow a new book until you return the current one.";
+                    next;
+                    mes "[Lea]";
+                    mes "Don't you know how many others would want the book you already have? It's a bit selfish to want more than one, you know.";
+                    close;
+			    }
+                if (Zeny > 2000000) {
+				mes "Thank you for your deposit. The book's return date is written on the lending card on the back cover of the book. Please try not to lose or damage the book and avoid paying compensation.";
 				next;
-				mes "[Lea]";
-				mes "Oh, my....";
-				mes "I can't believe someone actually wants that book.";
-				next;
-				select("Please don't say that you don't have it.");
-				mes "[Lea]";
-				mes "Frankly, I've never even seen the Ultimate Magic Book.";
-				next;
-				mes "[Lea]";
-				mes "You should ask Master Velofos if you want to know more about that book.";
-				next;
-				mes "[Lea]";
-				mes "I'm sorry that I can't help you more than that.";
-				set mac_book,1;
+				Zeny -= 2000000;
+				getitem .@Books[.@i-1],1; //WL_MB_CM, WL_MB_TV
 				close;
 			}
-			if ((BaseLevel > 139) && (mac_book > 0) && ((getskilllv(2217) > 0) || (getskilllv(2213) > 0))) {
-				mes "[Lea]";
-				mes "You should ask Master Velofos for some information about that book.";
-				close;
+			mes "The ^4d4dffloan deposit is 500,000z^000000. The deposit has adjusted as the Magic Book has changed.";
 			}
+
 			mes "[Lea]";
 			mes "Well... why don't you practice a little longer before that?";
 			next;
