@@ -1159,9 +1159,6 @@ Body:
         - Index: 9
           Item: Diving_Goggles
           Rate: 1
-        - Index: 10
-          Item: Comp_Classical_Fhat
-          Rate: 2
         - Index: 11
           Item: Comp_Crow_Tengu_Mask
           Rate: 1
