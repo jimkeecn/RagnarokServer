@@ -44,7 +44,7 @@
 ###########################################################################
 #
 #Note all cash box will start from 15000000, 
-#Currently at 15000030
+#Currently at 15000034
 ################################################
 Header:
   Type: ITEM_GROUP_DB
@@ -1205,9 +1205,6 @@ Body:
         - Index: 3
           Item: Spell_Circuit
           Rate: 2
-        - Index: 4
-          Item: Plain_Black_Mage_Hat
-          Rate: 1
         - Index: 6
           Item: SurviveOrb
           Rate: 2
@@ -1268,10 +1265,3 @@ Body:
         - Index: 25
           Item: Robe_Of_Flattery
           Rate: 2
-
-
-
-
-
-
-
