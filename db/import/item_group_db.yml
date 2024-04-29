@@ -1036,7 +1036,7 @@ Body:
         List:
         - Index: 0
           Item: Ein_SAFETY_PENDL
-          Rate: 3
+          Rate: 1
         - Index: 1
           Item: PlumpyWormCharm
           Rate: 2
@@ -1045,13 +1045,13 @@ Body:
           Rate: 1
         - Index: 3
           Item: HigherRabbitCharm
-          Rate: 3
+          Rate: 1
         - Index: 4
           Item: E_Auto_Armor_B
           Rate: 1
         - Index: 5
           Item: Auto_Leg_A
-          Rate: 3
+          Rate: 1
         - Index: 6
           Item: Auto_Engine_A
           Rate: 1
@@ -1060,7 +1060,7 @@ Body:
           Rate: 2
         - Index: 8
           Item: Fluffy_DandelionShoes_J
-          Rate: 3
+          Rate: 1
         - Index: 9
           Item: Freyja_Crown_J
           Rate: 1
@@ -1069,13 +1069,13 @@ Body:
           Rate: 2
         - Index: 11
           Item: Up_MeawFoxtail
-          Rate: 3
+          Rate: 1
         - Index: 12
           Item: Fluffy_Shark_Pajama
           Rate: 1
         - Index: 13
           Item: Cassock_Boots
-          Rate: 3
+          Rate: 1
         - Index: 14
           Item: Fluffy_FishShoes_J
           Rate: 2
@@ -1091,7 +1091,7 @@ Body:
           Rate: 2
         - Index: 1
           Item: HigherLeafCharm
-          Rate: 3
+          Rate: 1
         - Index: 2
           Item: CassockA_STR
           Rate: 1
@@ -1100,13 +1100,13 @@ Body:
           Rate: 2
         - Index: 4
           Item: E_Auto_Leg_A
-          Rate: 3
+          Rate: 1
         - Index: 5
           Item: Temporal_Str_Boots_
           Rate: 1
         - Index: 6
           Item: Auto_Leg_B
-          Rate: 3
+          Rate: 1
         - Index: 7
           Item: E_Auto_Engine_A
           Rate: 2
@@ -1121,7 +1121,7 @@ Body:
           Rate: 1
         - Index: 11
           Item: Cute_Frog_Raincoat
-          Rate: 3
+          Rate: 1
         - Index: 12
           Item: Pretty_PigShoes
           Rate: 2
@@ -1134,7 +1134,7 @@ Body:
           Rate: 1
         - Index: 1
           Item: ShiningTwigCharm
-          Rate: 3
+          Rate: 1
         - Index: 2
           Item: Temporal_M_Str
           Rate: 2
@@ -1143,7 +1143,7 @@ Body:
           Rate: 1
         - Index: 4
           Item: E_Auto_Engine_B
-          Rate: 3
+          Rate: 1
         - Index: 5
           Item: Ein_SAFETY_EPAULL
           Rate: 2
@@ -1152,7 +1152,7 @@ Body:
           Rate: 1
         - Index: 7
           Item: Ein_SAFETY_PENDR
-          Rate: 3
+          Rate: 1
         - Index: 8
           Item: Fluffy_Lovely_Fox
           Rate: 2
@@ -1164,7 +1164,7 @@ Body:
           Rate: 2
         - Index: 11
           Item: Comp_Crow_Tengu_Mask
-          Rate: 3
+          Rate: 1
         - Index: 12
           Item: Crow_Tengu_Mask
           Rate: 1
@@ -1176,7 +1176,7 @@ Body:
           Rate: 1
         - Index: 15
           Item: Sagittarius_DiademK_LT
-          Rate: 3
+          Rate: 1
         - Index: 16
           Item: Yummy_Lollipop
           Rate: 2
@@ -1186,13 +1186,13 @@ Body:
         List:
         - Index: 0
           Item: Large_Sorcerer_Crown
-          Rate: 3
+          Rate: 1
         - Index: 1
           Item: Large_Sorcerer_Crown_LT
           Rate: 2
         - Index: 2
           Item: KarduiEar
-          Rate: 3
+          Rate: 1
         - Index: 3
           Item: Spell_Circuit
           Rate: 2
@@ -1204,7 +1204,7 @@ Body:
           Rate: 1
         - Index: 8
           Item: Survive_Circlet_K_LT
-          Rate: 3
+          Rate: 1
         - Index: 9
           Item: Rutilus_Stick_OS
           Rate: 2
@@ -1213,7 +1213,7 @@ Body:
           Rate: 1
         - Index: 11
           Item: Kronos
-          Rate: 3
+          Rate: 1
         - Index: 12
           Item: Up_Iron_Staff
           Rate: 2
@@ -1222,7 +1222,7 @@ Body:
           Rate: 1
         - Index: 14
           Item: Geffenia_Magictool_Ice
-          Rate: 3
+          Rate: 1
         - Index: 15
           Item: YinYang_Talisman
           Rate: 2
@@ -1231,7 +1231,7 @@ Body:
           Rate: 1
         - Index: 17
           Item: Old_DetachmentsRing_J
-          Rate: 3
+          Rate: 1
         - Index: 18
           Item: Phantom_Ear
           Rate: 2
@@ -1240,7 +1240,7 @@ Body:
           Rate: 1
         - Index: 20
           Item: Geffenia_Book_Water
-          Rate: 3
+          Rate: 1
         - Index: 21
           Item: Hero_Magic_Coat
           Rate: 2
@@ -1249,7 +1249,7 @@ Body:
           Rate: 1
         - Index: 23
           Item: Clack_Of_Servival_IL
-          Rate: 3
+          Rate: 1
         - Index: 24
           Item: Kardui_Robe
           Rate: 2

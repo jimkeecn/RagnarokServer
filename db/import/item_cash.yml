@@ -182,11 +182,11 @@ Body:
           - Item: ArchBishop_Weapon_B_Box
             Price: 50
           - Item: DORAM_BOX_A
-            Price: 50
+            Price: 30
           - Item: DORAM_BOX_B
-            Price: 60
+            Price: 50
           - Item: DORAM_BOX_C
-            Price: 40
+            Price: 60
           - Item: WARLOCK_BOX_A
             Price: 40
     - Tab: Scrolls
