@@ -629,11 +629,19 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 		mes "^FF0000*If you bring Cursed Fragment, you can enchant it into the Old Helmet.*^000000";
 		next;
 		.@equip_id = getequipid(EQI_HEAD_TOP);
+		if(.@equip_id < 1){
+			mes "[Wandering Mind]";
+			mes "You didn't wear any headgear.";
+			close;
+			end;
+		}
 		.@equipe_level = getiteminfo(.@equip_id,ITEMINFO_EQUIPLEVELMIN);
 
 		if(.@equipe_level < 100){
 			mes "[Wandering Mind]";
 			mes "I only enchant powerful headgear that requires min 100 base level.";
+			close;
+			end;
 		}
 		mes "[Wandering Mind]";
 	
@@ -852,18 +860,6 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 			break;
 		case 1:
 			setarray .@enchant[0],
-				4703,	// Strength4
-				4704,	// Strength5
-				4713,	// Inteligence4
-				4714,	// Inteligence5
-				4723,	// Dexterity4
-				4724,	// Dexterity5
-				4733,	// Agility4
-				4734,	// Agility5
-				4743,	// Vitality4
-				4744,	// Vitality5
-				4753,	// Luck4
-				4754,	// Luck5
 				29061,	// Ambition1Lv
 				29071,	// Tab1Lv
 				29081,	// Expect1Lv
