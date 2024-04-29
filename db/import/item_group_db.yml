@@ -1038,157 +1038,148 @@ Body:
           Item: Ein_SAFETY_PENDL
           Rate: 3
         - Index: 1
-          Item: Ein_SAFETY_EPAULL
+          Item: PlumpyWormCharm
           Rate: 2
         - Index: 2
-          Item: Ein_SAFETY_EPAULR
-          Rate: 3
+          Item: Auto_Armor_A
+          Rate: 1
         - Index: 3
-          Item: Ein_SAFETY_PENDR
-          Rate: 2
-        - Index: 4
-          Item: Glittering_Cat_Choker
-          Rate: 1
-        - Index: 5
-          Item: PlumpyWormCharm
-          Rate: 3
-        - Index: 6
-          Item: FreshTunaCharm
-          Rate: 2
-        - Index: 7
-          Item: ShiningTwigCharm
-          Rate: 1
-        - Index: 8
           Item: HigherRabbitCharm
           Rate: 3
-        - Index: 9
-          Item: HigherSaurelCharm
+        - Index: 4
+          Item: E_Auto_Armor_B
+          Rate: 1
+        - Index: 5
+          Item: Auto_Leg_A
+          Rate: 3
+        - Index: 6
+          Item: Auto_Engine_A
+          Rate: 1
+        - Index: 7
+          Item: Glittering_Cat_Choker
           Rate: 2
+        - Index: 8
+          Item: Fluffy_DandelionShoes_J
+          Rate: 3
+        - Index: 9
+          Item: Freyja_Crown_J
+          Rate: 1
         - Index: 10
-          Item: HigherLeafCharm
-          Rate: 3
-        - Index: 11
-          Item: F_Ein_1H_Foxtail
-          Rate: 3
-        - Index: 12
           Item: Ein_1H_Foxtail
           Rate: 2
-        - Index: 13
+        - Index: 11
           Item: Up_MeawFoxtail
-          Rate: 1
-        - Index: 14
-          Item: CassockA_STR
           Rate: 3
-        - Index: 15
+        - Index: 12
           Item: Fluffy_Shark_Pajama
+          Rate: 1
+        - Index: 13
+          Item: Cassock_Boots
+          Rate: 3
+        - Index: 14
+          Item: Fluffy_FishShoes_J
           Rate: 2
+        - Index: 15
+          Item: Baby_Boar_Bib
+          Rate: 1
   - Group: DORAM_BOX_B
     SubGroups:
       - SubGroup: 1
         List:
         - Index: 0
-          Item: Cute_Frog_Raincoat
-          Rate: 1
-        - Index: 1
-          Item: E_Auto_Armor_A
+          Item: F_Ein_1H_Foxtail
           Rate: 2
-        - Index: 2
-          Item: E_Auto_Armor_B
+        - Index: 1
+          Item: HigherLeafCharm
           Rate: 3
+        - Index: 2
+          Item: CassockA_STR
+          Rate: 1
         - Index: 3
-          Item: Auto_Armor_A
+          Item: Auto_Armor_B
           Rate: 2
         - Index: 4
-          Item: Auto_Armor_B
-          Rate: 1
+          Item: E_Auto_Leg_A
+          Rate: 3
         - Index: 5
-          Item: Cassock_Boots
-          Rate: 3
-        - Index: 6
-          Item: Fluffy_FishShoes_J
-          Rate: 2
-        - Index: 7
-          Item: Fluffy_DandelionShoes_J
+          Item: Temporal_Str_Boots_
           Rate: 1
-        - Index: 8
-          Item: Pretty_PigShoes
+        - Index: 6
+          Item: Auto_Leg_B
           Rate: 3
+        - Index: 7
+          Item: E_Auto_Engine_A
+          Rate: 2
+        - Index: 8
+          Item: Auto_Engine_B
+          Rate: 1
+        - Index: 9
+          Item: Purple_Cat_Ears_Beret
+          Rate: 2
+        - Index: 10
+          Item: FreshTunaCharm
+          Rate: 1
+        - Index: 11
+          Item: Cute_Frog_Raincoat
+          Rate: 3
+        - Index: 12
+          Item: Pretty_PigShoes
+          Rate: 2
   - Group: DORAM_BOX_C
     SubGroups:
       - SubGroup: 1
         List:
         - Index: 0
-          Item: Temporal_Str_Boots_
-          Rate: 2
+          Item: HigherSaurelCharm
+          Rate: 1
         - Index: 1
-          Item: Auto_Leg_A
+          Item: ShiningTwigCharm
           Rate: 3
         - Index: 2
-          Item: E_Auto_Leg_A
-          Rate: 1
-        - Index: 3
-          Item: E_Auto_Leg_B
+          Item: Temporal_M_Str
           Rate: 2
-        - Index: 4
-          Item: Auto_Leg_B
-          Rate: 3
-        - Index: 5
+        - Index: 3
           Item: Cassock_Manteau
           Rate: 1
-        - Index: 6
-          Item: Baby_Boar_Bib
+        - Index: 4
+          Item: E_Auto_Engine_B
+          Rate: 3
+        - Index: 5
+          Item: Ein_SAFETY_EPAULL
           Rate: 2
+        - Index: 6
+          Item: Ein_SAFETY_EPAULR
+          Rate: 1
         - Index: 7
-          Item: Temporal_M_Str
+          Item: Ein_SAFETY_PENDR
           Rate: 3
         - Index: 8
-          Item: E_Auto_Engine_A
-          Rate: 1
-        - Index: 9
-          Item: E_Auto_Engine_B
-          Rate: 2
-        - Index: 10
-          Item: Auto_Engine_A
-          Rate: 3
-        - Index: 11
-          Item: Auto_Engine_B
-          Rate: 1
-        - Index: 12
           Item: Fluffy_Lovely_Fox
-          Rate: 3
-        - Index: 13
-          Item: Purple_Cat_Ears_Beret
           Rate: 2
-        - Index: 14
-          Item: Freyja_Crown_J
-          Rate: 1
-        - Index: 15
+        - Index: 9
           Item: Diving_Goggles
-          Rate: 3
-        - Index: 16
+          Rate: 1
+        - Index: 10
           Item: Comp_Classical_Fhat
           Rate: 2
-        - Index: 17
+        - Index: 11
           Item: Comp_Crow_Tengu_Mask
-          Rate: 1
-        - Index: 18
+          Rate: 3
+        - Index: 12
           Item: Crow_Tengu_Mask
-          Rate: 2
-        - Index: 19
+          Rate: 1
+        - Index: 13
           Item: Tengu_Scroll
-          Rate: 1
-        - Index: 20
-          Item: Sagittarius_DiademK
-          Rate: 3
-        - Index: 21
-          Item: Sagittarius_DiademK_LT
           Rate: 2
-        - Index: 22
-          Item: Yummy_Lollipop
+        - Index: 14
+          Item: Sagittarius_DiademK
           Rate: 1
-        - Index: 23
-          Item: Bloody_Knight_Shield__
+        - Index: 15
+          Item: Sagittarius_DiademK_LT
           Rate: 3
+        - Index: 16
+          Item: Yummy_Lollipop
+          Rate: 2
   - Group: WARLOCK_BOX_A
     SubGroups:
       - SubGroup: 1
