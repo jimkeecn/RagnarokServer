@@ -181,6 +181,12 @@ Body:
             Price: 25
           - Item: ArchBishop_Weapon_B_Box
             Price: 50
+          - Item: DORAM_BOX_A
+            Price: 50
+          - Item: DORAM_BOX_B
+            Price: 60
+          - Item: DORAM_BOX_C
+            Price: 40
     - Tab: Scrolls
       Items:
           - Item: Inc_Agi_10_Scroll

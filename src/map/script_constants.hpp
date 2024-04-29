@@ -11207,6 +11207,10 @@
 	export_constant(IG_ARCHBISHOP_SHIELD_A_BOX);
 	export_constant(IG_ARCHBISHOP_WEAPON_A_BOX);
 	export_constant(IG_ARCHBISHOP_WEAPON_B_BOX);
+	export_constant(IG_DORAM_BOX_A);
+	export_constant(IG_DORAM_BOX_B);
+	export_constant(IG_DORAM_BOX_C);
+	
 
 	#undef export_constant
 	#undef export_constant2

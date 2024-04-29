@@ -2794,6 +2794,9 @@ enum e_random_item_group {
 	IG_ARCHBISHOP_SHIELD_A_BOX,
 	IG_ARCHBISHOP_WEAPON_A_BOX,
 	IG_ARCHBISHOP_WEAPON_B_BOX,
+	IG_DORAM_BOX_A,
+	IG_DORAM_BOX_B,
+	IG_DORAM_BOX_C,
 };
 
 /// Enum for bound/sell restricted selling
