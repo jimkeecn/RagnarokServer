@@ -2797,6 +2797,7 @@ enum e_random_item_group {
 	IG_DORAM_BOX_A,
 	IG_DORAM_BOX_B,
 	IG_DORAM_BOX_C,
+	IG_WARLOCK_BOX_A,
 };
 
 /// Enum for bound/sell restricted selling

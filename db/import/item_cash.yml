@@ -187,6 +187,8 @@ Body:
             Price: 60
           - Item: DORAM_BOX_C
             Price: 40
+          - Item: WARLOCK_BOX_A
+            Price: 40
     - Tab: Scrolls
       Items:
           - Item: Inc_Agi_10_Scroll

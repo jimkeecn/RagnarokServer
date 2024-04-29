@@ -1189,6 +1189,86 @@ Body:
         - Index: 23
           Item: Bloody_Knight_Shield__
           Rate: 3
+  - Group: WARLOCK_BOX_A
+    SubGroups:
+      - SubGroup: 1
+        List:
+        - Index: 0
+          Item: Large_Sorcerer_Crown
+          Rate: 3
+        - Index: 1
+          Item: Large_Sorcerer_Crown_LT
+          Rate: 2
+        - Index: 2
+          Item: KarduiEar
+          Rate: 3
+        - Index: 3
+          Item: Spell_Circuit
+          Rate: 2
+        - Index: 4
+          Item: Plain_Black_Mage_Hat
+          Rate: 1
+        - Index: 6
+          Item: SurviveOrb
+          Rate: 2
+        - Index: 7
+          Item: SurviveOrb_K_LT
+          Rate: 1
+        - Index: 8
+          Item: Survive_Circlet_K_LT
+          Rate: 3
+        - Index: 9
+          Item: Rutilus_Stick_OS
+          Rate: 2
+        - Index: 10
+          Item: Rutilus_Stick_AD
+          Rate: 1
+        - Index: 11
+          Item: Kronos
+          Rate: 3
+        - Index: 12
+          Item: Up_Iron_Staff
+          Rate: 2
+        - Index: 13
+          Item: Iron_Staff
+          Rate: 1
+        - Index: 14
+          Item: Geffenia_Magictool_Ice
+          Rate: 3
+        - Index: 15
+          Item: YinYang_Talisman
+          Rate: 2
+        - Index: 16
+          Item: Ring_of_Pazuzu
+          Rate: 1
+        - Index: 17
+          Item: Old_DetachmentsRing_J
+          Rate: 3
+        - Index: 18
+          Item: Phantom_Ear
+          Rate: 2
+        - Index: 19
+          Item: Lapine_Shield
+          Rate: 1
+        - Index: 20
+          Item: Geffenia_Book_Water
+          Rate: 3
+        - Index: 21
+          Item: Hero_Magic_Coat
+          Rate: 2
+        - Index: 22
+          Item: Shoes_Of_Servival
+          Rate: 1
+        - Index: 23
+          Item: Clack_Of_Servival_IL
+          Rate: 3
+        - Index: 24
+          Item: Kardui_Robe
+          Rate: 2
+        - Index: 25
+          Item: Robe_Of_Flattery
+          Rate: 2
+
 
 
 

@@ -11210,7 +11210,7 @@
 	export_constant(IG_DORAM_BOX_A);
 	export_constant(IG_DORAM_BOX_B);
 	export_constant(IG_DORAM_BOX_C);
-	
+	export_constant(IG_WARLOCK_BOX_A);
 
 	#undef export_constant
 	#undef export_constant2
